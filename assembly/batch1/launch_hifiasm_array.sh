@@ -2,7 +2,7 @@
 
 # Author      : Julian Lucas, juklucas@ucsc.edu
 # Description : Launch toil job submission for HPRC's Hifiasm workflow using Slurm arrays
-# Usage       : sbatch toil-run-arrays.sh sample_file.csv
+# Usage       : sbatch launch_hifiasm_array.sh sample_file.csv
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
 
@@ -23,7 +23,7 @@ sample_file=$1
 
 # Read the CSV file and extract the sample ID for the current job array task
 # Skip first row to avoid the header
-sample_id=$(awk -v task_id=${SLURM_ARRAY_TASK_ID} 'NR>1 && NR==task_id+1 {print $1}' "${sample_file}")
+sample_id=$(awk -F ',' -v task_id=${SLURM_ARRAY_TASK_ID} 'NR>1 && NR==task_id+1 {print $1}' "${sample_file}")
 
 
 # Ensure a sample ID is obtained
@@ -49,8 +49,8 @@ toil-wdl-runner \
     --jobStore ./assembly_bigstore \
     --batchSystem slurm \
     --batchLogsDir ./assembly_logs \
-    /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_yak_input_cutadapt_multistep.wdl \
-    /private/groups/hprc/hprc_intermediate_assembly/assembly/batch1/hifiasm_input_jsons/{sample}_hifiasm.json \
+    /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_cutadapt_multistep.wdl \
+    hifiasm_input_jsons/{sample}_hifiasm.json \
     --outputDirectory analysis/assembly \
     --outputFile {sample}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
