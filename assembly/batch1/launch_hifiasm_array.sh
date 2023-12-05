@@ -35,8 +35,8 @@ fi
 echo "${sample_id}"
 
 ## Create then change into sample directory...
-mkdir -p {sample}
-cd {sample}
+mkdir -p {sample_id}
+cd {sample_id}
 
 
 mkdir toil_logs 
@@ -50,9 +50,9 @@ toil-wdl-runner \
     --batchSystem slurm \
     --batchLogsDir ./assembly_logs \
     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_cutadapt_multistep.wdl \
-    hifiasm_input_jsons/{sample}_hifiasm.json \
+    hifiasm_input_jsons/{sample_id}_hifiasm.json \
     --outputDirectory analysis/assembly \
-    --outputFile {sample}_hifiasm_outputs.json \
+    --outputFile {sample_id}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 0 \
     --disableProgress \
