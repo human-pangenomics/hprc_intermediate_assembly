@@ -33,7 +33,7 @@ workflow_name   = args.workflow_name
 ###############################################################################
 
 # Read the CSV file into a Pandas DataFrame
-data_df     = pd.read_csv(data_table, delimiter='\t')
+data_df     = pd.read_csv(data_table)
 mapping_df  = pd.read_csv(field_mapping)
 
 ## Loop through each sample in data inputs...
