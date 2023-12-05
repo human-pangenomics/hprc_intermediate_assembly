@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --partition=priority
+#SBATCH --partition=high_priority
 #SBATCH --mail-user=juklucas@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb

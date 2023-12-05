@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --partition=priority
+#SBATCH --partition=high_priority
 #SBATCH --mail-user=juklucas@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
@@ -50,7 +50,7 @@ toil-wdl-runner \
     --batchSystem slurm \
     --batchLogsDir ./assembly_logs \
     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_yak_input_cutadapt_multistep.wdl \
-    {sample}_hifiasm.json \
+    /private/groups/hprc/hprc_intermediate_assembly/assembly/batch1/hifiasm_input_jsons/{sample}_hifiasm.json \
     --outputDirectory analysis/assembly \
     --outputFile {sample}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
