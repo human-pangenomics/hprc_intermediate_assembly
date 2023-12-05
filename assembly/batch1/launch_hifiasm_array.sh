@@ -14,7 +14,7 @@
 #SBATCH --mail-user=juklucas@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
-#SBATCH --output=hifiasm_submit_%x_%j_%A_%a.log
+#SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
 #SBATCH --time=3-0:00
 #SBATCH --array=1-10%10
 
@@ -50,7 +50,7 @@ toil-wdl-runner \
     --batchSystem slurm \
     --batchLogsDir ./assembly_logs \
     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_cutadapt_multistep.wdl \
-    hifiasm_input_jsons/${sample_id}_hifiasm.json \
+    ../hifiasm_input_jsons/${sample_id}_hifiasm.json \
     --outputDirectory analysis/assembly \
     --outputFile ${sample_id}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
