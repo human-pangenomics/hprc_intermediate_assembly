@@ -35,8 +35,8 @@ fi
 echo "${sample_id}"
 
 ## Create then change into sample directory...
-mkdir -p {sample_id}
-cd {sample_id}
+mkdir -p ${sample_id}
+cd ${sample_id}
 
 
 mkdir toil_logs 
