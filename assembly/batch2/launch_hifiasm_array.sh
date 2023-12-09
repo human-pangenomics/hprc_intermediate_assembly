@@ -39,12 +39,12 @@ mkdir -p ${sample_id}
 cd ${sample_id}
 
 
-mkdir toil_logs 
+mkdir assembly_logs 
 mkdir analysis
 
 SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache 
 MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl 
-TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority"
+export TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority"
 
 toil-wdl-runner \
     --jobStore ./assembly_bigstore \
