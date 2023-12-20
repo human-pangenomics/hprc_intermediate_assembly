@@ -1,5 +1,5 @@
 ###############################################################################
-##                                    CHM13 v2.0                             ## 
+##                                    CHM13 v2.0                             ##
 ###############################################################################
 
 mkdir -p /private/groups/hprc/ref_files/chm13
@@ -16,12 +16,12 @@ pigz -p 8 /private/groups/hprc/ref_files/chm13/chm13v2.0.fa
 ## annotationBed
 aws s3 cp \
     s3://human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_GenomeFeature_v1.0.bed \
-    /private/groups/hprc/ref_files/chm13/ 
+    /private/groups/hprc/ref_files/chm13/
 
 ## annotationCENSAT
 aws s3 cp \
     s3://human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed \
-    /private/groups/hprc/ref_files/chm13/ 
+    /private/groups/hprc/ref_files/chm13/
 
 ## annotationSD
 gsutil cp \
@@ -30,10 +30,10 @@ gsutil cp \
 
 
 ###############################################################################
-##                                   GRCh38                                  ## 
+##                                   GRCh38                                  ##
 ###############################################################################
 
-mkdir -p /private/groups/hprc/ref_files/grch38 
+mkdir -p /private/groups/hprc/ref_files/grch38
 
 
 ## genesFasta
@@ -52,5 +52,18 @@ gsutil cp \
 
 
 ###############################################################################
-##                                                                           ## 
+##                              GIAB bed files                              ##
 ###############################################################################
+
+mkdir -p /private/groups/hprc/ref_files/giab
+
+cd /private/groups/hprc/ref_files/giab
+
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed
+
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/ChineseTrio/HG005_NA24631_son/NISTv4.2.1/GRCh38/HG005_GRCh38_1_22_v4.2.1_benchmark.bed
+
+bedtools intersect \
+-a /private/groups/hprc/ref_files/giab/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed \
+-b /private/groups/hprc/ref_files/giab/HG005_GRCh38_1_22_v4.2.1_benchmark.bed \
+> /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed
