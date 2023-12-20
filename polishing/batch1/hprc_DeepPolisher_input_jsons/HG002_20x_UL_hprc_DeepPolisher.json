@@ -1,0 +1,15 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/downsampled_40x/03_08_22_R941_HG002_5_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz",
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/downsampled_40x/03_08_22_R941_HG002_3_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/HiFi_DC_v1.2/downsampled_40x/m64011_190714_120746.dc.q20.fastq.gz",
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/HiFi_DC_v1.2/downsampled_40x/m64011_190830_220126.dc.q20.fastq.gz",
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/HiFi_DC_v1.2/downsampled_40x/m64011_190901_095311.dc.q20.fastq.gz",
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/HiFi_DC_v1.2/downsampled_40x/m64012_190920_173625.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG002_y2_polishing/assembly/HG002.trio_hifiasm_0.19.5.DC_1.2_40x.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG002_y2_polishing/assembly/HG002.trio_hifiasm_0.19.5.DC_1.2_40x.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz"
+}
