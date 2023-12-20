@@ -15,7 +15,7 @@
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
-#SBATCH --time=3-0:00
+#SBATCH --time=2-0:00
 #SBATCH --array=1-3%3
 
 ## Pull samples names from CSV passed to script
