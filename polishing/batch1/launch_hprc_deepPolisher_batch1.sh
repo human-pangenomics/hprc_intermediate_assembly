@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
 #SBATCH --time=3-0:00
-#SBATCH --array=1-10%5
+#SBATCH --array=1-4%4
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -57,6 +57,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
+    --clusterStats ${sample_id}_clusterstats.json \
     2>&1 | tee log.txt
 
 wait

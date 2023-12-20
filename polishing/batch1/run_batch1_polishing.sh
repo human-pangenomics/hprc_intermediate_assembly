@@ -26,16 +26,13 @@ cd /private/groups/hprc/polishing
 git clone https://github.com/human-pangenomics/hprc_intermediate_assembly.git
 
 ## check that github repo is up to date
-git -C /private/groups/hprc/hprc_intermediate_assembly pull
+git -C /private/groups/hprc/polishing/hprc_intermediate_assembly pull
 
 ## get wdl workflow from github
 git clone https://github.com/miramastoras/hpp_production_workflows.git
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
-
-# manually add in polishing docker v0.0.8_12122023 until its publicly released
-vim /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl
 
 mkdir batch1
 cd batch1
