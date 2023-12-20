@@ -1,7 +1,7 @@
 {
   "hprc_DeepPolisher.ONTReads": [
-    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/downsampled_40x/03_08_22_R941_HG002_5_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz",
-    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/downsampled_40x/03_08_22_R941_HG002_3_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz"
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/03_08_22_R941_HG002_5_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz",
+    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/03_08_22_R941_HG002_3_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz"
   ],
   "hprc_DeepPolisher.HifiReads": [
     "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/HiFi_DC_v1.2/downsampled_40x/m64011_190714_120746.dc.q20.fastq.gz",
