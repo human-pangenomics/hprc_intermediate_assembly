@@ -8,7 +8,7 @@
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch1/hprc_DeepPolisher_input_jsons
 
 python3 ../../../hpc/launch_from_table.py \
-     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira.csv \
+     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv \
      --field_mapping ../hprc_DeepPolisher_input_mapping.csv \
      --workflow_name hprc_DeepPolisher
 
@@ -45,4 +45,4 @@ mkdir hprc_DeepPolisher_submit_logs
 ## launch with slurm array job
 sbatch \
      launch_hprc_deepPolisher_batch1_array.sh \
-     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira.csv
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
