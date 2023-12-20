@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
 #SBATCH --time=3-0:00
-#SBATCH --array=1-4%2
+#SBATCH --array=1-3%3
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -44,7 +44,7 @@ mkdir hprc_DeepPolisher_outputs
 
 SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
 MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority"
+export TOIL_SLURM_ARGS="--time=2-0:00 --partition=high_priority"
 
 toil-wdl-runner \
     --jobStore ./polishing_bigstore \
