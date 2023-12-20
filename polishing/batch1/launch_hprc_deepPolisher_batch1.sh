@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
 #SBATCH --time=3-0:00
-#SBATCH --array=1-4%4
+#SBATCH --array=1-4%2
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
