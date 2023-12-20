@@ -46,3 +46,8 @@ mkdir hprc_DeepPolisher_submit_logs
 sbatch \
      launch_hprc_deepPolisher_batch1.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
+
+## relaunch HG002_UL_chr20 with fixed fastq paths 
+sbatch \
+     launch_hprc_deepPolisher_batch1.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
