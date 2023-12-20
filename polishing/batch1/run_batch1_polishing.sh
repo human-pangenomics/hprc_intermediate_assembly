@@ -44,5 +44,5 @@ mkdir hprc_DeepPolisher_submit_logs
 
 ## launch with slurm array job
 sbatch \
-     launch_hprc_deepPolisher_batch1_array.sh \
+     launch_hprc_deepPolisher_batch1.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
