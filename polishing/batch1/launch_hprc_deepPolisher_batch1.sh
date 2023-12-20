@@ -14,7 +14,7 @@
 #SBATCH --mail-user=mmastora@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
-#SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
+#SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
 #SBATCH --array=1-3%3
 
