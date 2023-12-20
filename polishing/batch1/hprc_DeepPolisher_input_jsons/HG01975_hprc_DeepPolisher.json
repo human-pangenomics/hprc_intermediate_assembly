@@ -14,5 +14,6 @@
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch1/HG01975/analysis/assembly/HG01975.pat.fa.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch1/HG01975/analysis/assembly/HG01975.mat.fa.gz",
-  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz"
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG01975"
 }
