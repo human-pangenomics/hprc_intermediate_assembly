@@ -51,3 +51,9 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch1_relaunch.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
+
+## relaunch HG002_UL_chr20 and HG01975 because of weird failure and hanging for 24 hours
+## added more disk space to extract reads wdl since that seemed to be the cause of the failure
+sbatch \
+     launch_hprc_deepPolisher_batch1_relaunch.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv

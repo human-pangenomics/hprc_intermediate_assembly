@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
-#SBATCH --array=[3]%1
+#SBATCH --array=[1,3]%2
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
