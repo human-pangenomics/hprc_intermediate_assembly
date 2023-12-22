@@ -50,6 +50,11 @@ gsutil cp \
     gs://hifiasm/hs38DH.fa \
     /private/groups/hprc/ref_files/grch38/
 
+## GIAB version with chr names
+cd /private/groups/hprc/ref_files/grch38
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz
+gunzip /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz
+samtools faidx /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta
 
 ###############################################################################
 ##                              GIAB bed files                              ##
@@ -67,3 +72,15 @@ bedtools intersect \
 -a /private/groups/hprc/ref_files/giab/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed \
 -b /private/groups/hprc/ref_files/giab/HG005_GRCh38_1_22_v4.2.1_benchmark.bed \
 > /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed
+
+bedtools sort -faidx /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.fai \
+-i /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed \
+> tmp ; mv tmp /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed
+
+cut -f1-2 /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.fai \
+> /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.fai.genome
+
+bedtools complement \
+-i /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed \
+-g /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.fai.genome \
+> /private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed

@@ -57,3 +57,10 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch1_relaunch.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
+
+# relaunch just HG01975 (#1) because it failed due "samtools not found" on extract reads which makes no sense
+# adding logDebug to toil command
+
+sbatch \
+     launch_hprc_deepPolisher_batch1_relaunch.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv

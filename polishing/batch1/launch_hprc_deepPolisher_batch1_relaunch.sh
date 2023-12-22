@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
-#SBATCH --array=[1,3]%2
+#SBATCH --array=[1]%1
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -57,6 +57,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
+    --logDebug \
     --clusterStats ${sample_id}_clusterstats.json \
     2>&1 | tee log.txt
 
