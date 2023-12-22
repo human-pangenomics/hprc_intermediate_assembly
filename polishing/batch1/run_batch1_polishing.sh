@@ -60,6 +60,7 @@ sbatch \
 
 # relaunch just HG01975 (#1) because it failed due "samtools not found" on extract reads which makes no sense
 # adding logDebug to toil command
+# restarting 
 
 sbatch \
      launch_hprc_deepPolisher_batch1_relaunch.sh \
