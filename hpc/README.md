@@ -6,8 +6,8 @@ This script takes in two data files and a workflow name and creates an input jso
 ```
 python3 ./launch_from_table.py \
      --data_table sample_data_table.csv \
-     --field_mapping input_mapping_hifiasm.csv \
-     --workflow_name hifiasm
+     --field_mapping input_mapping.csv \
+     --workflow_name yak
 ```
 
 ### Inputs
@@ -22,5 +22,29 @@ python3 ./launch_from_table.py \
 
 * `{sample_id}_{workflow_name}.json`
 
+
+## Read TOIL output JSONs and write updated data table (update_table_with_outputs.py)
+
+This script takes in two data files and a workflow name and creates an input json file for launching a workflow with TOIL
+## Call with 
+```
+python3 update_table_with_outputs.py \
+     --input_data_table test.csv \
+     --output_data_table test_updated.csv \
+     --json_location '{sample_id}_hifiasm_output.json' \
+     --field_mapping mapping.csv (optional)
+```
+
+### Inputs
+* input_data_table (CSV file with header. First column must be sample_id): File that contains data locations for each sample. This is probably what you used to launch the workflow.
+* output_data_table (String): the name of the input_data_table to write. Will be the input_data_table with columns added for outputs that the workflow wrote.
+* json_location (String): Location of the output json that the workflow wrote. Note that it is expected that the output json is under a directory with the name {sample_id}.
+* field_mapping (CSV file with header, optional): file that maps json keys (outputs from workflow) to column names in the output csv file.
+	* json_key: The name for the json row (not including the workflow name)
+	* output_name: The name of the column to write in the row.
+
+### Note on optional field mapping file:
+
+If none is provided all json keys are added to output CSV. If one is provided, keys in the json are looked up and the output CSV has a column with the name specified for that key. If no key mapping is found then the key is not written to the output (useful for workflows with a lot of outputs.)
 
 ------------------ 
