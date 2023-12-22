@@ -58,7 +58,6 @@ toil-wdl-runner \
     --retryCount 1 \
     --disableProgress \
     --logDebug \
-    --restart \
     --clusterStats ${sample_id}_clusterstats.json \
     2>&1 | tee log.txt
 
