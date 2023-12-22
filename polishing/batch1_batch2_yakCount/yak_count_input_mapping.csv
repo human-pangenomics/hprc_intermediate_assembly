@@ -1,0 +1,2 @@
+input,type,value
+runYakCount.sampleReadsILM,array,$input.child_ilmn

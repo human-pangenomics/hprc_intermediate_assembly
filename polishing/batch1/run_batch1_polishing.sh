@@ -65,3 +65,15 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch1_relaunch.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
+
+
+###############################################################################
+##                             write output files to csv                     ##
+###############################################################################
+
+cd /private/groups/hprc/polishing/batch1
+
+python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.updated.csv \
+      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'
