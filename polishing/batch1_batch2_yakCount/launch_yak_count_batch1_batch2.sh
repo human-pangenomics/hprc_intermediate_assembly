@@ -51,7 +51,7 @@ time toil-wdl-runner \
     --batchSystem slurm \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/tasks/yak_count.wdl \
-    ../hprc_DeepPolisher_input_jsons/${sample_id}_yak_count.json \
+    ../yak_count_input_jsons/${sample_id}_yak_count.json \
     --outputDirectory yak_count_outputs \
     --outputFile ${sample_id}_yak_count_outputs.json \
     --runLocalJobsOnWorkers \
