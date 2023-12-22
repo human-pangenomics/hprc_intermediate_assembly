@@ -25,7 +25,8 @@ python3 ./launch_from_table.py \
 
 ## Read TOIL output JSONs and write updated data table (update_table_with_outputs.py)
 
-This script takes in two data files and a workflow name and creates an input json file for launching a workflow with TOIL
+This script takes in a data file, an output name, and the location of a workflow's output jsons in order to update the data file with the worklfow's outputs. This script is useful to update a data table with workflow outputs so they can be used as inputs into your next workflow.
+
 ## Call with 
 ```
 python3 update_table_with_outputs.py \
