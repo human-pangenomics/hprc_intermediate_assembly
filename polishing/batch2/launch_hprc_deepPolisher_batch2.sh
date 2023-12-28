@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author      : Julian Lucas, juklucas@ucsc.edu
-# Description : Launch toil job submission for HPRC's Hifiasm workflow using Slurm arrays
+# Description : Launch toil job submission for HPRC's DeepPolisher workflow using Slurm arrays
 # Usage       : sbatch launch_hifiasm_array.sh sample_file.csv
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
@@ -44,7 +44,7 @@ mkdir hprc_DeepPolisher_outputs
 
 SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
 MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=2-0:00 --partition=high_priority"
+export TOIL_SLURM_ARGS="--time=5-0:00 --partition=high_priority"
 
 time toil-wdl-runner \
     --jobStore ./polishing_bigstore \
