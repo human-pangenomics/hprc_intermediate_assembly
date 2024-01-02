@@ -3,12 +3,13 @@ import json
 import os
 import argparse
 
-## Call with 
+## Call with
 # python3 update_table_with_outputs.py \
 #      --input_data_table test.csv \
 #      --output_data_table test_updated.csv \
 #      --json_location '{sample_id}/{sample_id}_hifiasm_output.json' \
-#      --field_mapping mapping.csv (optional)
+#      --field_mapping mapping.csv (optional) \
+#      --submit_logs_directory (optional)
 
 
 # Note on optional field mapping file:
@@ -19,6 +20,11 @@ import argparse
 # then the key is not written to the output (useful for workflows with a lot of
 # outputs.)
 
+# Note on optional submit logs directory:
+
+# if the location of the submit logs directory in cwd is provided, the log for each sample
+# run will be added to the outputs data table also. The sample ID must be the first
+# line of each submit log in this directory
 
 ###############################################################################
 ##                          Function Definitions                             ##
@@ -51,11 +57,26 @@ def validate_csv_header(csv_file_path):
         if not header or header[0] != 'sample_id':
             raise ValueError("Input CSV file does not have 'sample_id' as its first column")
 
-def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_csv_path=None):
+def parse_submit_logs(submit_logs_directory, base_dir):
+    submit_logs_dict={}
+    dir=os.path.join(base_dir, submit_logs_directory)
+    if os.path.exists(dir):
+        for filename in os.listdir(dir):
+            filepath=os.path.join(dir, filename)
+            with open(filepath) as f:
+                sampleID = f.readline().strip('\n')
+            submit_logs_dict[sampleID] = filepath
+    else:
+        raise ValueError("Invalid submit logs directory path")
+
+    return submit_logs_dict
+
+def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_csv_path=None,submit_logs_directory=None):
     updated_rows = []
     header_updated = False
     base_dir = os.getcwd()
     mapping = read_mapping_csv(mapping_csv_path) if mapping_csv_path else {}
+    submit_logs_dict=parse_submit_logs(submit_logs_directory,base_dir) if submit_logs_directory else {}
 
     validate_csv_header(csv_file_path)  # Validate the header of the input CSV file
 
@@ -83,9 +104,14 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
 
                     value_with_path = os.path.join(sample_dir, value)
                     row[column_name] = value_with_path
-            
+
+            if submit_logs_directory:
+                column_name="Submission_Log_filepath"
+                fieldnames.append(column_name)
+                row[column_name]=submit_logs_dict[sample_id]
+
             updated_rows.append(row)
-            
+
         print(header_updated)
         if header_updated:
             with open(output_csv_path, mode='w', newline='') as write_file:
@@ -105,10 +131,11 @@ def main():
                         help='location and name relative to CWD of the output JSON files, use {sample_id} as placeholder for sample ID')
     parser.add_argument('--field_mapping', '-m', type=str, action='store',
                         help='Optional path to the mapping CSV file', default=None)
-
+    parser.add_argument('--submit_logs_directory', '-s', type=str, action='store',
+                        help='Optional path to submit logs for sbatch array run, relative to cwd', default=None)
     args = parser.parse_args()
 
-    update_csv_with_json(args.input_data_table, args.output_data_table, args.json_location, args.field_mapping)
+    update_csv_with_json(args.input_data_table, args.output_data_table, args.json_location, args.field_mapping, args.submit_logs_directory)
 
 
 if __name__ == '__main__':
