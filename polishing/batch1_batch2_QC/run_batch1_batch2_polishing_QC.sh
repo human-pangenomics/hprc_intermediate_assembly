@@ -13,7 +13,7 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch1/hprc_DeepPolisher_input_jsons
+cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch1_batch2_QC/hprc_polishing_QC_input_jsons/
 
 python3 ../../../hpc/launch_from_table.py \
      --data_table ../intAsm_batch1_batch2_polishingQC_sample_table.csv \
@@ -21,3 +21,7 @@ python3 ../../../hpc/launch_from_table.py \
      --workflow_name hprc_polishing_QC
 
 ## add/commit/push to github (hprc_intermediate_assembly)
+
+###############################################################################
+##                             create launch polishing                      ##
+###############################################################################
