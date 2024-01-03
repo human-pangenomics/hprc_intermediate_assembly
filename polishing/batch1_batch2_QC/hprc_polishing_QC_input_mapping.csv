@@ -13,3 +13,4 @@ hprc_polishing_QC.rawHap2Fasta,scalar,$input.maternalFastaGz
 hprc_polishing_QC.grch38Fasta,scalar,/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta
 hprc_polishing_QC.sampleReadsIlm,array,$input.child_ilmn
 hprc_polishing_QC.sampleID,scalar,$input.sample_id
+hprc_polishing_QC.makeMerylDB.referenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
