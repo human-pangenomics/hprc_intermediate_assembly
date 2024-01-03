@@ -5,7 +5,7 @@
 ## on personal computer, manually add sample yak column from
 # intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.updated.csv
 # to intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.updated.csv
-# and add HG01975 from batch 1
+# and add HG01975 from batch 1 
 
 ###############################################################################
 ##                             create input jsons                            ##
