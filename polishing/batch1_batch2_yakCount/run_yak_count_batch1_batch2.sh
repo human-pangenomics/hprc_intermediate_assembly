@@ -38,3 +38,16 @@ mkdir yak_count_submit_logs
 sbatch \
      launch_yak_count_batch1_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.csv
+
+
+###############################################################################
+##                             write output files to sample table            ##
+###############################################################################
+
+# on hprc after entire batch has finished
+cd /private/groups/hprc/polishing/batch1_batch2_yakCount
+
+python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.csv \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.updated.csv \
+      --json_location '{sample_id}_yak_count_outputs.json'
