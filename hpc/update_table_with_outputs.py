@@ -107,12 +107,14 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
 
             if submit_logs_directory:
                 column_name="Submission_Log_filepath"
-                fieldnames.append(column_name)
+                if column_name not in fieldnames:
+                    fieldnames.append(column_name)
+                    header_updated = True
+
                 row[column_name]=submit_logs_dict[sample_id]
 
             updated_rows.append(row)
 
-        print(header_updated)
         if header_updated:
             with open(output_csv_path, mode='w', newline='') as write_file:
                 writer = csv.DictWriter(write_file, fieldnames=fieldnames)

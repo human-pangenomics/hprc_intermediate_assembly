@@ -39,6 +39,11 @@ sbatch \
      launch_yak_count_batch1_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.csv
 
+#
+## relaunch HG01261
+sbatch \
+     launch_yak_count_batch1_batch2_relaunch.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1_2_yak_count.csv
 
 ###############################################################################
 ##                             write output files to sample table            ##
