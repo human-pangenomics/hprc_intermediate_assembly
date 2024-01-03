@@ -47,3 +47,8 @@ mkdir hprc_polishing_QC_submit_logs
 sbatch \
      launch_batch1_batch2_polishingQC.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
+
+# relaunch all hprc samples because I forgot to include the hg38 for extracting cram
+sbatch \
+     launch_batch1_batch2_polishingQC_relaunch.sh \
+     intAsm_batch1_batch2_polishingQC_sample_table.csv
