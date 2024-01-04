@@ -48,7 +48,8 @@ sbatch \
      launch_batch1_batch2_polishingQC.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
 
-# relaunch all hprc samples because I forgot to include the hg38 for extracting cram
+# relaunch all hprc samples because I forgot to include the hg38 for extracting cram.
+# also relaunched because i needed to add more memory for merqury count 
 sbatch \
      launch_batch1_batch2_polishingQC_relaunch.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv

@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_polishing_QC_submit_logs/hprc_polishing_QC_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
-#SBATCH --array=2-4,6-8,10,11%9
+#SBATCH --array=2-4,6-8,10,11%8
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
