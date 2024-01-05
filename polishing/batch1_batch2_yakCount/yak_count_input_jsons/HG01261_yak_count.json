@@ -1,6 +1,6 @@
 {
   "runYakCount.sampleReadsILM": [
-    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG01261/Illumina/child/HG01261.final.cram"
+    "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_14151/Project_CCDG_14151_B01_GRM_WGS.cram.2020-02-12/Sample_HG01261/analysis/HG01261.final.cram"
   ],
   "runYakCount.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa"
 }
