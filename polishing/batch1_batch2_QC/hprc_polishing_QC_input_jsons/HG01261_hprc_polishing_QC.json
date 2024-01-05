@@ -1,6 +1,6 @@
 {
   "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01260.yak",
-  "hprc_polishing_QC.sampleYak": NaN,
+  "hprc_polishing_QC.sampleYak": "/private/groups/hprc/polishing/batch1_batch2_yakCount/HG01261/yak_count_outputs/sample.yak",
   "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
   "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/hprc/polishing/batch2/HG01261/hprc_DeepPolisher_outputs/HG01261_Hap1.polished.fasta",
   "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",

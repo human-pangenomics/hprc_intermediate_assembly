@@ -6,7 +6,7 @@
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
 
-#SBATCH --job-name=HPRC-polishingQC-batch1and2_relaunch
+#SBATCH --job-name=HPRC-polishingQC-batch1and2_relaunch_HG01261
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_polishing_QC_submit_logs/hprc_polishing_QC_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
-#SBATCH --array=2-4,6-8,10,11%8
+#SBATCH --array=5%1
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
