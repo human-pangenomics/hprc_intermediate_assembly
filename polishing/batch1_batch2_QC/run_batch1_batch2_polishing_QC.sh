@@ -53,3 +53,15 @@ sbatch \
 sbatch \
      launch_batch1_batch2_polishingQC_relaunch.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
+
+###############################################################################
+##                             write output files to csv                     ##
+###############################################################################
+
+# on hprc after entire batch has finished
+cd /private/groups/hprc/polishing/batch1_batch2_QC
+
+python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table ./intAsm_batch1_batch2_polishingQC_sample_table.csv \
+      --output_data_table ./intAsm_batch1_batch2_polishingQC_sample_table.updated.csv \
+      --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
