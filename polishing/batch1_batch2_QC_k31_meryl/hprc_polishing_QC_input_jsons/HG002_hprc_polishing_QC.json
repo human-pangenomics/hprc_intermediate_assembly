@@ -11,9 +11,7 @@
   "hprc_polishing_QC.polishingVcf": "/private/groups/hprc/polishing/batch1/HG002/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
   "hprc_polishing_QC.rawHap2Fasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG002_y2_polishing/assembly/HG002.trio_hifiasm_0.19.5.DC_1.2_40x.mat.fa.gz",
   "hprc_polishing_QC.grch38Fasta": "/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta",
-  "hprc_polishing_QC.sampleReadsIlm": [
-    "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/illumina/HG002_HiSeq30x_subsampled_R1.fastq.gz","/private/groups/patenlab/masri/hprc/polishing/HG002/reads/illumina/HG002_HiSeq30x_subsampled_R2.fastq.gz"]
-  ],
+  "hprc_polishing_QC.sampleReadsIlm": ["/private/groups/patenlab/masri/hprc/polishing/HG002/reads/illumina/HG002_HiSeq30x_subsampled_R1.fastq.gz","/private/groups/patenlab/masri/hprc/polishing/HG002/reads/illumina/HG002_HiSeq30x_subsampled_R2.fastq.gz"],
   "hprc_polishing_QC.sampleID": "HG002",
   "hprc_polishing_QC.makeMerylDB.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
   "hprc_polishing_QC.makeMerylDB.kmerSize": 31

@@ -47,3 +47,8 @@ mkdir hprc_polishing_QC_submit_logs
 sbatch \
      launch_batch1_batch2_QC_k31_meryl.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
+
+#resubmit HG002 because json had a bug
+sbatch \
+     launch_batch1_batch2_QC_k31_meryl_HG002.sh \
+     intAsm_batch1_batch2_polishingQC_sample_table.csv
