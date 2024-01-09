@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_polishing_QC_submit_logs/hprc_polishing_QC_submit_%x_%j_%A_%a.log
 #SBATCH --time=2-0:00
-#SBATCH --array=1-4,6-8,10,11%9
+#SBATCH --array=1-11%7
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -42,8 +42,8 @@ cd ${sample_id}
 mkdir toil_logs
 mkdir hprc_polishing_QC_outputs
 
-SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
-MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
+export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
+export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
 export TOIL_SLURM_ARGS="--time=2-0:00 --partition=high_priority"
 
 time toil-wdl-runner \
