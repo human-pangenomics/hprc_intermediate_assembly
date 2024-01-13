@@ -52,3 +52,9 @@ sbatch \
 sbatch \
      launch_batch1_batch2_QC_k31_meryl_HG002.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
+
+
+#still dealing with bugs, just try HG00597 for now
+sbatch \
+     launch_batch1_batch2_QC_k31_meryl.HG00597.sh \
+     intAsm_batch1_batch2_polishingQC_sample_table.csv

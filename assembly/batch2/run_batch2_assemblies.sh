@@ -1,6 +1,6 @@
 
 ###############################################################################
-##                             create input jsons                            ##   
+##                             create input jsons                            ##
 ###############################################################################
 
 ## on personal computer...
@@ -15,14 +15,14 @@ python3 ../../../hpc/launch_from_table.py \
 ## add/commit/push to github (hprc_intermediate_assembly)
 
 ###############################################################################
-##                             create launch assemblies                      ##   
+##                             create launch assemblies                      ##
 ###############################################################################
 
 ## on HPC...
 cd /private/groups/hprc/
 
 ## check that github repo is up to date
-git -C /private/groups/hprc/hprc_intermediate_assembly pull 
+git -C /private/groups/hprc/hprc_intermediate_assembly pull
 
 mkdir assembly/batch2
 cd assembly/batch2
@@ -40,7 +40,7 @@ sbatch \
 
 
 ###############################################################################
-##                               Relaunch Failures                           ##   
+##                               Relaunch Failures                           ##
 ###############################################################################
 
 # Loop through directories starting with 'HG'
@@ -80,10 +80,10 @@ sbatch \
 
 
 ###############################################################################
-##                               Relaunch Failures (Again)                   ##   
+##                               Relaunch Failures (Again)                   ##
 ###############################################################################
 
-rm hifiasm_status.txt 
+rm hifiasm_status.txt
 
 # Loop through directories starting with 'HG'
 for dir in HG* ; do
@@ -118,3 +118,17 @@ cp launch_hifiasm_array.sh launch_hifiasm_array_restart.sh
 sbatch \
      launch_hifiasm_array_restart.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2_rerun.csv
+
+
+###############################################################################
+##                               Update table with outputs                   ##
+###############################################################################
+
+# on hprc after entire batch has finished
+cd /private/groups/hprc/assembly/batch2
+
+python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch2.csv \
+      --output_data_table /private/groups/hprc/HPRC_Intermediate_Assembly_s3Locs_Batch2.csv.updated.csv \
+      --json_location '{sample_id}_hifiasm_outputs.json' \
+      --submit_logs_directory hifiasm_submit_logs
