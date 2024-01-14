@@ -47,15 +47,10 @@ sbatch \
      launch_hprc_deepPolisher_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.polishing_batch3.csv
 
+## relaunch only 4 because ran out of space in hprc folder 
+sbatch \
+     launch_hprc_deepPolisher_batch3.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.polishing_batch3.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
-
-# on hprc after entire batch has finished
-cd /private/groups/hprc/polishing/batch2
-
-python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.csv \
-      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.updated.csv \
-      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json' \
-      --submit_logs_directory hprc_DeepPolisher_submit_logs
