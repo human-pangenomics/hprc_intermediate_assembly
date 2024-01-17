@@ -7,9 +7,7 @@
   "hprc_DeepPolisher.HifiReads": [
     "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00408/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00408.m64136_211111_194404.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00408/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00408.m64136_211113_063830.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00408/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00408.m64136_211114_164241.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/331018f0-4fa6-46d3-bf49-dc08405598c3--WUSTL_HPRC_HiFi_Year3_TopUp/HG00408/PacBio_HiFi/m84081_230721_175633_s1.hifi_reads.bc1002.bam",
-    "s3://human-pangenomics/submissions/331018f0-4fa6-46d3-bf49-dc08405598c3--WUSTL_HPRC_HiFi_Year3_TopUp/HG00408/PacBio_HiFi/m84081_230721_182654_s2.hifi_reads.bc1002.bam"
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00408/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00408.m64136_211114_164241.dc.q20.fastq.gz"
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch1/HG00408/analysis/assembly/HG00408.pat.fa.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch1/HG00408/analysis/assembly/HG00408.mat.fa.gz",

@@ -5,10 +5,12 @@
 
 ## on personal computer...
 
+# Remove top up data from data table
+
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch2/hprc_DeepPolisher_input_jsons
 
 python3 ../../../hpc/launch_from_table.py \
-     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.csv \
+     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv \
      --field_mapping ../hprc_DeepPolisher_input_mapping.csv \
      --workflow_name hprc_DeepPolisher
 
@@ -53,6 +55,12 @@ sbatch \
      launch_hprc_deepPolisher_batch2_relaunch.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.csv
 
+# rerun without topup
+# resubmit HG02258 (#7)
+
+sbatch \
+     launch_hprc_deepPolisher_batch2_relaunch.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
