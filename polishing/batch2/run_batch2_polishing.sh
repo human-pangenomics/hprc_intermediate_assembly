@@ -59,7 +59,7 @@ sbatch \
 # resubmit HG02258 (#7)
 
 sbatch \
-     launch_hprc_deepPolisher_batch2_relaunch.sh \
+     launch_hprc_deepPolisher_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
 ###############################################################################
 ##                             write output files to csv                     ##
