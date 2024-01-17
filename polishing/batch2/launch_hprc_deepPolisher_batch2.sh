@@ -15,8 +15,8 @@
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
-#SBATCH --time=5-0:00
-#SBATCH --array=1-9%5
+#SBATCH --time=7-0:00
+#SBATCH --array=1-10%5
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -44,7 +44,7 @@ mkdir hprc_DeepPolisher_outputs
 
 SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
 MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=5-0:00 --partition=high_priority"
+export TOIL_SLURM_ARGS="--time=7-0:00 --partition=high_priority"
 
 time toil-wdl-runner \
     --jobStore ./polishing_bigstore \
