@@ -27,7 +27,7 @@ mkdir hprc_DeepPolisher_outputs
 
 export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
 export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority --nodelist=phoenix-02 --exclude=phoenix-[00-01,03-21]"
+export TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority --nodelist=phoenix-11 --exclude=phoenix-[00-10,12-21]"
 export TOIL_COORDINATION_DIR=/data/tmp
 
 time toil-wdl-runner \
@@ -42,6 +42,7 @@ time toil-wdl-runner \
     --retryCount 1 \
     --disableProgress \
     --clusterStats ./HG00408_clusterstats.json \
+    --restart \
     2>&1 | tee log.txt
 
 wait
