@@ -57,8 +57,7 @@ toil-wdl-runner \
     --outputDirectory analysis/assembly \
     --outputFile ${sample_id}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
-    --retryCount 1 \
-    --disableProgress \
+    --disableProgress true \
     2>&1 | tee log.txt
 
 wait

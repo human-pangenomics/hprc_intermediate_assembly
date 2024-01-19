@@ -8,7 +8,7 @@
 cd /Users/juklucas/Desktop/github/hprc_intermediate_assembly/assembly/batch3/hifiasm_input_jsons
 
 python3 ../../../hpc/launch_from_table.py \
-     --data_table ../HPRC_Intermediate_Assembly_s3Locs_batch3.csv \
+     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch3.csv \
      --field_mapping ../hifiasm_input_mapping.csv \
      --workflow_name hifiasm
 
@@ -36,6 +36,4 @@ mkdir hifiasm_submit_logs
 ## launch with slurm array job
 sbatch \
      launch_hifiasm_array.sh \
-     HPRC_Intermediate_Assembly_s3Locs_batch3.csv
-
-
+     HPRC_Intermediate_Assembly_s3Locs_Batch3.csv
