@@ -15,7 +15,7 @@
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/HG00408_single_node_test.log
-#SBATCH --time=3-0:00
+#SBATCH --time=7-0:00
 
 
 ## Create then change into sample directory...
@@ -27,7 +27,7 @@ mkdir hprc_DeepPolisher_outputs
 
 export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
 export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=3-0:00 --partition=high_priority --nodelist=phoenix-11 --exclude=phoenix-[00-10,12-21]"
+export TOIL_SLURM_ARGS="--time=7-0:00 --partition=high_priority --nodelist=phoenix-11 --exclude=phoenix-[00-10,12-21]"
 export TOIL_COORDINATION_DIR=/data/tmp
 
 time toil-wdl-runner \
