@@ -111,3 +111,17 @@ mkdir qc_submit_logs
 sbatch \
      initial_qc/launch_initial_qc_array.sh \
      initial_qc/intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm_fixed_data.csv
+
+## needed to fix data for one sample (again)...
+rm -rf HG01261/qc_logs/     
+rm -rf HG01261/qc_bigstore/
+
+## check that github repo is up to date
+git -C /private/groups/hprc/hprc_intermediate_assembly pull 
+
+## get files to run hifiasm in sandbox...
+cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch1/initial_qc/* initial_qc/
+
+sbatch \
+     initial_qc/launch_initial_qc_array_relaunch.sh \
+     initial_qc/intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm_fixed_data.csv

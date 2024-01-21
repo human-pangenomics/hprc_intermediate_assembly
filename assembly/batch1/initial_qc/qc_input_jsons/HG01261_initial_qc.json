@@ -12,7 +12,7 @@
   "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01261.mat.fa.gz",
   "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
   "childReadsILM": [
-    "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_14151/Project_CCDG_14151_B01_GRM_WGS.cram.2020-02-12/Sample_HG01261/analysis/HG01261.final.cram"
+    "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_14151/Project_CCDG_14151_B01_GRM_WGS.cram"
   ],
   "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa"
 }
