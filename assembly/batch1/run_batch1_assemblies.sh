@@ -99,7 +99,6 @@ python3 ../../../../hpc/launch_from_table.py \
 cd /private/groups/hprc/assembly/batch1
 
 mkdir initial_qc
-cd initial_qc
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/hprc_intermediate_assembly pull 
