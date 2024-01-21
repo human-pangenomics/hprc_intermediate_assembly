@@ -38,7 +38,7 @@ echo "${sample_id}"
 cd ${sample_id}
 
 
-mkdir qc_logs 
+mkdir -p qc_logs 
 
 export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache 
 export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl 
@@ -56,6 +56,7 @@ toil-wdl-runner \
     --outputFile ${sample_id}_hifiasm_qc_outputs.json \
     --runLocalJobsOnWorkers \
     --disableProgress true \
+    --caching=false \
     2>&1 | tee log.txt
 
 wait
