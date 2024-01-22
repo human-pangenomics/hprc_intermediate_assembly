@@ -62,9 +62,14 @@ sbatch \
      launch_hprc_deepPolisher_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
 
+# relaunch # 2 which has been queued for 4 days
+
+sbatch \
+     launch_hprc_deepPolisher_batch2.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
 
 # Using HG00408 to test runtime while using an entire node for the entire pipeline.
-# scaled down split number of alignments to 5 
+# scaled down split number of alignments to 5
 
 sbatch launch_hprc_deepPolisher_batch2_HG00408.sh
 
