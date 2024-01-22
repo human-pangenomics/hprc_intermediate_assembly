@@ -60,6 +60,7 @@ time toil-wdl-runner \
     --disableProgress \
     --restart \
     --stats \
+    --clean=never \
     2>&1 | tee log.txt
 
 wait
