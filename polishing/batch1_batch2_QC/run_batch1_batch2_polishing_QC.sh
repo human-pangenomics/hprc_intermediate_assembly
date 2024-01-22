@@ -54,6 +54,17 @@ sbatch \
      launch_batch1_batch2_polishingQC_relaunch.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
 
+
+# relaunching with updated stats to save raw QV for yak
+#SBATCH --array=1-4,6-11%10
+sbatch \
+     launch_batch1_batch2_polishingQC.sh \
+     intAsm_batch1_batch2_polishingQC_sample_table.csv
+
+# relaunching with new assemblies - 3,4,6 are finished as of 1/22/2024
+sbatch \
+     launch_batch1_batch2_polishingQC.sh \
+     intAsm_batch1_batch2_polishingQC_sample_table.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
