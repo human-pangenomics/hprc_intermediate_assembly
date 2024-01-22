@@ -73,7 +73,7 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch2_relaunch.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
-     
+
 # Using HG00408 to test runtime while using an entire node for the entire pipeline.
 # scaled down split number of alignments to 5
 

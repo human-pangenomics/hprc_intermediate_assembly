@@ -58,13 +58,9 @@ time toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
-    --restart \
     --stats \
     --clean=never \
     2>&1 | tee log.txt
 
 wait
 echo "Done."
-
-toil stats ./polishing_bigstore &> toil_stats.txt
-toil clean ./polishing_bigstore
