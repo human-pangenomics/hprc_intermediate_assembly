@@ -4,15 +4,15 @@
   "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
   "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
   "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
-  "comparisonQC.sampleName": "HG01261",
+  "comparisonQC.sampleName": "HG02083",
   "comparisonQC.breakFasta": true,
-  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01259.yak",
-  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01260.yak",
-  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01261.pat.fa.gz",
-  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch1/HG01261/analysis/assembly/HG01261.mat.fa.gz",
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch2/HG02083/analysis/assembly/HG02085.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch2/HG02083/analysis/assembly/HG02084.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch2/HG02083/analysis/assembly/HG02083.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch2/HG02083/analysis/assembly/HG02083.mat.fa.gz",
   "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
   "childReadsILM": [
-    "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_14151/Project_CCDG_14151_B01_GRM_WGS.cram.2020-02-12/Sample_HG01261/analysis/HG01261.final.cram"
+    "s3://human-pangenomics/submissions/325b4b1c-9f20-49be-b03a-596da89c466e--1000G_CHILDREN/HG02083/1000G_data/HG02083.final.cram"
   ],
   "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa"
 }

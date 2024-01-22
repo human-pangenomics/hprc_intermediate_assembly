@@ -132,3 +132,44 @@ python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_tab
       --output_data_table /private/groups/hprc/HPRC_Intermediate_Assembly_s3Locs_Batch2.csv.updated.csv \
       --json_location '{sample_id}_hifiasm_outputs.json' \
       --submit_logs_directory hifiasm_submit_logs
+
+## add/commit/push to github (hprc_intermediate_assembly)
+
+
+###############################################################################
+##                        create input jsons for initial QC                  ##   
+###############################################################################
+
+## on personal computer...
+
+cd /Users/juklucas/Desktop/github/hprc_intermediate_assembly/assembly/batch2/initial_qc/qc_input_jsons
+
+python3 ../../../../hpc/launch_from_table.py \
+     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch2.updated_pt1.csv \
+     --field_mapping ../qc_input_mapping.csv \
+     --workflow_name initial_qc
+
+## add/commit/push to github (hprc_intermediate_assembly)
+
+
+###############################################################################
+##                               launch initial QC                           ##   
+###############################################################################
+
+## on HPC...
+
+cd /private/groups/hprc/assembly/batch2
+
+mkdir initial_qc
+
+## check that github repo is up to date
+git -C /private/groups/hprc/hprc_intermediate_assembly pull 
+
+## get files to run hifiasm in sandbox...
+cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch2/initial_qc/* initial_qc/
+
+mkdir qc_submit_logs
+
+sbatch \
+     initial_qc/launch_initial_qc_array.sh \
+     initial_qc/HPRC_Intermediate_Assembly_s3Locs_Batch2.updated_pt1.csv 
