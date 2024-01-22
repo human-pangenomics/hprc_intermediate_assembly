@@ -61,7 +61,7 @@ sbatch \
      launch_batch1_batch2_polishingQC.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
 
-# relaunching with new assemblies - 3,4,6 are finished as of 1/22/2024
+# relaunching with new assemblies - # 3,4,6 (HG01261, HG02015, HG02129) are finished as of 1/22/2024
 sbatch \
      launch_batch1_batch2_polishingQC.sh \
      intAsm_batch1_batch2_polishingQC_sample_table.csv
