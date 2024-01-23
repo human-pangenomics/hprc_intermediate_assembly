@@ -101,6 +101,5 @@ if [[ "${EXITCODE}" == "0" ]] ; then
     rm -Rf ${LOCAL_FOLDER}
 else
     echo "Failed."
+    exit "${EXITCODE}"
 fi
-
-echo "Done."
