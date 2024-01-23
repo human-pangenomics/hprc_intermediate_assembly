@@ -1,0 +1,16 @@
+input,type,value
+hprc_DeepPolisher.ONTReads,array,$input.nanopore
+hprc_DeepPolisher.HifiReads,array,$input.hifi
+hprc_DeepPolisher.Hap1RawFasta,scalar,$input.paternalFastaGz
+hprc_DeepPolisher.Hap2RawFasta,scalar,$input.maternalFastaGz
+hprc_DeepPolisher.DeepPolisherModelFilesTarGZ,scalar,$input.DeepPolisherModelFilesTarGZ
+hprc_DeepPolisher.sampleName,scalar,$input.sample_id
+hprc_DeepPolisher.alignHifiToDiploid.splitNumber,scalar,4
+hprc_DeepPolisher.alignONTToHap1.splitNumber,scalar,4
+hprc_DeepPolisher.alignONTToHap2.splitNumber,scalar,4
+hprc_DeepPolisher.PHARAOH.alignmentPaf.threadCount,scalar,32
+hprc_DeepPolisher.PHARAOH.alignAllToHap1Scattered.splitNumber,scalar,4
+hprc_DeepPolisher.PHARAOH.alignAllToHap2Scattered.splitNumber,scalar,4
+hprc_DeepPolisher.PHARAOH.DeepVariantHap1.threadCount,scalar,32
+hprc_DeepPolisher.PHARAOH.DeepVariantHap2.threadCount,scalar,32
+hprc_DeepPolisher.DeepPolisher.DeepPolisher.threadCount,scalar,32

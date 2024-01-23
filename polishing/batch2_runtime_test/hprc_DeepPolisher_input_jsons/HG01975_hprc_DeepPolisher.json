@@ -1,0 +1,26 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/submissions/79275EDA-C282-424A-9D5B-A8E876592893--UCSC_HPRC_ONT_Y3_GUPPY6/HG01975/08_03_21_R941_HG01975_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/79275EDA-C282-424A-9D5B-A8E876592893--UCSC_HPRC_ONT_Y3_GUPPY6/HG01975/08_03_21_R941_HG01975_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/79275EDA-C282-424A-9D5B-A8E876592893--UCSC_HPRC_ONT_Y3_GUPPY6/HG01975/08_03_21_R941_HG01975_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG01975/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01975.m64043_211113_003158.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG01975/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01975.m64043_211114_112934.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG01975/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01975.m64043_211115_222749.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG01975/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01975.m64043_211222_184851.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch1/HG01975/analysis/assembly/HG01975.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch1/HG01975/analysis/assembly/HG01975.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG01975",
+  "hprc_DeepPolisher.alignHifiToDiploid.splitNumber": 4,
+  "hprc_DeepPolisher.alignONTToHap1.splitNumber": 4,
+  "hprc_DeepPolisher.alignONTToHap2.splitNumber": 4,
+  "hprc_DeepPolisher.PHARAOH.alignmentPaf.threadCount": 32,
+  "hprc_DeepPolisher.PHARAOH.alignAllToHap1Scattered.splitNumber": 4,
+  "hprc_DeepPolisher.PHARAOH.alignAllToHap2Scattered.splitNumber": 4,
+  "hprc_DeepPolisher.PHARAOH.DeepVariantHap1.threadCount": 32,
+  "hprc_DeepPolisher.PHARAOH.DeepVariantHap2.threadCount": 32,
+  "hprc_DeepPolisher.DeepPolisher.DeepPolisher.threadCount": 32
+}
