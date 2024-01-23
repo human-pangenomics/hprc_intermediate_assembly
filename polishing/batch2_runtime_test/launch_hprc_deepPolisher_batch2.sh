@@ -76,4 +76,8 @@ time toil-wdl-runner \
     2>&1 | tee log.txt
 
 wait
+
+# Clean up
+rm -Rf ${LOCAL_FOLDER}
+
 echo "Done."
