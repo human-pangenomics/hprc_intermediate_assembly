@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
-#SBATCH --array=1-10%10
+#SBATCH --array=11%1
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -39,7 +39,7 @@ mkdir -p ${sample_id}
 cd ${sample_id}
 
 mkdir toil_logs
-mkdir hprc_DeepPolisher_outputs
+mkdir -p ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs
 
 # make folder on local node for s3 data
 LOCAL_FOLDER=/data/tmp/HPRC_DeepPolisher_${sample_id}
@@ -67,12 +67,17 @@ time toil-wdl-runner \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
     ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json \
-    --outputDirectory hprc_DeepPolisher_outputs \
+    --outputDirectory ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs \
     --outputFile ${sample_id}_hprc_DeepPolisher_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
-    --disableProgress \
+    --disableProgress=True \
     2>&1 | tee log.txt
 
 wait
 echo "Done."
+
+# copy polished fasta, polishing vcf to /private/groups/hprc
+mkdir hprc_DeepPolisher_outputs
+cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*.fasta hprc_DeepPolisher_outputs/
+cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/polisher_output.vcf.gz hprc_DeepPolisher_outputs/

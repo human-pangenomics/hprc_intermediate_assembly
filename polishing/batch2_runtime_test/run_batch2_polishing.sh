@@ -44,7 +44,8 @@ cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch2
 
 mkdir hprc_DeepPolisher_submit_logs
 
-## launch with slurm array job
+## launch with slurm array job chr20 to test
+# #SBATCH --array=11%1
 sbatch \
      launch_hprc_deepPolisher_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
