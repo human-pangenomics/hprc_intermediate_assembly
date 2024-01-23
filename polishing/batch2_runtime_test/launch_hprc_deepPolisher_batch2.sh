@@ -18,13 +18,14 @@
 #SBATCH --time=7-0:00
 #SBATCH --array=1-10%10
 
+set -ex
+
 ## Pull samples names from CSV passed to script
 sample_file=$1
 
 # Read the CSV file and extract the sample ID for the current job array task
 # Skip first row to avoid the header
 sample_id=$(awk -F ',' -v task_id=${SLURM_ARRAY_TASK_ID} 'NR>1 && NR==task_id+1 {print $1}' "${sample_file}")
-
 
 # Ensure a sample ID is obtained
 if [ -z "${sample_id}" ]; then
@@ -38,11 +39,11 @@ echo "${sample_id}"
 mkdir -p ${sample_id}
 cd ${sample_id}
 
-mkdir toil_logs
-mkdir hprc_DeepPolisher_outputs
+mkdir -p toil_logs
+mkdir -p hprc_DeepPolisher_outputs
 
 # make folder on local node for s3 data
-LOCAL_FOLDER=/data/tmp/HPRC_DeepPolisher_${sample_id}
+LOCAL_FOLDER=/data/tmp/$(whoami)/HPRC_DeepPolisher_${sample_id}
 mkdir -p ${LOCAL_FOLDER}
 
 # create new json
@@ -71,7 +72,7 @@ time toil-wdl-runner \
     --outputFile ${sample_id}_hprc_DeepPolisher_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
-    --disableProgress \
+    --disableProgress=True \
     2>&1 | tee log.txt
 
 wait
