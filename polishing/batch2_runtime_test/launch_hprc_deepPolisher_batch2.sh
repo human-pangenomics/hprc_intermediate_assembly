@@ -39,12 +39,12 @@ echo "${sample_id}"
 mkdir -p ${sample_id}
 cd ${sample_id}
 
-mkdir -p toil_logs
-mkdir -p ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs
-
 # make folder on local node for s3 data
 LOCAL_FOLDER=/data/tmp/$(whoami)/HPRC_DeepPolisher_${sample_id}
 mkdir -p ${LOCAL_FOLDER}
+
+mkdir -p toil_logs
+mkdir -p ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs
 
 # create new json
 cp ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json
