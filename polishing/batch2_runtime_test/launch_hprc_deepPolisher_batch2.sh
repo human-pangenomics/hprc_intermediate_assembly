@@ -52,18 +52,18 @@ cp ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json ${LOCAL_
 # then replace them in the new json file
 grep s3 ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json \
 | sed 's|,||g' | sed 's|["'\'']||g' | while read line
-do aws s3 cp $line ${LOCAL_FOLDER}/
+do aws s3 cp --no-sign-request $line ${LOCAL_FOLDER}/
 FILENAME=`basename $line`
 sed -i "s|${line}|${LOCAL_FOLDER}/${FILENAME}|g" ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json
 done
 
-export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
-export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
+export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
+export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
 export TOIL_SLURM_ARGS="--time=7-0:00 --partition=high_priority"
 export TOIL_COORDINATION_DIR=/data/tmp
 
 time toil-wdl-runner \
-    --batchSystem single-machine \
+    --batchSystem single_machine \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
     ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json \
