@@ -36,8 +36,8 @@ git clone https://github.com/miramastoras/hpp_production_workflows.git
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
-mkdir batch2
-cd batch2
+mkdir batch2_runtime_test
+cd batch2_runtime_test
 
 ## get files to run in polishing folder ...
 cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch2_runtime_test/* ./

@@ -71,7 +71,7 @@ time toil-wdl-runner \
     --outputFile ${sample_id}_hprc_DeepPolisher_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
-    --disableProgress=True \
+    --disableProgress \
     2>&1 | tee log.txt
 
 wait
