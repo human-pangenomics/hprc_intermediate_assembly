@@ -72,6 +72,7 @@ time toil-wdl-runner \
     --stats \
     --clean=never \
     --batchSystem single_machine \
+    --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
     ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json \
