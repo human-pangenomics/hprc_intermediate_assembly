@@ -36,15 +36,16 @@ git clone https://github.com/miramastoras/hpp_production_workflows.git
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
-mkdir batch2
-cd batch2
+mkdir batch2_runtime_test
+cd batch2_runtime_test
 
 ## get files to run in polishing folder ...
 cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch2_runtime_test/* ./
 
 mkdir hprc_DeepPolisher_submit_logs
 
-## launch with slurm array job
+## launch with slurm array job chr20 to test
+# #SBATCH --array=11%1
 sbatch \
      launch_hprc_deepPolisher_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv

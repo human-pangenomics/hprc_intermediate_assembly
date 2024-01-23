@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
-#SBATCH --array=1-10%10
+#SBATCH --array=11%1
 
 set -ex
 
@@ -40,7 +40,7 @@ mkdir -p ${sample_id}
 cd ${sample_id}
 
 mkdir -p toil_logs
-mkdir -p hprc_DeepPolisher_outputs
+mkdir -p ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs
 
 # make folder on local node for s3 data
 LOCAL_FOLDER=/data/tmp/$(whoami)/HPRC_DeepPolisher_${sample_id}
@@ -76,7 +76,7 @@ time toil-wdl-runner \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
     ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json \
-    --outputDirectory hprc_DeepPolisher_outputs \
+    --outputDirectory ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs \
     --outputFile ${sample_id}_hprc_DeepPolisher_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
@@ -91,13 +91,17 @@ set -e
 toil stats --outputFile stats.txt "${LOCAL_FOLDER}/jobstore"
 
 if [[ "${EXITCODE}" == "0" ]] ; then
+    echo "Succeeded."
+    
+    # copy polished fasta, polishing vcf to /private/groups/hprc
+    mkdir -p hprc_DeepPolisher_outputs
+    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*.fasta hprc_DeepPolisher_outputs/
+    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/polisher_output.vcf.gz hprc_DeepPolisher_outputs/
+
     # Clean up
     rm -Rf ${LOCAL_FOLDER}
-
-    echo "Succeeded."
-
 else
     echo "Failed."
 fi
 
-exit "${EXITCODE}"
+echo "Done."
