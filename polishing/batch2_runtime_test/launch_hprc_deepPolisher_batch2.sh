@@ -52,7 +52,7 @@ cp ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json ${LOCAL_
 # then replace them in the new json file
 grep s3 ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json \
 | sed 's|,||g' | sed 's|["'\'']||g' | while read line
-do aws s3 cp $line ${LOCAL_FOLDER}/
+do aws s3 cp --no-sign-request $line ${LOCAL_FOLDER}/
 FILENAME=`basename $line`
 sed -i "s|${line}|${LOCAL_FOLDER}/${FILENAME}|g" ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json
 done
