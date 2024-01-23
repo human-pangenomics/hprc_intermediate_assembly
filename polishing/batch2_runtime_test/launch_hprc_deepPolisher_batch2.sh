@@ -67,6 +67,8 @@ export TOIL_COORDINATION_DIR=/data/tmp
 
 toil clean "${LOCAL_FOLDER}/jobstore"
 
+set -o pipefail
+set +e
 time toil-wdl-runner \
     --jobStore "${LOCAL_FOLDER}/jobstore" \
     --stats \
@@ -82,9 +84,6 @@ time toil-wdl-runner \
     --retryCount 1 \
     --disableProgress=True \
     2>&1 | tee log.txt
-
-set +e
-wait
 EXITCODE=$?
 set -e
 
