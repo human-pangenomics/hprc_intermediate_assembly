@@ -52,10 +52,12 @@ cp ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json ${LOCAL_
 # loop through s3 links, download them to LOCAL_FOLDER,
 # then replace them in the new json file
 grep s3 ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json \
-| sed 's|,||g' | sed 's|["'\'']||g' | while read line
-do aws s3 cp --no-sign-request $line ${LOCAL_FOLDER}/
-FILENAME=`basename $line`
-sed -i "s|${line}|${LOCAL_FOLDER}/${FILENAME}|g" ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json
+| sed 's|,||g' | sed 's|["'\'']||g' | while read line ; do
+    FILENAME=`basename $line`
+    if [[ ! -e ${LOCAL_FOLDER}/${FILENAME} ]] ; then
+        aws s3 cp --no-sign-request $line ${LOCAL_FOLDER}/
+    fi
+    sed -i "s|${line}|${LOCAL_FOLDER}/${FILENAME}|g" ${LOCAL_FOLDER}/${sample_id}_hprc_DeepPolisher.json
 done
 
 export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
@@ -63,7 +65,12 @@ export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
 export TOIL_SLURM_ARGS="--time=7-0:00 --partition=high_priority"
 export TOIL_COORDINATION_DIR=/data/tmp
 
+toil clean "${LOCAL_FOLDER}/jobstore"
+
 time toil-wdl-runner \
+    --jobStore "${LOCAL_FOLDER}/jobstore" \
+    --stats \
+    --clean=never \
     --batchSystem single_machine \
     --batchLogsDir ./toil_logs \
     /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
@@ -75,9 +82,21 @@ time toil-wdl-runner \
     --disableProgress=True \
     2>&1 | tee log.txt
 
+set +e
 wait
+EXITCODE=$?
+set -e
 
-# Clean up
-rm -Rf ${LOCAL_FOLDER}
+toil stats --outputFile stats.txt "${LOCAL_FOLDER}/jobstore"
 
-echo "Done."
+if [[ "${EXITCODE}" == "0" ]] ; then
+    # Clean up
+    rm -Rf ${LOCAL_FOLDER}
+
+    echo "Succeeded."
+
+else
+    echo "Failed."
+fi
+
+exit "${EXITCODE}"
