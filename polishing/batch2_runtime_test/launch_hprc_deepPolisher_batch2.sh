@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author      : Julian Lucas, juklucas@ucsc.edu
-# Description : Launch toil job submission for HPRC's DeepPolisher workflow using Slurm arrays
+# Description : Launch toil job submission for HPRC's DeepPolisher workflow on a single machine
 # Usage       : sbatch launch_hifiasm_array.sh sample_file.csv
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
@@ -14,6 +14,7 @@
 #SBATCH --mail-user=mmastora@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
+#SBATCH --threads-per-core=1
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
 #SBATCH --array=11%1
@@ -91,7 +92,7 @@ toil stats --outputFile stats.txt "${LOCAL_FOLDER}/jobstore"
 
 if [[ "${EXITCODE}" == "0" ]] ; then
     echo "Succeeded."
-    
+
     # copy polished fasta, polishing vcf to /private/groups/hprc
     mkdir -p hprc_DeepPolisher_outputs
     cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*.fasta hprc_DeepPolisher_outputs/
