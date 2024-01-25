@@ -1,3 +1,28 @@
+###############################################################################
+##                             remove topup from data table                  ##
+###############################################################################
+
+## on personal computer...
+cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch3
+
+# convert data table to tsv in excel
+cp HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.tsv HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv
+cut -f11 HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.tsv \
+| sed 's/ //g' | sed 's/\"[][]//g' | sed 's/[][]\"//g' | sed 's/\,/\n/g' | \
+while read line ; do
+    if [[ "$line" =~ "TopUp" ]] ; then
+        sed -i.bak "s|, ${line}||g" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv
+    fi
+    if [[ "$line" =~ "Topoff" ]] ; then
+        sed -i.bak "s|, ${line}||g" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv
+    fi
+done
+
+sed 's/\t/,/g' HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv > HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+
+rm HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv.bak
+rm HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.tsv
+rm HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.tsv
 
 ###############################################################################
 ##                             create input jsons                            ##
@@ -5,10 +30,12 @@
 
 ## on personal computer...
 
+# Remove top up data from data table
+
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch3/hprc_DeepPolisher_input_jsons
 
 python3 ../../../hpc/launch_from_table.py \
-     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.polishing_batch3.csv \
+     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv \
      --field_mapping ../hprc_DeepPolisher_input_mapping.csv \
      --workflow_name hprc_DeepPolisher
 
@@ -42,15 +69,8 @@ cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch3
 
 mkdir hprc_DeepPolisher_submit_logs
 
-## launch with slurm array job
+## Launch first 16 of batch 3 with new toil single machine method
+#SBATCH --array=2-6,8-12,14-19%16
 sbatch \
      launch_hprc_deepPolisher_batch3.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.polishing_batch3.csv
-
-## relaunch only 4 because ran out of space in hprc folder 
-sbatch \
-     launch_hprc_deepPolisher_batch3.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.polishing_batch3.csv
-###############################################################################
-##                             write output files to csv                     ##
-###############################################################################
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv

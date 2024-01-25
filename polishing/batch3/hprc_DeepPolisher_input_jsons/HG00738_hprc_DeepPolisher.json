@@ -8,8 +8,7 @@
     "s3://human-pangenomics/submissions/02355F32-E75A-4279-A7B8-FCCEA70FB6CD--DEEPCONSENSUS_v1pt2/HG00738/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00738.m64043_210530_003337.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/02355F32-E75A-4279-A7B8-FCCEA70FB6CD--DEEPCONSENSUS_v1pt2/HG00738/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00738.m64043_210531_080529.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/02355F32-E75A-4279-A7B8-FCCEA70FB6CD--DEEPCONSENSUS_v1pt2/HG00738/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00738.m64043_210601_160048.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/02355F32-E75A-4279-A7B8-FCCEA70FB6CD--DEEPCONSENSUS_v1pt2/HG00738/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00738.m64136_210602_151340.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/67b71022-da25-40ef-b56f-52297e946b32--WUSTL_HPRC_HiFi_Year2_TopUp/HG00738/PacBio_HiFi/m84081_231112_034048_s4.hifi_reads.bc2079.bam"
+    "s3://human-pangenomics/submissions/02355F32-E75A-4279-A7B8-FCCEA70FB6CD--DEEPCONSENSUS_v1pt2/HG00738/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00738.m64136_210602_151340.dc.q20.fastq.gz"
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch2/HG00738/analysis/assembly/HG00738.pat.fa.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch2/HG00738/analysis/assembly/HG00738.mat.fa.gz",
