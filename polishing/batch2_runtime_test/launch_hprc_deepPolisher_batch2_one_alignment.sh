@@ -6,7 +6,7 @@
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
 
-#SBATCH --job-name=HPRC-DeepPolisher-batch2
+#SBATCH --job-name=HPRC-DeepPolisher_one_alignment_chr20
 #SBATCH --cpus-per-task=32
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
