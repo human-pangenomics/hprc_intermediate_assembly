@@ -74,3 +74,10 @@ mkdir hprc_DeepPolisher_submit_logs
 sbatch \
      launch_hprc_deepPolisher_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+
+s
+## Launch next 10 of batch 3 with new toil single machine method
+#SBATCH --array=20-30%10
+sbatch \
+     launch_hprc_deepPolisher_batch3_next10.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
