@@ -81,3 +81,9 @@ s
 sbatch \
      launch_hprc_deepPolisher_batch3_next10.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+
+# cancel and restart 15,16,19 because they were on phoenix 00 which has a problem
+#SBATCH --array=15,16,19%3
+sbatch \
+     launch_hprc_deepPolisher_batch3_restart_15_16_19.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
