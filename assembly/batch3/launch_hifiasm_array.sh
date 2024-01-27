@@ -16,7 +16,7 @@
 #SBATCH --mem=200gb
 #SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
 #SBATCH --time=3-0:00
-#SBATCH --array=1-17%9
+#SBATCH --array=1-17%17
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -58,6 +58,7 @@ toil-wdl-runner \
     --outputFile ${sample_id}_hifiasm_outputs.json \
     --runLocalJobsOnWorkers \
     --disableProgress true \
+    --caching=false \
     2>&1 | tee log.txt
 
 wait
