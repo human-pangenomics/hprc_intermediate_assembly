@@ -135,13 +135,13 @@ sbatch \
 cd /private/groups/hprc/assembly/batch1
 
 ## collect location of QC results
-python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm.csv \
       --output_data_table intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm_w_qc.csv \
       --json_location '{sample_id}_hifiasm_qc_outputs.json'
 
 ## extract QC results
-python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/misc/extract_initial_qc.py \
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial_qc.py \
      --qc_data_table intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm_w_qc.csv \
      --extract_column_name filtQCStats \
      --output batch1_extracted_qc_results.csv
