@@ -87,3 +87,9 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch3_restart_15_16_19.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+
+# launch final 10 minus the two that aren't done (39 and 37)
+#SBATCH --array=31-36,38,40%8
+sbatch \
+     launch_hprc_deepPolisher_batch3.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
