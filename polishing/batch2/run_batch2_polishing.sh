@@ -79,6 +79,11 @@ sbatch \
 
 sbatch launch_hprc_deepPolisher_batch2_HG00408.sh
 
+#  cancelled HG00408 test, was too slow. rerunning with new single machine method
+
+sbatch \
+     launch_hprc_deepPolisher_batch2_HG00408.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
@@ -87,7 +92,7 @@ sbatch launch_hprc_deepPolisher_batch2_HG00408.sh
 cd /private/groups/hprc/polishing/batch2
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.csv \
-      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2.updated.csv \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs.json' \
       --submit_logs_directory hprc_DeepPolisher_submit_logs
