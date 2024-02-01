@@ -35,8 +35,8 @@ git clone https://github.com/miramastoras/hpp_production_workflows.git
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
-mkdir batch2
-cd batch2
+mkdir -p batch2/hprc_polishing_QC
+cd batch2/hprc_polishing_QC
 
 ## get files to run hifiasm in sandbox...
 cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch2/hprc_polishing_QC/* ./

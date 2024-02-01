@@ -52,7 +52,7 @@ cp ../hprc_polishing_QC_input_jsons/${sample_id}_hprc_polishing_QC.json ${LOCAL_
 
 # loop through s3 links, download them to LOCAL_FOLDER,
 # then replace them in the new json file
-grep s3 ../hprc_polishing_QC_input_jsons/${sample_id}_hprc_polishing_QC.json \
+grep "s3:" ../hprc_polishing_QC_input_jsons/${sample_id}_hprc_polishing_QC.json \
 | sed 's|,||g' | sed 's|["'\'']||g' | while read line ; do
     FILENAME=`basename $line`
     if [[ ! -e ${LOCAL_FOLDER}/${FILENAME} ]] ; then
