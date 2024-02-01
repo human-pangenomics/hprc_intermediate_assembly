@@ -93,3 +93,23 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+
+###############################################################################
+##                             write output files to csv                     ##
+###############################################################################
+
+# update output file jsons
+cd /private/groups/hprc/polishing/batch3
+
+grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
+| while read line ; do sample_id=$line ; grep  \
+
+
+# on hprc after entire batch has finished
+cd /private/groups/hprc/polishing/batch2
+
+python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv \
+      --json_location '{sample_id}_hprc_polishing_QC_outputs.json' \
+      --submit_logs_directory hprc_polishing_QC_submit_logs

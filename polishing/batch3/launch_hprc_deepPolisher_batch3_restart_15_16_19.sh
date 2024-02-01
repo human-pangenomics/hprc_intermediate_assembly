@@ -85,7 +85,6 @@ time toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
-    --restart \
     2>&1 | tee log.txt
 EXITCODE=$?
 set -e
