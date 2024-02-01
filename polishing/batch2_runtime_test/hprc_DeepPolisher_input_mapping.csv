@@ -1,7 +1,0 @@
-input,type,value
-hprc_DeepPolisher.ONTReads,array,$input.nanopore
-hprc_DeepPolisher.HifiReads,array,$input.hifi
-hprc_DeepPolisher.Hap1RawFasta,scalar,$input.paternalFastaGz
-hprc_DeepPolisher.Hap2RawFasta,scalar,$input.maternalFastaGz
-hprc_DeepPolisher.DeepPolisherModelFilesTarGZ,scalar,$input.DeepPolisherModelFilesTarGZ
-hprc_DeepPolisher.sampleName,scalar,$input.sample_id
