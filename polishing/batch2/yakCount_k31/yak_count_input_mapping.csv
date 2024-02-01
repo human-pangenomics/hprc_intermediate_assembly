@@ -1,0 +1,3 @@
+input,type,value
+runYakCount.sampleReadsILM,array,$input.child_ilmn
+runYakCount.referenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa

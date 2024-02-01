@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Author      : Julian Lucas, juklucas@ucsc.edu
-# Description : Launch toil job submission for HPRC's DeepPolisher workflow using Slurm arrays
+# Description : Launch toil job submission for HPRC's Hifiasm workflow using Slurm arrays
 # Usage       : sbatch launch_hifiasm_array.sh sample_file.csv
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
 
-#SBATCH --job-name=HPRC-DeepPolisher-batch3
+#SBATCH --job-name=HPRCyakCount-batch1batch2
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
@@ -14,9 +14,9 @@
 #SBATCH --mail-user=mmastora@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
-#SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
-#SBATCH --time=4-0:00
-#SBATCH --array=4,5,6,7%4
+#SBATCH --output=yak_count_submit_logs/yak_count_submit_%x_%j_%A_%a.log
+#SBATCH --time=1-0:00
+#SBATCH --array=3%1
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -40,25 +40,23 @@ cd ${sample_id}
 
 
 mkdir toil_logs
-mkdir hprc_DeepPolisher_outputs
+mkdir yak_count_outputs
 
-export SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
-export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=7-0:00 --partition=high_priority"
-export TOIL_COORDINATION_DIR=/data/tmp
+SINGULARITY_CACHEDIR=`pwd`/outputs/cache/.singularity/cache
+MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/outputs/cache/.cache/miniwdl
+export TOIL_SLURM_ARGS="--time=1-0:00 --partition=high_priority"
 
 time toil-wdl-runner \
     --jobStore ./polishing_bigstore \
     --batchSystem slurm \
     --batchLogsDir ./toil_logs \
-    /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
-    ../hprc_DeepPolisher_input_jsons/${sample_id}_hprc_DeepPolisher.json \
-    --outputDirectory hprc_DeepPolisher_outputs \
-    --outputFile ${sample_id}_hprc_DeepPolisher_outputs.json \
+    /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/tasks/yak_count.wdl \
+    ../yak_count_input_jsons/${sample_id}_yak_count.json \
+    --outputDirectory yak_count_outputs \
+    --outputFile ${sample_id}_yak_count_outputs.json \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
-    --restart \
     --clusterStats ${sample_id}_clusterstats.json \
     2>&1 | tee log.txt
 
