@@ -102,8 +102,10 @@ sbatch \
 cd /private/groups/hprc/polishing/batch3
 
 grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
-| while read line ; do sample_id=$line ; grep  \
-
+| while read line ; do sample_id=$line ; sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json | \
+cut -f 2 -d ":" | sed 's| ||g' | sed 's|}||g' | sed 's|"||g' | while read line ; do file=`basename $line`;\
+newpath="/private/groups/hprc/polishing/batch3/${sample_id}/hprc_DeepPolisher_outputs/${file}" ; \
+sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json ;done; done
 
 # on hprc after entire batch has finished
 cd /private/groups/hprc/polishing/batch2
