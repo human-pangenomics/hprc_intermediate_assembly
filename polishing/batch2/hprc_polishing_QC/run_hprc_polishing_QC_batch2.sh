@@ -48,7 +48,13 @@ sbatch \
      launch_hprc_polishing_QC_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv
 
+## relaunch 2,7,9 which failed
+#SBATCH --array=2,7,9%3
 
+sbatch \
+     launch_hprc_polishing_QC_batch2.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv
+     
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
