@@ -110,8 +110,10 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
                 if column_name not in fieldnames:
                     fieldnames.append(column_name)
                     header_updated = True
-
-                row[column_name]=submit_logs_dict[sample_id]
+                try:
+                    row[column_name]=submit_logs_dict[sample_id]
+                except:
+                    row[column_name]"NA"
 
             updated_rows.append(row)
 
