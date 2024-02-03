@@ -63,8 +63,11 @@ def parse_submit_logs(submit_logs_directory, base_dir):
     if os.path.exists(dir):
         for filename in os.listdir(dir):
             filepath=os.path.join(dir, filename)
+
             with open(filepath) as f:
-                sampleID = f.readline().strip('\n')
+                lines=f.readlines()
+                sampleID=lines[5].strip('\n')
+
             submit_logs_dict[sampleID] = filepath
     else:
         raise ValueError("Invalid submit logs directory path")
