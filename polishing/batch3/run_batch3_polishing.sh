@@ -94,6 +94,11 @@ sbatch \
      launch_hprc_deepPolisher_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
 
+# 36 was the one not done, not 37. launching 37
+#SBATCH --array=37%8
+sbatch \
+     launch_hprc_deepPolisher_batch3.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
@@ -102,16 +107,20 @@ sbatch \
 cd /private/groups/hprc/polishing/batch3
 
 grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
-| while read line ; do sample_id=$line ; sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json | \
+| while read line ; do sample_id=$line ; cp ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs_updated.json; done
+
+grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
+| while read line ; do sample_id=$line ; \
+sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json | \
 cut -f 2 -d ":" | sed 's| ||g' | sed 's|}||g' | sed 's|"||g' | while read line ; do file=`basename $line`;\
 newpath="/private/groups/hprc/polishing/batch3/${sample_id}/hprc_DeepPolisher_outputs/${file}" ; \
-sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json ;done; done
+sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs_updated.json ;done; done
 
 # on hprc after entire batch has finished
-cd /private/groups/hprc/polishing/batch2
+cd /private/groups/hprc/polishing/batch3
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv \
-      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv \
-      --json_location '{sample_id}_hprc_polishing_QC_outputs.json' \
-      --submit_logs_directory hprc_polishing_QC_submit_logs
+      --input_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv \
+      --output_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.csv \
+      --json_location '{sample_id}_hprc_DeepPolisher_outputs_updated.json' \
+      --submit_logs_directory hprc_DeepPolisher_submit_logs

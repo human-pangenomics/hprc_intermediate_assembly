@@ -1,0 +1,16 @@
+input,type,value
+hprc_polishing_QC.polishedHap1Fasta,scalar,$input.polishedAsmHap1
+hprc_polishing_QC.polishedHap2Fasta,scalar,$input.polishedAsmHap2
+hprc_polishing_QC.polishingVcf,scalar,$input.DeepPolisherVcf
+hprc_polishing_QC.sampleReadsIlm,array,$input.child_ilmn
+hprc_polishing_QC.maternalYak,scalar,$input.maternalYak
+hprc_polishing_QC.paternalYak,scalar,$input.paternalYak
+hprc_polishing_QC.grch38OutsideConfRegions,scalar,/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed
+hprc_polishing_QC.referenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
+hprc_polishing_QC.grch38InsideConfRegions,scalar,/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed
+hprc_polishing_QC.toilRunLog,scalar,$input.Submission_Log_filepath
+hprc_polishing_QC.rawHap1Fasta,scalar,$input.paternalFastaGz
+hprc_polishing_QC.rawHap2Fasta,scalar,$input.maternalFastaGz
+hprc_polishing_QC.grch38Fasta,scalar,/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta
+hprc_polishing_QC.sampleID,scalar,$input.sample_id
+hprc_polishing_QC.yakMerylKmerSize,scalar,21
