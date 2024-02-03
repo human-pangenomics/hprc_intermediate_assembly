@@ -113,7 +113,7 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
                 try:
                     row[column_name]=submit_logs_dict[sample_id]
                 except:
-                    row[column_name]"NA"
+                    row[column_name]="NA"
 
             updated_rows.append(row)
 
