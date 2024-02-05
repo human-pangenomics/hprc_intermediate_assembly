@@ -99,6 +99,14 @@ sbatch \
 sbatch \
      launch_hprc_deepPolisher_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
+# relaunch the ones with weird results to look at their bam files
+
+# 36 was the one not done, not 37. launching 37
+#SBATCH --array=18,12,23,19%4
+
+sbatch \
+     launch_hprc_deepPolisher_batch3.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################

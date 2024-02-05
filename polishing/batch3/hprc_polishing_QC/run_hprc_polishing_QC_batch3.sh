@@ -48,10 +48,22 @@ sbatch \
      launch_hprc_polishing_QC_batch3.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.csv
 
+# relaunch 14 from batch 3 QC which failed with stale file handle error
+#SBATCH --array=14%1
+sbatch \
+     launch_hprc_polishing_QC_batch3.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.csv
 
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
+
+# concatenate output csv files
+grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.csv | cut -f1 -d "," \
+| while read line ; do sample_id=$line ; \
+tail -n2 ${sample_id}/hprc_polishing_QC_outputs/${sample_id}.polishing.QC.csv >> batch3.polishing.QC.csv ; done
+
+
 
 # on hprc after entire batch has finished
 cd /private/groups/hprc/polishing/batch3

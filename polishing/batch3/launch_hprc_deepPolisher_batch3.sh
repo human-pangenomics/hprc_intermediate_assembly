@@ -17,7 +17,7 @@
 #SBATCH --threads-per-core=1
 #SBATCH --output=hprc_DeepPolisher_submit_logs/hprcDeepPolisher_submit_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
-#SBATCH --array=31-36,38,40%8
+#SBATCH --array=18,12,23,19%4
 
 set -ex
 
@@ -97,6 +97,7 @@ if [[ "${EXITCODE}" == "0" ]] ; then
     mkdir -p hprc_DeepPolisher_outputs
     cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*.fasta hprc_DeepPolisher_outputs/
     cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/polisher_output.vcf.gz hprc_DeepPolisher_outputs/
+    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*PHARAOH* hprc_DeepPolisher_outputs/
 
     # Clean up
     rm -Rf ${LOCAL_FOLDER}
