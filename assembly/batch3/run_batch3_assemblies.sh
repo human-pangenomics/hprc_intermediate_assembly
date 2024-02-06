@@ -67,11 +67,16 @@ for dir in HG* ; do
     echo "${dir}    ${status}" >> hifiasm_status.txt
 done
 
+(awk 'NR == 1' HPRC_Intermediate_Assembly_s3Locs_Batch3.csv; \
+     awk '$2 ~ /ERROR/ { print $1 }' hifiasm_status.txt \
+     | while read sample; do grep "^$sample," HPRC_Intermediate_Assembly_s3Locs_Batch3.csv; done) \
+          > HPRC_Intermediate_Assembly_s3Locs_Batch3_rerun.csv
+
+
 awk '$2 ~ /ERROR/ { print $1 }' hifiasm_status.txt \
   | while read sample; do grep "^$sample," HPRC_Intermediate_Assembly_s3Locs_Batch3.csv; done \
   > HPRC_Intermediate_Assembly_s3Locs_Batch3_rerun.csv
 
-
 sbatch \
-     launch_hifiasm_array_restart.sh \
+     launch_hifiasm_array_rerun.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch3_rerun.csv
