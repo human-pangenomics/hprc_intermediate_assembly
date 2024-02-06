@@ -15,7 +15,7 @@ python3 ../../../hpc/launch_from_table.py \
 ## add/commit/push to github (hprc_intermediate_assembly)
 
 ###############################################################################
-##                             create launch assemblies                      ##
+##                                 launch assemblies.                        ##
 ###############################################################################
 
 ## on HPC...
@@ -37,3 +37,41 @@ mkdir hifiasm_submit_logs
 sbatch \
      launch_hifiasm_array.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch3.csv
+
+
+###############################################################################
+##                               Relaunch Failures.                          ##
+###############################################################################
+
+rm hifiasm_status.txt
+
+# Loop through directories starting with 'HG'
+for dir in HG* ; do
+    # Check if a JSON file exists in the directory
+    json_file=$(find "$dir" -name '*_hifiasm_outputs.json' -print -quit)
+
+    # If a JSON file is found
+    if [ -n "$json_file" ]; then
+        # Check if the file is empty
+        if [ -s "$json_file" ]; then
+            status="DONE"
+        else
+            status="NOT DONE"
+        fi
+    else
+        # If no JSON file is found
+        status="ERROR No Json found"
+    fi
+
+    # Print the directory and the status
+    echo "${dir}    ${status}" >> hifiasm_status.txt
+done
+
+awk '$2 ~ /ERROR/ { print $1 }' hifiasm_status.txt \
+  | while read sample; do grep "^$sample," HPRC_Intermediate_Assembly_s3Locs_Batch3.csv; done \
+  > HPRC_Intermediate_Assembly_s3Locs_Batch3_rerun.csv
+
+
+sbatch \
+     launch_hifiasm_array_restart.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch3_rerun.csv
