@@ -54,7 +54,19 @@ sbatch \
 sbatch \
      launch_hprc_polishing_QC_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv
-     
+
+# rerun 5 for full merqury results
+#SBATCH --array=5%1
+sbatch \
+     launch_hprc_polishing_QC_batch2.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv
+
+# relaunch 3 , HG01261 with new cram
+#SBATCH --array=3%1
+sbatch \
+     launch_hprc_polishing_QC_batch2.sh \
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv
+
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
