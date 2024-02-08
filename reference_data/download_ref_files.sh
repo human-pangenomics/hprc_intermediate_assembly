@@ -84,3 +84,15 @@ bedtools complement \
 -i /private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed \
 -g /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.fai.genome \
 > /private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed
+
+
+###############################################################################
+##                           Yak Files For Sex Chromosomes                   ##
+###############################################################################
+
+mkdir -p /private/groups/hprc/ref_files/yak
+
+wget -O- 'https://zenodo.org/record/7882299/files/human-chrXY-yak.tar?download=1' \
+    | tar xf - -C /private/groups/hprc/ref_files/yak
+
+    
