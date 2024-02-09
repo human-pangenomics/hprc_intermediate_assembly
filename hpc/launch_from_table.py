@@ -81,16 +81,26 @@ for data_index, data_row in data_df.iterrows():
 
         ## Format scalar values so ints, floats, and bools are converted from str to correct type
         elif input_type == 'scalar':
-            try:
-                data_value = int(data_value)
-            except ValueError:
-                try:
-                    data_value = float(data_value)
-                except ValueError:
-                    if data_value.lower() == 'true' or data_value.lower() == 'false':
-                        data_value = data_value.lower() == 'true'
-                    else:
-                        data_value = data_value
+            # Ensure data_value is a string before trying to convert
+            # If data_value is not a string, it keeps its original type
+            if isinstance(data_value, str):
+                # Check for boolean values first
+                if data_value.lower() == 'true':
+                    data_value = True
+                elif data_value.lower() == 'false':
+                    data_value = False
+                else:
+                    # Try to convert to an integer
+                    try:
+                        data_value = int(data_value)
+                    except ValueError:
+                        # If that fails, try to convert to a float
+                        try:
+                            data_value = float(data_value)
+                        except ValueError:
+                            # If all else fails, keep it as a string
+                            data_value = data_value
+        
 
         ## Set the value in the dictionary!
         sample_json_dict[mapping_row['input']] = data_value
