@@ -36,5 +36,5 @@ mkdir hifiasm_submit_logs
 ## launch with slurm array job
 sbatch --array=[1-24]%24 \
      launch_hifiasm_array.sh \
-     HPRC_Intermediate_Assembly_s3Locs_batch4.csv
+     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv
      
