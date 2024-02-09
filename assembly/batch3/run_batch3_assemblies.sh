@@ -152,9 +152,9 @@ python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial
      --extract_column_name filtQCStats \
      --output initial_qc/batch3_extracted_qc_results.csv
 
-# cp \
-#      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm.csv \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch1/intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_hifiasm.csv
+cp \
+     HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch3/HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv
 
 ## add/commit/push to github (hprc_intermediate_assembly)
 
