@@ -60,7 +60,7 @@ toil-wdl-runner \
     --jobStore ./assembly_bigstore \
     --batchSystem slurm \
     --batchLogsDir ./assembly_logs \
-    /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_cutadapt_multistep.wdl \
+    /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
     ../hifiasm_input_jsons/${sample_id}_hifiasm.json \
     --outputDirectory analysis/assembly \
     --outputFile ${sample_id}_hifiasm_outputs.json \
