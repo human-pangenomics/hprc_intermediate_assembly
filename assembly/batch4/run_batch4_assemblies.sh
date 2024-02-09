@@ -37,4 +37,10 @@ mkdir hifiasm_submit_logs
 sbatch --array=[1-24]%24 \
      launch_hifiasm_array.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch4.csv
-     
+
+## HG02965 failed to finish downloading...
+rm -rf HG02965
+
+sbatch --array=[5]%1 \
+     launch_hifiasm_array.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv     
