@@ -1,0 +1,18 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "HG00741",
+  "comparisonQC.breakFasta": true,
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch3/HG00741/analysis/assembly/HG00739.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch3/HG00741/analysis/assembly/HG00740.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch3/HG00741/analysis/assembly/HG00741.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch3/HG00741/analysis/assembly/HG00741.mat.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/working/HPRC/HG00741/raw_data/Illumina/child/HG00741.final.cram"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa"
+}
