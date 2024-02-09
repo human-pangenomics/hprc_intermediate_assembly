@@ -48,7 +48,7 @@
     "s3://human-pangenomics/working/HPRC/HG03195/raw_data/nanopore/guppy_6/04_12_22_R941_HG03195_4_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
   ],
   "hicHifiasmAssembly.minOntReadLength": 50000,
-  "hicHifiasmAssembly.homCov": 66.43,
+  "hicHifiasmAssembly.homCov": 66,
   "hicHifiasmAssembly.filterAdapters": true,
   "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
   "hicHifiasmAssembly.threadCount": 64,
