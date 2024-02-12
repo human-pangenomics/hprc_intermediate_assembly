@@ -1,0 +1,9 @@
+{
+  "hic_group_xy_wf.group_xy.hap1_gz": "/private/groups/hprc/assembly/batch4/HG02155/assembly_bigstore/files/for-job/kind-WDLTaskJob/instance-o73al72a/file-c25e553cf74e4b0280a719a3d44e129b/HG02155.hap1.fa.gz",
+  "hic_group_xy_wf.group_xy.hap2_gz": "/private/groups/hprc/assembly/batch4/HG02155/assembly_bigstore/files/for-job/kind-WDLTaskJob/instance-o73al72a/file-76ba709a3d814e449c2a7e0dc0e508f6/HG02155.hap2.fa.gz",
+  "hicHifiasmAssembly.childID": "HG02155",
+  "hicHifiasmAssembly.isMaleSample": false,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
+}
