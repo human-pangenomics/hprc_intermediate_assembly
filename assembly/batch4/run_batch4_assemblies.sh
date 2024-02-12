@@ -118,6 +118,7 @@ python3 /Users/juklucas/Desktop/github/hprc_intermediate_assembly/hpc/launch_fro
 cd /private/groups/hprc/assembly/batch4
 
 mkdir rerun_groupbyxy
+mkdir groupbyxy_submit_logs
 
 cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/rerun_groupbyxy/* rerun_groupbyxy/
 
@@ -125,3 +126,47 @@ sbatch \
     --array=[1-24]%24 \
     rerun_groupbyxy/launch_groupbyxy_array.sh \
     HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv 
+
+
+###############################################################################
+##                         Update table with outputs                         ##
+###############################################################################
+
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+      --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_groupbyxy.csv \
+      --json_location '{sample_id}_hifiasm_groupbyxy_outputs.json'  
+
+mkdir initial_qc
+cd initial_qc
+
+mkdir qc_input_jsons
+cd qc_input_jsons
+
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
+     --data_table ../../HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_groupbyxy.csv \
+     --field_mapping ../qc_input_mapping.csv \
+     --workflow_name initial_qc    
+
+## copy to github repo for notetaking
+cd ../../
+
+cp \
+    HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_groupbyxy.csv \
+    /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_groupbyxy_updated.csv
+
+cp -r initial_qc/ /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/        
+
+
+###############################################################################
+##                               launch initial QC                           ##   
+###############################################################################
+
+cd /private/groups/hprc/assembly/batch3
+
+mkdir qc_submit_logs
+
+sbatch \
+    --array=[1-24]%24 \
+    initial_qc/launch_initial_qc_array.sh \
+    HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_groupbyxy.csv 
