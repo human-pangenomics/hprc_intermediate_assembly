@@ -6,7 +6,7 @@
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
 
-#SBATCH --job-name=HPRC-qc-batch3
+#SBATCH --job-name=HPRC-qc-batch4
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --nodes=1

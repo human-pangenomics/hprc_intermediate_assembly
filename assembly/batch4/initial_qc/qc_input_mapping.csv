@@ -5,9 +5,9 @@ comparisonQC.annotationSD,scalar,/private/groups/hprc/ref_files/chm13/chm13v2.0_
 comparisonQC.genesFasta,scalar,/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa
 comparisonQC.hs38Paf,scalar,/private/groups/hprc/ref_files/grch38/hs38.paf
 comparisonQC.sampleName,scalar,$input.sample_id
-comparisonQC.breakFasta,scalar,TRUE
-comparisonQC.hap1Fasta,scalar,$input.hap1FastaGz
-comparisonQC.hap2Fasta,scalar,$input.hap2FastaGz
+comparisonQC.breakFasta,scalar,FALSE
+comparisonQC.hap1Fasta,scalar,$input.outputHap1FastaGz
+comparisonQC.hap2Fasta,scalar,$input.outputHap2FastaGz
 comparisonQC.reference,scalar,/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz
-comparisonQC.childReadsILM,array,$input.child_ilmn
-comparisonQC.extractReadsReferenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
+childReadsILM,array,$input.child_ilmn
+extractReadsReferenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
