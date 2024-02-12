@@ -119,6 +119,8 @@ cd /private/groups/hprc/assembly/batch4
 
 mkdir rerun_groupbyxy
 
+cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/rerun_groupbyxy/* rerun_groupbyxy/
+
 sbatch \
     --array=[1-24]%24 \
     rerun_groupbyxy/launch_groupbyxy_array.sh \

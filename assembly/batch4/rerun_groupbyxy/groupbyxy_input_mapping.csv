@@ -1,8 +1,8 @@
 ﻿input,type,value
 hic_group_xy_wf.group_xy.hap1_gz,scalar,$input.rawhap1FastaGz
 hic_group_xy_wf.group_xy.hap2_gz,scalar,$input.rawhap2FastaGz
-hicHifiasmAssembly.childID,scalar,$input.sample_id
-hicHifiasmAssembly.isMaleSample,scalar,$input.isMaleSample
-hicHifiasmAssembly.chrY_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrY-no-par.yak
-hicHifiasmAssembly.chrX_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrX-no-par.yak
-hicHifiasmAssembly.par_yak,scalar,/private/groups/hprc/ref_files/yak/par.yak
+hic_group_xy_wf.childID,scalar,$input.sample_id
+hic_group_xy_wf.isMaleSample,scalar,$input.isMaleSample
+hic_group_xy_wf.chrY_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrY-no-par.yak
+hic_group_xy_wf.chrX_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrX-no-par.yak
+hic_group_xy_wf.par_yak,scalar,/private/groups/hprc/ref_files/yak/par.yak

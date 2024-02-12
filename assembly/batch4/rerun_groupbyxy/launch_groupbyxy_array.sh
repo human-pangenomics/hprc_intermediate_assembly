@@ -57,7 +57,7 @@ toil-wdl-runner \
     --batchSystem slurm \
     --batchLogsDir ./groupbyxy \
     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/tasks/hic_group_xy.wdl \
-    ../groupbyxy/groupbyxy_input_jsons/${sample_id}_groupbyxy.json \
+    ../rerun_groupbyxy//groupbyxy_input_jsons/${sample_id}_groupbyxy.json \
     --outputDirectory analysis/groupbyxy \
     --outputFile ${sample_id}_hifiasm_groupbyxy_outputs.json \
     --runLocalJobsOnWorkers \
