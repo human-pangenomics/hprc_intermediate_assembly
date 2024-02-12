@@ -1,9 +1,9 @@
 {
   "hic_group_xy_wf.group_xy.hap1_gz": "/private/groups/hprc/assembly/batch4/HG02976/assembly_bigstore/files/for-job/kind-WDLTaskJob/instance-ty9h1ex8/file-f9dde3c1ba584c7ab010f61684c56ccf/HG02976.hap1.fa.gz",
   "hic_group_xy_wf.group_xy.hap2_gz": "/private/groups/hprc/assembly/batch4/HG02976/assembly_bigstore/files/for-job/kind-WDLTaskJob/instance-ty9h1ex8/file-6b11cf7197734e2db444c7e7d831f7ed/HG02976.hap2.fa.gz",
-  "hic_group_xy_wf.childID": "HG02976",
-  "hic_group_xy_wf.isMaleSample": false,
-  "hic_group_xy_wf.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
-  "hic_group_xy_wf.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
-  "hic_group_xy_wf.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
+  "hic_group_xy_wf.group_xy.childID": "HG02976",
+  "hic_group_xy_wf.group_xy.isMaleSample": false,
+  "hic_group_xy_wf.group_xy.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hic_group_xy_wf.group_xy.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hic_group_xy_wf.group_xy.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
 }
