@@ -205,9 +205,9 @@ toil-wdl-runner \
     --disableProgress \
     2>&1 | tee log.txt
 
+EXITCODE=$?
 echo "[$(date)] Toil job is finished."
 
-EXITCODE=$?
 set -e
 
 # Save runtime stats
@@ -234,11 +234,12 @@ if [[ "${EXITCODE}" == "0" ]] ; then
 
     echo "[$(date)] Output json file is located here: ${PWD}/${SAMPLE_ID}_${WDL_NAME}_outputs.json"
     echo "[$(date)] Cleaning up ${LOCAL_FOLDER}"
-    # Clean up
-    rm -Rf ${LOCAL_FOLDER}
 
     echo "[$(date)] Finished!"
 else
     echo "[$(date)] Your Toil job failed! :("
-    exit "${EXITCODE}"
 fi
+
+# Clean up
+rm -Rf ${LOCAL_FOLDER}
+exit "${EXITCODE}"
