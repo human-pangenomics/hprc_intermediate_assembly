@@ -93,11 +93,9 @@ toil stats --outputFile stats.txt "${LOCAL_FOLDER}/jobstore"
 if [[ "${EXITCODE}" == "0" ]] ; then
     echo "Succeeded."
 
-    # copy polished fasta, polishing vcf to /private/groups/hprc
+    # copy outputs to /private/groups/hprc
     mkdir -p hprc_DeepPolisher_outputs
-    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*.fasta hprc_DeepPolisher_outputs/
-    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/polisher_output.vcf.gz hprc_DeepPolisher_outputs/
-    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/*PHARAOH* hprc_DeepPolisher_outputs/
+    cp ${LOCAL_FOLDER}/hprc_DeepPolisher_outputs/* hprc_DeepPolisher_outputs/
 
     # Clean up
     rm -Rf ${LOCAL_FOLDER}
