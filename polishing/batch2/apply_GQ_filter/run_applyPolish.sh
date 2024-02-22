@@ -89,7 +89,7 @@ git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 cd /private/groups/hprc/polishing/batch2/apply_GQ_filter
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/batch2/apply_GQ_filter/* ./
+cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch2/apply_GQ_filter/* ./
 
 mkdir applyPolish_submit_logs
 

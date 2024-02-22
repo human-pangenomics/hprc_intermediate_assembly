@@ -17,7 +17,7 @@
 #SBATCH --threads-per-core=1
 #SBATCH --output=applyPolish_submit_logs/applyPolish_submit_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
-#SBATCH --array=2,4,6,8,10,12,14,16,18%9
+#SBATCH --array=1-10%10
 
 set -ex
 
