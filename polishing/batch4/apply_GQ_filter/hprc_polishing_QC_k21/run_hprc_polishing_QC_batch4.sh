@@ -7,7 +7,7 @@ mkdir -p /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polish
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch4/apply_GQ_filter/hprc_polishing_QC_k21/hprc_polishing_QC_input_jsons
 
 python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.filterVcf.polished.csv \
+     --data_table ../HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv \
      --field_mapping ../hprc_polishing_QC_input_mapping.csv \
      --workflow_name hprc_polishing_QC
 
@@ -34,8 +34,8 @@ mkdir hprc_polishing_QC_submit_logs
 
 ## launch with slurm array job
 sbatch \
-     launch_hprc_polishing_QC_batch3.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.filterVcf.polished.csv
+     launch_hprc_polishing_QC_batch4.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv
 
 ###############################################################################
 ##                             write output files to csv                     ##
