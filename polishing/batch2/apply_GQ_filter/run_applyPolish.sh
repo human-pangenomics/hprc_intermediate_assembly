@@ -103,20 +103,21 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-
 # on hprc after entire batch has finished
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
+cd /private/groups/hprc/polishing/batch2/apply_GQ_filter
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./HPRC_int_asm_GQfilters.samples.csv \
-      --output_data_table ./HPRC_int_asm_GQfilters.samples.mat.csv \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.mat.csv \
       --json_location '{sample_id}_applyPolish_mat_outputs.json'
 
-sed -i "s|asmPolished|polishedAsmHap2|g" ./HPRC_int_asm_GQfilters.samples.mat.csv
+sed -i "s|asmPolished|polishedGQFilterAsmHap2|g" ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.mat.csv
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./HPRC_int_asm_GQfilters.samples.mat.csv \
-      --output_data_table ./HPRC_int_asm_GQfilters.samples.updated.csv \
+      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.mat.csv  \
+      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv  \
       --json_location '{sample_id}_applyPolish_pat_outputs.json'
 
-sed -i "s|asmPolished|polishedAsmHap1|g" ./HPRC_int_asm_GQfilters.samples.updated.csv
+sed -i "s|asmPolished|polishedGQFilterAsmHap1|g" ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv
+
+rm intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.mat.csv
