@@ -39,9 +39,19 @@ done
 ###############################################################################
 ##                             update sample table with filtered vcf         ##
 ###############################################################################
+## back on personal computer...
+
+cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch2/apply_GQ_filter/
 
 
+# create copy of csv with new column for filtered vcf, with NA in each row
 
+head -n 1 intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv > tmp.csv
+grep -v "sample_id"  intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv \
+| cut -f1 -d"," | while read line ; do grep $line intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv \
+| sed "s|NA|/private/groups/hprc/polishing/batch2/apply_GQ_filter/${line}/filtered_vcf/${line}.polisher_output.GQ_filtered.vcf.gz|g" >> tmp.csv; done
+
+mv tmp.csv intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv
 ###############################################################################
 ##                             create input jsons                            ##
 ###############################################################################
@@ -49,49 +59,37 @@ done
 ## back on personal computer...
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch2/apply_GQ_filter/
 
-# add column for filtered vcf in csv table
-HEAD=`head -n 1 intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.csv`
-echo "filteredDeepPolisherVcf",${HEAD} >
-
-
 # Generate apply polish toil json files from csv sample table
 
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch2/apply_GQ_filter/applyPolish_input_jsons
 python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.csv \
+     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv \
      --field_mapping ../applyPolish.input.mapping.mat.csv \
      --workflow_name applyPolish.mat
 
 python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.csv \
+     --data_table ../intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv \
      --field_mapping ../applyPolish.input.mapping.pat.csv \
      --workflow_name applyPolish.pat
-
-
-
-
 
 ###############################################################################
 ##                             create launch apply polish                    ##
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira
-
-## clone repo
-git clone https://github.com/miramastoras/phoenix_batch_submissions.git
+cd /private/groups/hprc/polishing
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/hprc/polishing/hprc_intermediate_assembly pull
 
-## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+## check that github repo is up to date
+git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 # move to work dir
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
+cd /private/groups/hprc/polishing/batch2/apply_GQ_filter
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/applyPolish/HPRC_int_asm_GQ_filters/* ./
+cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/batch2/apply_GQ_filter/* ./
 
 mkdir applyPolish_submit_logs
 
@@ -99,7 +97,7 @@ mkdir applyPolish_submit_logs
 
 sbatch \
      launch_applyPolish.sh \
-     HPRC_int_asm_GQfilters.samples.csv
+     intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.csv
 #
 ###############################################################################
 ##                             write output files to csv                     ##

@@ -1,5 +1,5 @@
 input,type,value
 runApplyPolish.applyPolish.asmRaw,scalar,$input.maternalFastaGz
-runApplyPolish.applyPolish.polishingVcf,scalar,$input.DeepPolisherVcf
+runApplyPolish.applyPolish.polishingVcf,scalar,$input.DeepPolisherFilteredVcf
 runApplyPolish.applyPolish.HaplotypeLabel,scalar,hap2
 runApplyPolish.applyPolish.outPrefix,scalar,$input.sample_id

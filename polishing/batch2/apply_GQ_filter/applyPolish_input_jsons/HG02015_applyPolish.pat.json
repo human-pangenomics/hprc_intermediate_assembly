@@ -1,6 +1,6 @@
 {
   "runApplyPolish.applyPolish.asmRaw": "/private/groups/hprc/assembly/batch1/HG02015/analysis/assembly/HG02015.pat.fa.gz",
-  "runApplyPolish.applyPolish.polishingVcf": "/private/groups/hprc/polishing/batch2/HG02015/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
+  "runApplyPolish.applyPolish.polishingVcf": "/private/groups/hprc/polishing/batch2/apply_GQ_filter/HG02015/filtered_vcf/HG02015.polisher_output.GQ_filtered.vcf.gz",
   "runApplyPolish.applyPolish.HaplotypeLabel": "hap1",
   "runApplyPolish.applyPolish.outPrefix": "HG02015"
 }
