@@ -1,0 +1,6 @@
+{
+  "runApplyPolish.applyPolish.asmRaw": NaN,
+  "runApplyPolish.applyPolish.polishingVcf": "/private/groups/hprc/polishing/batch3/apply_GQ_filter/HG00544/filtered_vcf/HG00544.polisher_output.GQ_filtered.vcf.gz",
+  "runApplyPolish.applyPolish.HaplotypeLabel": "hap1",
+  "runApplyPolish.applyPolish.outPrefix": "HG00544"
+}

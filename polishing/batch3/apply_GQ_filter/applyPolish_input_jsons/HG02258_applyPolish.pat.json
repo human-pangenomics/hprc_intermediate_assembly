@@ -1,0 +1,6 @@
+{
+  "runApplyPolish.applyPolish.asmRaw": "/private/groups/hprc/assembly/batch1/HG02258/analysis/assembly/HG02258.pat.fa.gz",
+  "runApplyPolish.applyPolish.polishingVcf": "/private/groups/hprc/polishing/batch2/apply_GQ_filter/HG02258/filtered_vcf/HG02258.polisher_output.GQ_filtered.vcf.gz",
+  "runApplyPolish.applyPolish.HaplotypeLabel": "hap1",
+  "runApplyPolish.applyPolish.outPrefix": "HG02258"
+}
