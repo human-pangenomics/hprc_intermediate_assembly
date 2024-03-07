@@ -1,0 +1,45 @@
+{
+  "hicHifiasmAssembly.childID": "HG00140",
+  "hicHifiasmAssembly.isMaleSample": true,
+  "hicHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00140/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00140.m64043_220728_173215.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00140/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00140.m64136_220715_182717.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00140/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00140.m64136_220717_152248.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/HG00140/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG00140.m64136_220719_122056.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/331018f0-4fa6-46d3-bf49-dc08405598c3--WUSTL_HPRC_HiFi_Year3_TopUp/HG00140/PacBio_HiFi/m84081_230628_194051_s3.hifi_reads.bc1018.bam",
+    "s3://human-pangenomics/submissions/331018f0-4fa6-46d3-bf49-dc08405598c3--WUSTL_HPRC_HiFi_Year3_TopUp/HG00140/PacBio_HiFi/m84081_230628_201157_s4.hifi_reads.bc1018.bam"
+  ],
+  "hicHifiasmAssembly.childReadsHiC1": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L004_R1_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsHiC2": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-1_S22_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/HG00140/raw_data/hic/HG00140-2_S30_L004_R2_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/HG00140/raw_data/nanopore/guppy_6/06_28_22_R941_HG00140_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00140/raw_data/nanopore/guppy_6/06_28_22_R941_HG00140_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00140/raw_data/nanopore/guppy_6/06_28_22_R941_HG00140_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hicHifiasmAssembly.minOntReadLength": 50000,
+  "hicHifiasmAssembly.homCov": 61,
+  "hicHifiasmAssembly.filterAdapters": true,
+  "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hicHifiasmAssembly.threadCount": 64,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
+}

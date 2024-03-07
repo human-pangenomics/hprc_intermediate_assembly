@@ -1,0 +1,59 @@
+{
+  "hicHifiasmAssembly.childID": "NA20752",
+  "hicHifiasmAssembly.isMaleSample": true,
+  "hicHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220827_152226.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220829_104034.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220831_195843.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/4f8c8e63-dfd3-4f90-965f-8a8cf3ee4de9--UW_HPRC_HiFi_Y4_AND_Y3_Topoff/NA20752/m84046_230517_211630_s4.hifi_reads.bc2052.bam"
+  ],
+  "hicHifiasmAssembly.childReadsHiC1": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L004_R1_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsHiC2": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-1_S1i_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA20752/raw_data/hic/NA20752-2_S9i_L004_R2_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hicHifiasmAssembly.minOntReadLength": 50000,
+  "hicHifiasmAssembly.homCov": 74,
+  "hicHifiasmAssembly.filterAdapters": true,
+  "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hicHifiasmAssembly.threadCount": 64,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
+}

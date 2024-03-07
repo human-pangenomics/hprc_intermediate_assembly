@@ -96,7 +96,7 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
 
             if json_data:
                 for key, value in json_data.items():
-                    key = key.split('.')[1]
+                    key = key.split('.')[1]  # Adjust based on your JSON structure
                     if mapping_csv_path and key not in mapping:
                         continue
 
@@ -105,7 +105,12 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
                         fieldnames.append(column_name)
                         header_updated = True
 
-                    value_with_path = os.path.join(sample_dir, value)
+                    # Check if value is not None before joining
+                    if value is not None:
+                        value_with_path = os.path.join(sample_dir, value)
+                    else:
+                        value_with_path = "N/A"  # or any other placeholder you prefer for None values
+
                     row[column_name] = value_with_path
 
             if submit_logs_directory:
