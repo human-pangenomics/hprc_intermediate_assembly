@@ -89,7 +89,7 @@ export TOIL_COORDINATION_DIR=/data/tmp
 toil clean "${LOCAL_FOLDER}/jobstore"
 
 set -o pipefail
-set +e
+set +e            ## continue running even on failure so we clean node storage
 
 
 ###############################################################################
@@ -112,13 +112,11 @@ time toil-wdl-runner \
     --disableProgress \
     2>&1 | tee log.txt
 
-set -e
-
 ## Calculate run statistics
 toil stats --outputFile "${WDL_NAME}_stats.txt" "${LOCAL_FOLDER}/jobstore"
 
 ## cleanup local/node storage
-rm -Rf "${LOCAL_FOLDER}"
+toil clean "${LOCAL_FOLDER}/jobstore"
 
 ###############################################################################
 ##                                    DONE                                   ##
