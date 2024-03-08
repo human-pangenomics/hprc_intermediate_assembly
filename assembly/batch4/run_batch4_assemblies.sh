@@ -20,25 +20,32 @@ cd assembly/batch4
 mv ../batch4_old ./
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/* ./
+cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/hifiasm_input_jsons/ ./
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/HPRC_Intermediate_Assembly_s3Locs_Batch4.csv ./
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/launch_hifiasm_array_local.sh ./
 
 mkdir hifiasm_submit_logs
 
 ## Test local array script
 sbatch \
-     --job-name=HPRC-asm-batch3 \
+     --job-name=HPRC-asm-batch4 \
      --array=[1]%1 \
      --cpus-per-task=68 \
-     launch_hifiasm_array_local.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv
+     launch_hprc_array_local.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
+     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
+     '../hifiasm_input_jsons/${sample_id}_hifiasm.json' 
+
 
 ## launch rest of batch
 sbatch \
-     --job-name=HPRC-asm-batch3 \
+     --job-name=HPRC-asm-batch4 \
      --array=[2-24]%23 \
      --cpus-per-task=68 \
-     launch_hifiasm_array_local.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv
+     launch_hprc_array_local.sh \
+     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
+     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
+     '../hifiasm_input_jsons/${sample_id}_hifiasm.json' 
 
   
 # ###############################################################################

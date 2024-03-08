@@ -1,24 +1,30 @@
 #!/bin/bash
 
 # Author      : Julian Lucas, juklucas@ucsc.edu
-# Description : Launch toil job submission for HPRC's Assembly workflow on a single machine
-# Usage       : sbatch launch_hifiasm_array.sh sample_file.csv
+# Description : Launch toil job submission for HPRC's Assembly workflows on a single machine
+# Usage       : sbatch launch_hprc_array_local.sh sample_file.csv path_to_workflow.wdl input_json_path
 #               	sample_file.csv should have a header (otherwised first sample will be skipped)
 #					and the sample names should be in the first column
+#                   the input_json_path should be of the form: '../hifiasm_input_jsons/${sample_id}_hifiasm.json'
 
-#SBATCH --job-name=HPRC-asm-batch3
+#SBATCH --job-name=HPRC-run
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --threads-per-core=1
+#SBATCH --cpus-per-task=64
 #SBATCH --partition=high_priority
 #SBATCH --mail-user=juklucas@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=800gb
-#SBATCH --output=hifiasm_submit_logs/hifiasm_submit_%x_%j_%A_%a.log
+#SBATCH --output=slurm_logs/submission_%x_%j_%A_%a.log
 #SBATCH --time=7-0:00
 
 
 set -ex
+
+###############################################################################
+##                               Parse Inputs                                ##
+###############################################################################
 
 ## Pull samples names from CSV passed to script
 sample_file=$1
@@ -35,30 +41,45 @@ fi
 
 echo "${sample_id}"
 
+
+# Get the path and name of the workflow
+wdl_path=$2
+WDL_NAME=$(basename ${wdl_path%%.wdl})
+
+# Ensure a worklow is obtained
+if [ -z "${wdl_path}" ]; then
+    echo "Error: Failed to find the WDL. Exiting."
+    exit 1
+fi
+
+
+# Get the path to the input json
+path_with_placeholder=$3
+json_path=$(echo $path_with_placeholder | sed "s/\${sample_id}/$sample_id/")
+
+# Ensure the input json is found...
+if [ -z "${json_path}" ]; then
+    echo "Error: Failed to find the input JSON. Exiting."
+    exit 1
+fi
+
+
+###############################################################################
+##                             Prepare For Run                               ##
+###############################################################################
+
 ## Create then change into sample directory...
 mkdir -p ${sample_id}
 cd ${sample_id}
 
-# make folder on local node for s3 data
+## make folder on local node for jobstore
 LOCAL_FOLDER=/data/tmp/$(whoami)/hprc_assembly_${sample_id}
 mkdir -p ${LOCAL_FOLDER}
 
+## make folders on shared drive for logs and output
 mkdir -p toil_logs
-mkdir -p ${LOCAL_FOLDER}/hprc_assembly_outputs
+mkdir -p analysis
 
-# create new json
-cp ../hifiasm_input_jsons/${sample_id}_hifiasm.json ${LOCAL_FOLDER}/${sample_id}_hifiasm.json
-
-# loop through s3 links, download them to LOCAL_FOLDER,
-# then replace them in the new json file
-grep s3 ../hifiasm_input_jsons/${sample_id}_hifiasm.json \
-| sed 's|,||g' | sed 's|["'\'']||g' | while read line ; do
-    FILENAME=`basename $line`
-    if [[ ! -e ${LOCAL_FOLDER}/${FILENAME} ]] ; then
-        aws s3 cp --no-sign-request $line ${LOCAL_FOLDER}/
-    fi
-    sed -i "s|${line}|${LOCAL_FOLDER}/${FILENAME}|g" ${LOCAL_FOLDER}/${sample_id}_hifiasm.json
-done
 
 export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
 export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
@@ -70,6 +91,11 @@ toil clean "${LOCAL_FOLDER}/jobstore"
 set -o pipefail
 set +e
 
+
+###############################################################################
+##                             Launch Workflow                               ##
+###############################################################################
+
 time toil-wdl-runner \
     --jobStore "${LOCAL_FOLDER}/jobstore" \
     --stats \
@@ -77,29 +103,23 @@ time toil-wdl-runner \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
-    /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-    ${LOCAL_FOLDER}/${sample_id}_hifiasm.json \
-    --outputDirectory ${LOCAL_FOLDER}/hprc_assembly_outputs \
-    --outputFile ${sample_id}_hprc_assembly_outputs.json \
+    "${wdl_path}" \
+    "${json_path}" \
+    --outputDirectory "analysis/${WDL_NAME}_outputs" \
+    --outputFile "${sample_id}_${WDL_NAME}_outputs.json" \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
     2>&1 | tee log.txt
-EXITCODE=$?
+
 set -e
 
-toil stats --outputFile stats.txt "${LOCAL_FOLDER}/jobstore"
+## Calculate run statistics
+toil stats --outputFile "${WDL_NAME}_stats.txt" "${LOCAL_FOLDER}/jobstore"
 
-if [[ "${EXITCODE}" == "0" ]] ; then
-    echo "Succeeded."
+## cleanup local/node storage
+rm -Rf "${LOCAL_FOLDER}"
 
-    # copy outputs to /private/groups/hprc
-    mkdir -p hprc_assembly_outputs
-    cp ${LOCAL_FOLDER}/hprc_assembly_outputs/* hprc_assembly_outputs/
-
-    # Clean up
-    rm -Rf ${LOCAL_FOLDER}
-else
-    echo "Failed."
-    exit "${EXITCODE}"
-fi
+###############################################################################
+##                                    DONE                                   ##
+###############################################################################
