@@ -118,7 +118,7 @@ if [ -z "${SAMPLE_ID}" ]; then
 fi
 
 # get input json path
-export input_json_path=$(echo $JSON_PATH_WITH_PLACEHOLDER | sed "s/\${SAMPLE_ID}/$SAMPLE_ID/")
+export INPUT_JSON_PATH=$(echo $JSON_PATH_WITH_PLACEHOLDER | sed "s/\${SAMPLE_ID}/$SAMPLE_ID/")
 
 # Extract the WDL name
 WDL_NAME=$(basename ${WDL_PATH%%.wdl})
