@@ -40,16 +40,16 @@ while [ $# -gt 0 ]; do
 
       This script is used for sbatch command with scattering across samples found in a 
       sample table. The outputs will be stored in the sample's directory:
-          ${sample_id}/analysis/${WDL_NAME}_outputs
+          ${SAMPLE_ID}/analysis/${WDL_NAME}_outputs
       And a json file with all the workflows outputs will be created:
-          ${sample_id}/${sample_id}_${WDL_NAME}_outputs.json
+          ${SAMPLE_ID}/${SAMPLE_ID}_${WDL_NAME}_outputs.json
 
       Usage:
 
       sbatch toil_sbatch_single_machine.sh \
         --wdl /path/to/your/workflow.wdl \
         --sample_csv /path/your/sample_table.csv \
-        --input_json_path '../your_input_jsons/${sample_id}_myworkflow.json'
+        --input_json_path '../your_input_jsons/${SAMPLE_ID}_myworkflow.json'
 
       Options:
 
@@ -59,7 +59,7 @@ while [ $# -gt 0 ]; do
                                should have a header (otherwise the first sample will be skipped)
                                and the sample names should be in the first column
       -i, --input_json_path    The path for all JSON files created by launch_from_table.py
-                               should be of the form: '../your_input_jsons/${sample_id}_myworkflow.json'
+                               should be of the form: '../your_input_jsons/${SAMPLE_ID}_myworkflow.json'
                                so that this script can enter the sample ID.
 
 EOF
@@ -118,18 +118,18 @@ if [ -z "${SAMPLE_ID}" ]; then
 fi
 
 # get input json path
-export input_json_path=$(echo $JSON_PATH_WITH_PLACEHOLDER | sed "s/\${sample_id}/$sample_id/")
+export input_json_path=$(echo $JSON_PATH_WITH_PLACEHOLDER | sed "s/\${SAMPLE_ID}/$SAMPLE_ID/")
 
 # Extract the WDL name
 WDL_NAME=$(basename ${WDL_PATH%%.wdl})
 
 
 ## Create then change into sample directory...
-mkdir -p ${sample_id}
-cd ${sample_id}
+mkdir -p ${SAMPLE_ID}
+cd ${SAMPLE_ID}
 
 ## make folder on local node for jobstore
-LOCAL_FOLDER=/data/tmp/$(whoami)/hprc_assembly_${sample_id}
+LOCAL_FOLDER=/data/tmp/$(whoami)/hprc_assembly_${SAMPLE_ID}
 mkdir -p ${LOCAL_FOLDER}
 
 ## make folders on shared drive for logs and output
