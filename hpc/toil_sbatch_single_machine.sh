@@ -128,6 +128,9 @@ WDL_NAME=$(basename ${WDL_PATH%%.wdl})
 mkdir -p ${SAMPLE_ID}
 cd ${SAMPLE_ID}
 
+## store current directory in order to write output files
+export SHARED_FILESYSTEM_RUNFOLDER=`pwd`
+
 ## make folder on local node for jobstore
 LOCAL_FOLDER=/data/tmp/$(whoami)/hprc_assembly_${SAMPLE_ID}
 mkdir -p ${LOCAL_FOLDER}
@@ -151,17 +154,17 @@ set +e            ## continue running even on failure so we clean node storage
 ##                             Launch Workflow                               ##
 ###############################################################################
 
-time toil-wdl-runner \
+toil-wdl-runner \
     --jobStore "${LOCAL_FOLDER}/jobstore" \
     --stats \
     --clean=never \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
-    --batchLogsDir ./toil_logs \
+    --batchLogsDir "${SHARED_FILESYSTEM_RUNFOLDER}/toil_logs" \
     "${WDL_PATH}" \
     "${JSON_PATH}" \
-    --outputDirectory "analysis/${WDL_NAME}_outputs" \
-    --outputFile "${SAMPLE_ID}_${WDL_NAME}_outputs.json" \
+    --outputDirectory "${SHARED_FILESYSTEM_RUNFOLDER}/analysis/${WDL_NAME}_outputs" \
+    --outputFile "${SHARED_FILESYSTEM_RUNFOLDER}/${SAMPLE_ID}_${WDL_NAME}_outputs.json" \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
