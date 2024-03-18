@@ -137,7 +137,7 @@ mkdir -p ${LOCAL_FOLDER}
 
 ## make folders on shared drive for logs and output
 mkdir -p toil_logs
-mkdir -p analysis
+mkdir -p "${SHARED_FILESYSTEM_RUNFOLDER}/analysis/${WDL_NAME}_outputs"
 
 
 export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
@@ -168,7 +168,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
-    2>&1 | tee log.txt
+    2>&1 | tee "${SAMPLE_ID}_${WDL_NAME}_log.txt"
 
 ## Calculate run statistics
 toil stats --outputFile "${WDL_NAME}_stats.txt" "${LOCAL_FOLDER}/jobstore"
