@@ -99,6 +99,7 @@ EOF
         TOIL_ARGS=$1
       else
         TOIL_ARGS=""
+        echo "No toil args set. Running normally."
       fi
       shift
       ;;
@@ -174,7 +175,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
-    "$TOIL_ARGS" \
+    $TOIL_ARGS \
     2>&1 | tee "${SAMPLE_ID}_${WDL_NAME}_log.txt"
 
 ## Calculate run statistics
