@@ -146,11 +146,10 @@ mkdir -p "${SHARED_FILESYSTEM_RUNFOLDER}/analysis/${WDL_NAME}_outputs"
 
 export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
 export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=${SLURM_JOB_TIMELIMIT} --partition=${SLURM_JOB_PARTITION}"
+export TOIL_SLURM_ARGS="--time=3-0:00 --partition=${SLURM_JOB_PARTITION}"
 export TOIL_COORDINATION_DIR=/data/tmp
 
 echo "This job is running in the ${SLURM_JOB_PARTITION} partition."
-echo "Time limit for all jobs launched is set to ${SLURM_JOB_TIMELIMIT}"
 
 toil clean "${WDL_NAME}_jobstore"
 
