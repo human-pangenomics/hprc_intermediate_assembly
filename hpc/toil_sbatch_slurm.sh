@@ -174,6 +174,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
+    --caching=false \
     $TOIL_ARGS \
     2>&1 | tee "${SAMPLE_ID}_${WDL_NAME}_log.txt"
 
