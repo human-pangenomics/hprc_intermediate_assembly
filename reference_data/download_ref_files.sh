@@ -95,4 +95,20 @@ mkdir -p /private/groups/hprc/ref_files/yak
 wget -O- 'https://zenodo.org/record/7882299/files/human-chrXY-yak.tar?download=1' \
     | tar xf - -C /private/groups/hprc/ref_files/yak
 
-    
+
+###############################################################################
+##                          CHM13 Annotation Files For Flagger               ##
+###############################################################################
+
+cd /private/groups/hprc/ref_files/chm13/
+
+mkdir flagger_beds
+cd flagger_beds
+
+git clone https://github.com/mobinasri/flagger.git
+cd flagger
+git reset --hard e0dd6cdeda13ef1ea3811d93b253611203f2f6b2
+cd ..
+
+cp -r flagger/misc/stratifications/ ./
+rm -rf flagger
