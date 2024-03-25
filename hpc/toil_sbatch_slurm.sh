@@ -151,8 +151,6 @@ export TOIL_COORDINATION_DIR=/data/tmp
 
 echo "This job is running in the ${SLURM_JOB_PARTITION} partition."
 
-toil clean "${WDL_NAME}_jobstore"
-
 set -o pipefail
 set -e            ## exit on failure
 
