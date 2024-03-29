@@ -1,0 +1,43 @@
+{
+  "hicHifiasmAssembly.childID": "NA19185",
+  "hicHifiasmAssembly.isMaleSample": true,
+  "hicHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/NA19185/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA19185.m64055e_220902_174345.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/NA19185/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA19185.m64055e_220907_174608.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/NA19185/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA19185.m64055e_220909_131447.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B8BD83FD-2608-4494-AFD4-E63DC2376381--RU_Y3_topoff_redo/NA19185/hifi_reads/m84091_231120_182829_s1.hifi_reads.bc1017.bam"
+  ],
+  "hicHifiasmAssembly.childReadsHiC1": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L002_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L004_R1_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsHiC2": [
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-1_S17_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L002_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L003_R2_001.fastq.gz",
+    "s3://human-pangenomics/submissions/62B7A84C-C647-4FD9-92F0-90956198404D--Y3-HIC/NA19185/raw_data/hic/NA19185-2_S25_L004_R2_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/NA19185/raw_data/nanopore/guppy_6/08_10_22_R941_GM19185_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA19185/raw_data/nanopore/guppy_6/08_10_22_R941_GM19185_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA19185/raw_data/nanopore/guppy_6/08_10_22_R941_GM19185_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hicHifiasmAssembly.minOntReadLength": 50000,
+  "hicHifiasmAssembly.homCov": 60,
+  "hicHifiasmAssembly.filterAdapters": true,
+  "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hicHifiasmAssembly.threadCount": 64,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak"
+}
