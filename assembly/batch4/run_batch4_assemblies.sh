@@ -22,23 +22,31 @@ mv ../batch4_old ./
 ## get files to run hifiasm in sandbox...
 cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/hifiasm_input_jsons/ ./
 cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/HPRC_Intermediate_Assembly_s3Locs_Batch4.csv ./
-cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/launch_hprc_array_local.sh ./
 
 mkdir slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
-## Test local array script: 2607801
 sbatch \
      --job-name=HPRC-asm-batch4 \
-     --array=[1]%1 \
+     --array=[1-24]%24 \
      --cpus-per-task=64 \
      --mem=400gb \
-     launch_hprc_array_local.sh \
-     HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
-     /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-     '../hifiasm_input_jsons/${sample_id}_hifiasm.json' 
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
+     --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hifiasm.json' 
 
-  
+## redo job 5 because it got stuck on a failing node  
+sbatch \
+     --job-name=HPRC-asm-batch4 \
+     --array=[5]%1 \
+     --cpus-per-task=64 \
+     --mem=400gb \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
+     --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hifiasm.json' 
+
 # ###############################################################################
 # ##                         Update table with outputs                         ##
 # ###############################################################################
@@ -50,8 +58,25 @@ sbatch \
 #       --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
 #       --json_location '{sample_id}_hifiasm_outputs.json'
 
-# cp HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/
+
+# ###############################################################################
+# ##                           Create QC Input JSONs                           ##   
+# ###############################################################################
+
+# cd /private/groups/hprc/assembly/batch4
+
+# mkdir -p initial_qc
+# cd initial_qc
+
+# cp ../batch4_old/initial_qc/qc_input_mapping.csv ./
+
+# mkdir qc_input_jsons
+# cd qc_input_jsons
+
+# python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
+#      --data_table ../../HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+#      --field_mapping ../qc_input_mapping.csv \
+#      --workflow_name initial_qc    
 
 
 # ###############################################################################
@@ -63,20 +88,25 @@ sbatch \
 # mkdir qc_submit_logs
 
 # sbatch \
-#     --array=[1-24]%24 \
-#     initial_qc/launch_initial_qc_array.sh \
-#     HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv 
+#      --job-name=HPRC-qc-batch4 \
+#      --array=[1-24]%24 \
+#      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
+#      --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
+#      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+#      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
 
 
 # ###############################################################################
 # ##                     Update table with hifiasm qc outputs                  ##
 # ###############################################################################
 
+# cd /private/groups/hprc/assembly/batch4
+
 # ## collect location of QC results
 # python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-#       --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4.csv  \
+#       --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv  \
 #       --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv  \
-#       --json_location '{sample_id}_hifiasm_qc_outputs.json'
+#       --json_location '{sample_id}_comparison_qc.json'
 
 # ## extract QC results
 # python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial_qc_non_trio.py \
@@ -84,9 +114,15 @@ sbatch \
 #      --extract_column_name filtQCStats \
 #      --output initial_qc/batch4_extracted_qc_results.csv
 
-# cp \
-#      HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch3/HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv
+# ## copy to github repo for notetaking
+# cp HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/
 
-# ## add/commit/push to github (hprc_intermediate_assembly)
+# cp HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv \
+#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/     
+
+# ## git add, commit, push
+# cp -r \
+#      initial_qc/ \
+#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch4/
 
