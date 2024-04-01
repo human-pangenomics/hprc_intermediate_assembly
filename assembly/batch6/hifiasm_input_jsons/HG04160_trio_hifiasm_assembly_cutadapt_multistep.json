@@ -1,0 +1,29 @@
+{
+  "trioHifiasmAssembly.childID": "HG04160",
+  "trioHifiasmAssembly.paternalID": "HG04158",
+  "trioHifiasmAssembly.maternalID": "HG04159",
+  "trioHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m54306Ue_210713_140744.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m54306Ue_210715_000620.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m64055e_210711_053617.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m64055e_210715_181933.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/4D90DDB8-2EAC-4DCA-9CCF-2A85C7CC96AD--RU_Y2_topoff/HG04160/hifi_reads/m84091_230802_180324_s3.hifi_reads.bc1003.bam",
+    "s3://human-pangenomics/submissions/4D90DDB8-2EAC-4DCA-9CCF-2A85C7CC96AD--RU_Y2_topoff/HG04160/hifi_reads/m84091_230802_180324_s3.hifi_reads.unassigned.bam"
+  ],
+  "trioHifiasmAssembly.paternalReadsILM": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG04160/Illumina/parents/HG04158/HG04158.final.cram"
+  ],
+  "trioHifiasmAssembly.maternalReadsILM": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG04160/Illumina/parents/HG04159/HG04159.final.cram"
+  ],
+  "trioHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/HG04160/raw_data/nanopore/guppy_6/08_03_21_R941_HG04160_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG04160/raw_data/nanopore/guppy_6/08_03_21_R941_HG04160_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG04160/raw_data/nanopore/guppy_6/08_03_21_R941_HG04160_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "trioHifiasmAssembly.minOntReadLength": 50000,
+  "trioHifiasmAssembly.homCov": 59,
+  "trioHifiasmAssembly.filterAdapters": true,
+  "trioHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "trioHifiasmAssembly.threadCount": 64
+}
