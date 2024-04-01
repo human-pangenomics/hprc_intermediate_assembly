@@ -47,53 +47,54 @@ sbatch \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4.csv \
      --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hifiasm.json' 
 
-# ###############################################################################
-# ##                         Update table with outputs                         ##
-# ###############################################################################
+###############################################################################
+##                         Update table with outputs                         ##
+###############################################################################
 
-# cd /private/groups/hprc/assembly/batch4
+cd /private/groups/hprc/assembly/batch4
 
-# python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-#       --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4.csv  \
-#       --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
-#       --json_location '{sample_id}_hifiasm_outputs.json'
-
-
-# ###############################################################################
-# ##                           Create QC Input JSONs                           ##   
-# ###############################################################################
-
-# cd /private/groups/hprc/assembly/batch4
-
-# mkdir -p initial_qc
-# cd initial_qc
-
-# cp ../batch4_old/initial_qc/qc_input_mapping.csv ./
-
-# mkdir qc_input_jsons
-# cd qc_input_jsons
-
-# python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-#      --data_table ../../HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
-#      --field_mapping ../qc_input_mapping.csv \
-#      --workflow_name initial_qc    
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4.csv  \
+      --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+      --json_location '{sample_id}_hic_hifiasm_assembly_cutadapt_multistep_outputs.json'
 
 
-# ###############################################################################
-# ##                               launch initial QC                           ##   
-# ###############################################################################
+###############################################################################
+##                           Create QC Input JSONs                           ##   
+###############################################################################
 
-# cd /private/groups/hprc/assembly/batch4
+cd /private/groups/hprc/assembly/batch4
 
-# mkdir qc_submit_logs
+mkdir -p initial_qc
+cd initial_qc
 
-# sbatch \
-#      --job-name=HPRC-qc-batch4 \
-#      --array=[1-24]%24 \
-#      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
-#      --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
-#      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
-#      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
+cp ../batch4_old/initial_qc/qc_input_mapping.csv ./
+
+mkdir qc_input_jsons
+cd qc_input_jsons
+
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
+     --data_table ../../HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+     --field_mapping ../qc_input_mapping.csv \
+     --workflow_name initial_qc    
+
+
+###############################################################################
+##                               launch initial QC                           ##   
+###############################################################################
+
+cd /private/groups/hprc/assembly/batch4
+
+mkdir qc_submit_logs
+
+sbatch \
+     --job-name=HPRC-qc-batch4 \
+     --array=[1-24]%24 \
+     --partition=high_priority \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm.csv \
+     --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
 
 
 # ###############################################################################
