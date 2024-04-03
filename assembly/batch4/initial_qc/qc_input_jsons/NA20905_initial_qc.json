@@ -1,0 +1,16 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "NA20905",
+  "comparisonQC.breakFasta": false,
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch4/NA20905/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/NA20905.hap1.xygrouped.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch4/NA20905/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/NA20905.hap2.xygrouped.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/submissions/325b4b1c-9f20-49be-b03a-596da89c466e--1000G_CHILDREN/NA20905/1000G_data/NA20905.final.cram"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa"
+}
