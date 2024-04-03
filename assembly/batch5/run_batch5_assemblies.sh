@@ -105,33 +105,35 @@ sbatch \
      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
 
 
-# ###############################################################################
-# ##                     Update table with hifiasm qc outputs                  ##
-# ###############################################################################
+###############################################################################
+##                     Update table with hifiasm qc outputs                  ##
+###############################################################################
 
-# cd /private/groups/hprc/assembly/batch5
+cd /private/groups/hprc/assembly/batch5
 
-# ## collect location of QC results
-# python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-#       --input_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv  \
-#       --output_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv  \
-#       --json_location '{sample_id}_comparison_qc.json'
+## collect location of QC results
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv  \
+      --output_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv  \
+      --json_location '{sample_id}_comparison_qc_outputs.json'
 
-# ## extract QC results
-# python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial_qc_non_trio.py \
-#      --qc_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv \
-#      --extract_column_name filtQCStats \
-#      --output initial_qc/batch5_extracted_qc_results.csv
+## extract QC results
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial_qc_non_trio.py \
+     --qc_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv \
+     --extract_column_name filtQCStats \
+     --output initial_qc/batch5_extracted_qc_results.csv
 
-# ## copy to github repo for notetaking
-# cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/
+## copy to github repo for notetaking
+cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/
 
-# cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/     
+cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/     
 
-# ## git add, commit, push
-# cp -r \
-#      initial_qc/ \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/
+mv blah.csv initial_qc/t2t_counts.csv
+
+## git add, commit, push
+cp -r \
+     initial_qc/ \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/
 
