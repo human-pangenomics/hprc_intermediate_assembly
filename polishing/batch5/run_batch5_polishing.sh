@@ -52,3 +52,11 @@ sbatch \
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
+
+cd /private/groups/hprc/polishing/batch5
+
+## collect location of QC results
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv  \
+      --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv  \
+      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'

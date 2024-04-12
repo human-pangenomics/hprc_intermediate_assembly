@@ -54,23 +54,23 @@ sbatch \
 ###############################################################################
 
 # update output file jsons
-cd /private/groups/hprc/polishing/batch3
+cd /private/groups/hprc/polishing/batch4
 
-grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
+grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv | cut -f1 -d "," \
 | while read line ; do sample_id=$line ; cp ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs_updated.json; done
 
-grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv | cut -f1 -d "," \
+grep -v "sample_id" HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv | cut -f1 -d "," \
 | while read line ; do sample_id=$line ; \
 sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs.json | \
 cut -f 2 -d ":" | sed 's| ||g' | sed 's|}||g' | sed 's|"||g' | while read line ; do file=`basename $line`;\
-newpath="/private/groups/hprc/polishing/batch3/${sample_id}/hprc_DeepPolisher_outputs/${file}" ; \
+newpath="/private/groups/hprc/polishing/batch4/${sample_id}/hprc_DeepPolisher_outputs/${file}" ; \
 sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_DeepPolisher_outputs_updated.json ;done; done
 
 # on hprc after entire batch has finished
-cd /private/groups/hprc/polishing/batch3
+cd /private/groups/hprc/polishing/batch4
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.csv \
-      --output_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.csv \
+      --input_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.csv \
+      --output_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.csv \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs_updated.json' \
       --submit_logs_directory hprc_DeepPolisher_submit_logs

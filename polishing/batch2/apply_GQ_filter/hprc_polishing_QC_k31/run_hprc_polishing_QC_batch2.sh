@@ -19,6 +19,7 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 
 ## on HPC...
 mkdir -p /private/groups/hprc/polishing/batch2/apply_GQ_filter/hprc_polishing_QC_k31/
+cd /private/groups/hprc/polishing/batch2/apply_GQ_filter/hprc_polishing_QC_k31/
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hprc_intermediate_assembly pull
