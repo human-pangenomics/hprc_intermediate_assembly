@@ -67,6 +67,8 @@ sbatch \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv
 
 # launch HG002 revio
+mkdir slurm_logs
+export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 sbatch \
      --job-name=hprc-DeepPolisher-batch1 \

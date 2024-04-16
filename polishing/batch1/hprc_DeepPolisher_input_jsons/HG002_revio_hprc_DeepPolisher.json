@@ -5,7 +5,7 @@
     "/private/groups/patenlab/masri/hprc/polishing/HG002/reads/R941_Guppy6/gt_100k/downsampled_40x/03_08_22_R941_HG002_3_Guppy_6.0.6_prom_sup.gt_100kb.fastq.gz"
   ],
   "hprc_DeepPolisher.HifiReads": [
-    "s3://human-pangenomics/submissions/submissions/80d00e88-7a92-46d8-88c7-48f1486e11ed--HG002_PACBIO_REVIO/m84039_230117_233243_s1.hifi_reads.default.bam"
+    "s3://human-pangenomics/submissions/80d00e88-7a92-46d8-88c7-48f1486e11ed--HG002_PACBIO_REVIO/m84039_230117_233243_s1.hifi_reads.default.bam"
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG002_y2_polishing/assembly/HG002.trio_hifiasm_0.19.5.DC_1.2_40x.pat.fa.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG002_y2_polishing/assembly/HG002.trio_hifiasm_0.19.5.DC_1.2_40x.mat.fa.gz",
