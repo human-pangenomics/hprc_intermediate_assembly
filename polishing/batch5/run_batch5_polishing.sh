@@ -49,6 +49,20 @@ sbatch \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv \
      --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
 
+# resubmit samples which failed with no space error, using more CPUS to take over more of the node, and limiting my t
+# tasks to 2 per node 
+sbatch \
+     --job-name=hprc-DeepPolisher-batch5 \
+     --array=[2,3,5,13,18,19,20,21,22]%9 \
+     --partition=high_priority \
+     --cpus-per-task=64 \
+     --mem=400gb \
+     --ntasks-per-node=2 \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv \
+     --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
+
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
