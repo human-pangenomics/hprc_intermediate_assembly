@@ -82,6 +82,23 @@ sbatch \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
      --sample_csv intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv \
      --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
+
+# launch HG01255 revio
+mkdir slurm_logs
+export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
+
+sbatch \
+     --job-name=hprc-DeepPolisher-batch1 \
+     --array=[5]%1 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mail-type=FAIL,END \
+     --mail-user=mmastora@ucsc.edu \
+     --mem=400gb \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
+     --sample_csv intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch1.csv \
+     --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
