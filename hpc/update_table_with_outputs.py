@@ -66,7 +66,7 @@ def parse_submit_logs(submit_logs_directory, base_dir):
 
             with open(filepath) as f:
                 lines=f.readlines()
-                sampleID=lines[2].strip('\n').split("=")
+                sampleID=lines[1].strip('\n').split("=")
                 print(sampleID)
             submit_logs_dict[sampleID] = filepath
     else:
