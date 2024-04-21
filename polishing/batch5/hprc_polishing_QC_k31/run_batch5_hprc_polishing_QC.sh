@@ -40,7 +40,7 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 # submit job
 sbatch \
      --job-name=hprc-polishing_QC_k31-batch5 \
-     --array=[1-2,5,7-18,23,24]%17 \
+     --array=[1-19,21-24]%10 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
