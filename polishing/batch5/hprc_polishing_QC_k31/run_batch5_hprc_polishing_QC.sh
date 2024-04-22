@@ -51,16 +51,28 @@ sbatch \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
      --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 
+# resubmit samples which failed, took out submission log as input to pipeline
+sbatch \
+     --job-name=hprc-polishing_QC_k31-batch5 \
+     --array=[2-4,6,7,10,13,19-22]%5 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --mail-type=FAIL,END \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
+     --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/hprc/polishing/batch5
+cd /private/groups/hprc/polishing/batch5/hprc_polishing_QC_k31
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv  \
-      --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv  \
-      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json' \
-      --submit_logs_directory /private/groups/hprc/polishing/batch5/slurm_logs
+      --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv  \
+      --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.QC_k31.csv  \
+      --json_location '{sample_id}_hprc_polishing_QC_outputs.json'

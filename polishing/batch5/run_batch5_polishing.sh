@@ -156,5 +156,4 @@ cd /private/groups/hprc/polishing/batch5
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.csv  \
       --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.allDone.csv  \
-      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json' \
-      --submit_logs_directory /private/groups/hprc/polishing/batch5/slurm_logs
+      --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'
