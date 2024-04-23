@@ -42,10 +42,10 @@ sbatch \
 ###############################################################################
 
 # on hprc after entire batch has finished
-cd /private/groups/hprc/polishing/batch2/apply_GQ_filter/hprc_polishing_QC_k21
+cd /private/groups/hprc/polishing/batch4/apply_GQ_filter/hprc_polishing_QC
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.csv \
-      --output_data_table ./intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp.updated.csv \
+      --input_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv \
+      --output_data_table ./HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.QC.csv \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json' \
       --submit_logs_directory hprc_polishing_QC_submit_logs

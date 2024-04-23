@@ -1,0 +1,16 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/NA20752/raw_data/nanopore/guppy_6/09_14_22_R941_GM20752_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220827_152226.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220829_104034.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/42AFCE59-2972-45EE-BB72-5B84E7B57377--HPRC_DEEPCONSENSUS_v1pt2_2023_08_q20/NA20752/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA20752.m64457e_220831_195843.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch4/NA20752/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/NA20752.hap1.xygrouped.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch4/NA20752/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/NA20752.hap2.xygrouped.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "NA20752"
+}
