@@ -132,7 +132,7 @@ cd ${SAMPLE_ID}
 export SHARED_FILESYSTEM_RUNFOLDER=`pwd`
 
 ## make folder on local node for jobstore
-LOCAL_FOLDER=/data/tmp/$(whoami)/hprc_assembly_${SAMPLE_ID}
+LOCAL_FOLDER=/data/tmp/$(whoami)/${WDL_NAME}_${SAMPLE_ID}
 mkdir -p ${LOCAL_FOLDER}
 
 ## make folders on shared drive for logs and output
