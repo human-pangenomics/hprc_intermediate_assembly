@@ -19,6 +19,7 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 
 ## on HPC...
 mkdir -p /private/groups/hprc/polishing/batch2/apply_GQ_filter/hprc_polishing_QC/
+cd /private/groups/hprc/polishing/batch2/apply_GQ_filter/hprc_polishing_QC/
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hprc_intermediate_assembly pull
@@ -36,6 +37,19 @@ sbatch \
      launch_hprc_polishing_QC_batch2.sh \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv
 
+# resubmit HG02258 with new yak docker to fix error
+sbatch \
+     --job-name=hprc-polishing_QC_k21-batch2 \
+     --array=[7]%1 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --mail-type=FAIL,END \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
+     --sample_csv intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv \
+     --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
