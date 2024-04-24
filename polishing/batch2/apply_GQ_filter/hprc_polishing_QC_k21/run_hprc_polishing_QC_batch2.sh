@@ -38,6 +38,9 @@ sbatch \
      intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv
 
 # resubmit HG02258 with new yak docker to fix error
+mkdir -p slurm_logs
+export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
+
 sbatch \
      --job-name=hprc-polishing_QC_k21-batch2 \
      --array=[7]%1 \
