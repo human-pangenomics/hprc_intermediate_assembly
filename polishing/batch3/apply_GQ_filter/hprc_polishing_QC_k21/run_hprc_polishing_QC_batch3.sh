@@ -38,12 +38,17 @@ sbatch \
      HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.filterVcf.polished.csv
 
 # relaunch samples which failed due to yak error
+
+mkdir -p slurm_logs
+export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
+
 sbatch \
      --job-name=hprc-polishing_QC_k21-batch3 \
      --array=[29,32,3,5,4,8,10]%8 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
+     --exclude=phoenix-[09,10,22,23,24] \
      --mail-type=FAIL,END \
      --mail-user=mmastora@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
