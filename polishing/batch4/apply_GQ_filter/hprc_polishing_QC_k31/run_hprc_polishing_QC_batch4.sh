@@ -37,6 +37,25 @@ sbatch \
      launch_hprc_polishing_QC_batch4.sh \
      HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv
 
+
+#
+# resubmit job that failed due to yak error - new docker
+mkdir -p slurm_logs
+export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
+
+sbatch \
+     --job-name=hprc-polishing_QC_k31-batch4 \
+     --array=[1]%1 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --mail-type=FAIL,END \
+     --exclude=phoenix-[09,10,22,23,24] \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv \
+     --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
