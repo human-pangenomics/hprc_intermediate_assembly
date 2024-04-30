@@ -46,6 +46,7 @@ sbatch \
      --array=[7]%1 \
      --partition=high_priority \
      --cpus-per-task=32 \
+     --exclude=phoenix-[09,10,22,23,24] \
      --mem=400gb \
      --mail-type=FAIL,END \
      --mail-user=mmastora@ucsc.edu \

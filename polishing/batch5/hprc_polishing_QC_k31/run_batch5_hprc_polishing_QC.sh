@@ -79,6 +79,21 @@ sbatch \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
      --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
+
+# resubmit samples which i had accidentally polished using the wrong fasta
+
+sbatch \
+     --job-name=hprc-polishing_QC_k31-batch5 \
+     --array=[2,5,13,14,15,16,18,22,24]%9 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --mail-type=FAIL,END \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
+     --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################

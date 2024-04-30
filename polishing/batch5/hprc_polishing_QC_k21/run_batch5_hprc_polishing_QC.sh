@@ -78,6 +78,21 @@ sbatch \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
      --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
+
+# resubmit samples which i had accidentally polished using the wrong fasta
+#
+sbatch \
+     --job-name=hprc-polishing_QC_k21-batch5 \
+     --array=[2,5,13,14,15,16,18,22,24]%9 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --mail-type=FAIL,END \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
+     --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv \
+     --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
@@ -89,3 +104,13 @@ python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_tab
       --input_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.csv  \
       --output_data_table HPRC_Intermediate_Assembly_s3Locs_Batch4_w_hifiasm_w_QC.polished.QC_k21.csv  \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
+
+
+# combine outputs into one file
+cd /private/groups/hprc/polishing/batch5/hprc_polishing_QC_k21
+ls | grep "HG" | while read line ; do cat $line/analysis/hprc_polishing_QC_outputs/$line.polishing.QC.csv >> all_samples_QC.batch5.k21.csv ; done
+ls | grep "NA" | while read line ; do cat $line/analysis/hprc_polishing_QC_outputs/$line.polishing.QC.csv >> all_samples_QC.batch5.k21.csv ; done
+
+cd /private/groups/hprc/polishing/batch5/hprc_polishing_QC_k31
+ls | grep "HG" | while read line ; do cat $line/analysis/hprc_polishing_QC_outputs/$line.polishing.QC.csv >> all_samples_QC.batch5.k31.csv ; done
+ls | grep "NA" | while read line ; do cat $line/analysis/hprc_polishing_QC_outputs/$line.polishing.QC.csv >> all_samples_QC.batch5.k31.csv ; done

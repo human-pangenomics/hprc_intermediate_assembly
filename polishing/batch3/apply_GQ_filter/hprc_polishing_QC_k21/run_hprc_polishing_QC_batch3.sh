@@ -44,7 +44,7 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 sbatch \
      --job-name=hprc-polishing_QC_k21-batch3 \
-     --array=[29,32,3,5,4,8,10]%8 \
+     --array=[29,32,3,5,4,8,10,14]%8 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
@@ -55,6 +55,7 @@ sbatch \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
      --sample_csv HPRC_Intermediate_Assembly_s3Locs_Batch2.updated.noTopUp.updated.filterVcf.polished.csv \
      --input_json_path '../hprc_polishing_QC_input_jsons/${SAMPLE_ID}_hprc_polishing_QC.json'
+
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################

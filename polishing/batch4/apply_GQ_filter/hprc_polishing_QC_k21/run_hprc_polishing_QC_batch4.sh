@@ -48,6 +48,7 @@ sbatch \
      --cpus-per-task=32 \
      --mem=400gb \
      --mail-type=FAIL,END \
+     --exclude=phoenix-[09,10,22,23,24] \
      --mail-user=mmastora@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \

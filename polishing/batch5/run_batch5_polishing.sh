@@ -146,6 +146,24 @@ for sample in HG02165 HG02965 NA18612 HG03209 NA18747 NA18522 HG00140 NA20752
     do mv ${sample}/analysis/hprc_DeepPolisher_outputs/polisher_output.manual.hprc_filt.vcf.gz ${sample}/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz
   done
 
+# repolish 4/30/2024, realized I should have polished xygrouped.fa.gz instead
+# polish with filtered vcf
+for sample in HG02165 HG02965 NA18612 HG03209 NA18747 NA18522 HG00140 NA20752
+    do tabix -p vcf ${sample}/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz
+  done
+
+for sample in HG02165 HG02965 NA18612 HG03209 NA18747 NA18522 HG00140 NA20752
+    do echo ${sample}
+    bcftools consensus \
+    -f /private/groups/hprc/assembly/batch4/${sample}/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/${sample}.hap1.xygrouped.fa.gz \
+    -H 2 ${sample}/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz \
+    > ${sample}/analysis/hprc_DeepPolisher_outputs/${sample}_Hap1.polished.fasta
+    bcftools consensus \
+    -f /private/groups/hprc/assembly/batch4/${sample}/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/${sample}.hap2.xygrouped.fa.gz \
+    -H 2 ${sample}/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz \
+    > ${sample}/analysis/hprc_DeepPolisher_outputs/${sample}_Hap2.polished.fasta
+  done &> manual_polishing_redo.log.txt
+
 ###############################################################################
 ##                             write output files to csv                     ##
 ###############################################################################
