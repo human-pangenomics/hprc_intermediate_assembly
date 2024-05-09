@@ -15,11 +15,15 @@ cd batch5
 ## check that github repo is up to date
 git -C /private/groups/hprc/hprc_intermediate_assembly pull
 
+## get sample sheet
 cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/HPRC_Assembly_s3Locs_Batch5.csv ./
-cp hifiasm_hic_input_mapping.csv
 
 mkdir hifiasm_input_jsons
 cd hifiasm_input_jsons
+
+## get input mapping
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/hifiasm_input_jsons/hifiasm_hic_input_mapping.csv ./
+
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
      --data_table ../HPRC_Assembly_s3Locs_Batch5.csv \
@@ -31,12 +35,11 @@ python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py
 ##                                 launch assemblies                         ##
 ###############################################################################
 
-## on HPC...
-cd /private/groups/hprc/
+cd /private/groups/hprc/assembly/batch5
 
-## check that github repo is up to date
+## check again that github repo is up to date
 git -C /private/groups/hprc/hprc_intermediate_assembly pull
-
+git -C /private/home/juklucas/github/hpp_production_workflows/ pull
 
 mkdir slurm_logs
 
@@ -45,21 +48,12 @@ sbatch \
      --array=[1-14]%14 \
      --cpus-per-task=64 \
      --mem=400gb \
+     --partition=high_priority \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
      --sample_csv HPRC_Assembly_s3Locs_Batch5.csv \
      --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json' 
 
-# fixed HG03471 input json to deal with comma problem. Restart.
-sbatch \
-     --job-name=HPRC-asm-batch5 \
-     --array=[14]%1 \
-     --cpus-per-task=64 \
-     --mem=400gb \
-     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
-     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-     --sample_csv HPRC_Assembly_s3Locs_Batch5.csv \
-     --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json' 
 
 ###############################################################################
 ##                         Update table with outputs                         ##
