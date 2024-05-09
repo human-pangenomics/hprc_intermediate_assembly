@@ -3,18 +3,29 @@
 ##                             create input jsons                            ##
 ###############################################################################
 
-## on personal computer...
-cd /Users/juklucas/Desktop/github/hprc_intermediate_assembly/assembly/batch5/
+## on HPC...
+cd /private/groups/hprc/assembly
+
+## clean up prior results
+# rm -rf batch5
+
+mkdir batch5
+cd batch5
+
+## check that github repo is up to date
+git -C /private/groups/hprc/hprc_intermediate_assembly pull
+
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/HPRC_Assembly_s3Locs_Batch5.csv ./
+cp hifiasm_hic_input_mapping.csv
 
 mkdir hifiasm_input_jsons
 cd hifiasm_input_jsons
 
-python3 ../../../hpc/launch_from_table.py \
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
      --data_table ../HPRC_Assembly_s3Locs_Batch5.csv \
      --field_mapping hifiasm_hic_input_mapping.csv \
      --workflow_name hic_hifiasm_assembly_cutadapt_multistep
 
-## add/commit/push to github (hprc_intermediate_assembly)
 
 ###############################################################################
 ##                                 launch assemblies                         ##
@@ -26,11 +37,6 @@ cd /private/groups/hprc/
 ## check that github repo is up to date
 git -C /private/groups/hprc/hprc_intermediate_assembly pull
 
-mkdir assembly/batch5
-cd assembly/batch5
-
-cp -r /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/hifiasm_input_jsons/ ./
-cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/HPRC_Assembly_s3Locs_Batch5.csv ./
 
 mkdir slurm_logs
 
