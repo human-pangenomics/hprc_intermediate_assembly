@@ -112,3 +112,99 @@ cd ..
 
 cp -r flagger/misc/stratifications/ ./
 rm -rf flagger
+
+###############################################################################
+##                                  FCS DBs                                  ##
+###############################################################################
+
+cd /private/groups/hprc/ref_files/
+mkdir -p /private/groups/hprc/ref_files/fcs 
+
+s5cmd  --no-sign-request cp  \
+    --part-size 50  \
+    --concurrency 50 \
+    s3://ncbi-fcs-gx/gxdb/latest/all.* \
+    /private/groups/hprc/ref_files/fcs 
+
+
+###############################################################################
+##                               Mito Reference                              ##
+###############################################################################
+
+cd /private/groups/hprc/ref_files/
+mkdir -p mito 
+cd mito
+
+## Download reference (rCRS) mito genome
+## NC_012920.1.fasta + NC_012920.1.gb
+## based on src/findMitoReference.py in mitohifi...
+
+python3 << 'EOF'
+#!/usr/bin/env python
+
+from Bio import Entrez
+from Bio import SeqIO
+from io import StringIO
+import os
+
+def download_sequence_by_id(ncbi_id, email, outfolder):
+    Entrez.email = email
+
+    # Create output folder if it doesn't exist
+    if not os.path.isdir(outfolder):
+        os.mkdir(outfolder)
+
+    # Fetch and save GenBank file
+    handle = Entrez.efetch(db="nucleotide", id=ncbi_id, rettype="gb", retmode="text")
+    record = handle.read()
+    handle.close()
+    with open(os.path.join(outfolder, ncbi_id + '.gb'), "w") as out:
+        out.write(record)
+    
+    # Fetch and save FASTA file
+    handle = Entrez.efetch(db="nucleotide", id=ncbi_id, rettype="fasta", retmode="text")
+    record = handle.read()
+    handle.close()
+    with open(os.path.join(outfolder, ncbi_id + '.fasta'), "w") as out:
+        out.write(record)
+    
+    print(f"Downloaded {ncbi_id} sequence in GenBank and FASTA formats.")
+
+if __name__ == '__main__':
+    # Parameters
+    ncbi_id = 'NC_012920.1'
+    outfolder = 'rcrs_reference'
+    email = 'juklucas@ucsc.edu'
+
+    # Download the sequence
+    download_sequence_by_id(ncbi_id, email, outfolder)
+
+EOF
+
+
+## create concatenated reference for mapping (to avoid problems with circularization)
+python3 << 'EOF'
+
+from Bio import SeqIO
+
+def concatenate_fasta_sequences(file1, file2, output_file):
+    # Read the sequences from the input FASTA files
+    seq1 = SeqIO.read(file1, "fasta")
+    seq2 = SeqIO.read(file2, "fasta")
+    
+    # Concatenate the sequences
+    concatenated_sequence = seq1.seq + seq2.seq
+    
+    # Create a new SeqRecord with the concatenated sequence
+    concatenated_record = SeqIO.SeqRecord(concatenated_sequence, id=seq1.id, description=seq1.description)
+    
+    # Write the concatenated sequence to the output FASTA file
+    SeqIO.write(concatenated_record, output_file, "fasta")
+
+
+file1 = "rcrs_reference/NC_012920.1.fasta"
+output_file = "rcrs_reference/NC_012920.1_concat.fasta"
+
+concatenate_fasta_sequences(file1, file1, output_file)
+
+EOF
