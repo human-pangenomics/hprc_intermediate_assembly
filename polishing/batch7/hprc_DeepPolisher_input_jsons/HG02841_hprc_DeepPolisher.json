@@ -1,0 +1,18 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/working/HPRC/HG02841/raw_data/nanopore/guppy_6/08_03_21_R941_HG02841_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG02841/raw_data/nanopore/guppy_6/08_03_21_R941_HG02841_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG02841/raw_data/nanopore/guppy_6/08_03_21_R941_HG02841_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG02841/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02841.m54306Ue_220326_050928.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG02841/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02841.m54306Ue_220327_160600.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG02841/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02841.m64330e_220407_180519.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG02841/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02841.m64334e_220321_180258.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG02841/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02841.m64334e_220412_183749.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch6/HG02841/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/e6756062-027d-451c-bb2e-aef6b245febe/HG02841.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch6/HG02841/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/e6756062-027d-451c-bb2e-aef6b245febe/HG02841.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG02841"
+}

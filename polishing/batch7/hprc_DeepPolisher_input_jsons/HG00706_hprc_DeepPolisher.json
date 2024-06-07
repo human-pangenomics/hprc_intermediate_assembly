@@ -1,0 +1,17 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_1_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_2_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_3_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210731_145204.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210812_050522.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210813_141904.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210814_234047.hifi_reads.bam"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch6/HG00706/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1462fed7-ccfd-4716-a9d5-557c530dda58/HG00706.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch6/HG00706/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1462fed7-ccfd-4716-a9d5-557c530dda58/HG00706.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG00706"
+}
