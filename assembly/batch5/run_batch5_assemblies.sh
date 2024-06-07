@@ -54,6 +54,17 @@ sbatch \
      --sample_csv HPRC_Assembly_s3Locs_Batch5.csv \
      --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json' 
 
+## rerun download failures
+sbatch \
+     --job-name=HPRC-asm-batch5 \
+     --array=[6,12] \
+     --cpus-per-task=64 \
+     --mem=400gb \
+     --partition=high_priority \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
+     --sample_csv HPRC_Assembly_s3Locs_Batch5.csv \
+     --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json' 
 
 ###############################################################################
 ##                         Update table with outputs                         ##
@@ -76,7 +87,7 @@ cd /private/groups/hprc/assembly/batch5
 mkdir -p initial_qc
 cd initial_qc
 
-../../batch4/initial_qc/qc_input_mapping.csv ./
+cp /private/groups/hprc/assembly/batch4/initial_qc/qc_input_mapping.csv ./
 
 mkdir qc_input_jsons
 cd qc_input_jsons
@@ -102,7 +113,7 @@ sbatch \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
      --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
      --sample_csv HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
-     --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
+     --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json'
 
 
 ###############################################################################
