@@ -115,6 +115,8 @@ sbatch \
      --sample_csv HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json'
 
+# rm -rf  HG*/comparison_qc_jobstore
+# rm -rf  NA*/comparison_qc_jobstore
 
 ###############################################################################
 ##                     Update table with hifiasm qc outputs                  ##
