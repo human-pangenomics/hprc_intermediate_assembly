@@ -1,0 +1,7 @@
+input,type,value
+hprc_DeepPolisher.ONTReads,array,$input.nanopore
+hprc_DeepPolisher.HifiReads,array,$input.hifi_dc
+hprc_DeepPolisher.Hap1RawFasta,scalar,$input.hap1FastaGz
+hprc_DeepPolisher.Hap2RawFasta,scalar,$input.hap2FastaGz
+hprc_DeepPolisher.DeepPolisherModelFilesTarGZ,scalar,"/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz"
+hprc_DeepPolisher.sampleName,scalar,$input.sample_id
