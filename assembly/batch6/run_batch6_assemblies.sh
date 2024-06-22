@@ -18,24 +18,20 @@ cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/HPRC_Assembly
 mkdir hifiasm_input_jsons
 cd hifiasm_input_jsons
 
-cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/hifiasm_input_jsons/hifiasm_input_mapping.csv ./
+cp /private/groups/hprc/assembly/batch3/hifiasm_input_mapping.csv ./
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
      --data_table ../HPRC_Assembly_s3Locs_batch6.csv \
      --field_mapping hifiasm_input_mapping.csv \
      --workflow_name trio_hifiasm_assembly_cutadapt_multistep
 
-## add/commit/push to github (hprc_intermediate_assembly)
-
 ###############################################################################
 ##                                 launch assemblies                         ##
 ###############################################################################
 
-## on HPC...
 cd /private/groups/hprc/assembly/batch6
 
 ## check that github repo is up to date
-git -C /private/groups/hprc/hprc_intermediate_assembly pull
 git -C /private/home/juklucas/github/hpp_production_workflows/ pull
 
 mkdir slurm_logs
@@ -107,7 +103,7 @@ mkdir qc_submit_logs
 
 sbatch \
      --job-name=HPRC-qc-batch6 \
-     --array=[1-18,20]  \
+     --array=[1-42]%42  \
      --cpus-per-task=64 \
      --mem=400gb \
      --partition=high_priority \
@@ -116,6 +112,18 @@ sbatch \
      --sample_csv HPRC_Assembly_s3Locs_batch6_w_hifiasm.csv \
      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
 
+
+
+sbatch \
+     --job-name=HPRC-qc-batch6 \
+     --array=[2-17]  \
+     --cpus-per-task=64 \
+     --mem=400gb \
+     --partition=high_priority \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
+     --sample_csv HPRC_Assembly_s3Locs_batch6_w_hifiasm.csv \
+     --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json' 
 
 ###############################################################################
 ##                     Update table with hifiasm qc outputs                  ##
