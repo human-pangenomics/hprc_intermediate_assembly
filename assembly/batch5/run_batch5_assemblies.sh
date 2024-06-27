@@ -118,6 +118,18 @@ sbatch \
 # rm -rf  HG*/comparison_qc_jobstore
 # rm -rf  NA*/comparison_qc_jobstore
 
+## try again with single machine...
+sbatch \
+     --job-name=HPRC-qc-batch5 \
+     --array=[1-14]%14 \
+     --cpus-per-task=64 \
+     --mem=400gb \
+     --partition=high_priority \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
+     --sample_csv HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
+     --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json'
+
 ###############################################################################
 ##                     Update table with hifiasm qc outputs                  ##
 ###############################################################################
@@ -137,11 +149,12 @@ python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial
      --output initial_qc/batch5_extracted_qc_results.csv
 
 ## copy to github repo for notetaking
-cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm.csv \
+cp HPRC_Assembly_s3Locs_Batch5_w_*.csv \
      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/
 
-cp HPRC_Assembly_s3Locs_Batch5_w_hifiasm_w_QC.csv \
-     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/     
+cp hifiasm_input_jsons/* \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/hifiasm_input_jsons/
+
 
 mv blah.csv initial_qc/t2t_counts.csv
 

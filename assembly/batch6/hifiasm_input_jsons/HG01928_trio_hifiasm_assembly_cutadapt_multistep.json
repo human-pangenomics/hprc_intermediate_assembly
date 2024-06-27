@@ -15,10 +15,10 @@
     "s3://human-pangenomics/submissions/7acad60d-3d90-4dcf-9291-e2c679724df3--WUSTL_HPRC_HiFi_Year1_TopUp/HG01928/PacBio_HiFi/m84081_231222_141231_s4.hifi_reads.bc2022.bam"
   ],
   "trioHifiasmAssembly.paternalReadsILM": [
-    "s3://human-pangenomics/working/HPRC/HG01928/raw_data/Illumina/parents/HG01927/HG01927.final.cram"
+    "s3://human-pangenomics/working/HPRC/HG01928/raw_data/Illumina/parents/HG01926/HG01926.final.cram"
   ],
   "trioHifiasmAssembly.maternalReadsILM": [
-    "s3://human-pangenomics/working/HPRC/HG01928/raw_data/Illumina/parents/HG01926/HG01926.final.cram"
+    "s3://human-pangenomics/working/HPRC/HG01928/raw_data/Illumina/parents/HG01927/HG01927.final.cram"
   ],
   "trioHifiasmAssembly.childReadsONT": [
     "s3://human-pangenomics/submissions/CBC1E2D6-3925-4CD0-9682-555C64F81B02--UCSC_HPRC_ONT_Y1_WTOPUP_GUPPY6/HG01928/guppy_6/HG01928_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",

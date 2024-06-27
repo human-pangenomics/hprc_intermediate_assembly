@@ -3,11 +3,11 @@
   "trioHifiasmAssembly.paternalID": "HG01938",
   "trioHifiasmAssembly.maternalID": "HG01939",
   "trioHifiasmAssembly.childReadsHiFi": [
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64330e_220415_164034.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220304_185513.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220422_151506.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220424_021126.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220426_185110.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64330e_220415_164034.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220304_185513.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220422_151506.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220424_021126.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01940/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01940.m64334e_220426_185110.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/B8BD83FD-2608-4494-AFD4-E63DC2376381--RU_Y3_topoff_redo/HG01940/hifi_reads/m84091_240110_191713_s4.hifi_reads.bc1010.bam"
   ],
   "trioHifiasmAssembly.paternalReadsILM": [

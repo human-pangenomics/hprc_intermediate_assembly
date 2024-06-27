@@ -3,10 +3,10 @@
   "trioHifiasmAssembly.paternalID": "HG03679",
   "trioHifiasmAssembly.maternalID": "HG03642",
   "trioHifiasmAssembly.childReadsHiFi": [
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210507_224951.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210514_222517.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210517_210109.dc.q20.fastq.gz",
-    "s3://human-pangenomics/submissions/00ECE94B-24B3-40A2-8626-6CDF98E36C27--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210519_065152.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210507_224951.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210514_222517.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210517_210109.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG04204/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG04204.m54329U_210519_065152.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/4f8c8e63-dfd3-4f90-965f-8a8cf3ee4de9--UW_HPRC_HiFi_Y4_AND_Y3_Topoff/HG04204/m84046_230623_213746_s2.hifi_reads.bc1003.bam"
   ],
   "trioHifiasmAssembly.paternalReadsILM": [

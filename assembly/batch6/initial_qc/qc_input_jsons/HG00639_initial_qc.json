@@ -1,0 +1,23 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "HG00639",
+  "comparisonQC.breakFasta": true,
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch6/HG00639/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/fa370d70-2e85-499f-a258-47623184d9ca/HG00637.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch6/HG00639/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/632c66eb-ddb3-4ff4-b4bd-f8fb5421a198/HG00638.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch6/HG00639/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1e1dc96e-ea00-453d-bbe3-bcdf2357e42a/HG00639.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch6/HG00639/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1e1dc96e-ea00-453d-bbe3-bcdf2357e42a/HG00639.mat.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG00639/Illumina/child/HG00639.final.cram"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "comparisonQC.x_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoY_odb10_mb_download.tar.gz",
+  "comparisonQC.y_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoX_odb10_mb_download.tar.gz",
+  "comparisonQC.x_hap_compleasm_lineage": "primatesnoY_odb10",
+  "comparisonQC.y_hap_compleasm_lineage": "primatesnoX_odb10",
+  "comparisonQC.isMaleSample": false
+}

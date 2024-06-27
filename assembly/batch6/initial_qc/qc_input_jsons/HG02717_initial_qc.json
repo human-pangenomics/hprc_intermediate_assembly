@@ -1,0 +1,23 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "HG02717",
+  "comparisonQC.breakFasta": true,
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch6/HG02717/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/b8115302-8e65-4f0e-b088-92a288dcdb05/HG02716.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch6/HG02717/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/fabffa32-5036-4526-92c2-4d1236ad2444/HG02715.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch6/HG02717/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/93794091-482d-44c6-b0a3-73da9d65610b/HG02717.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch6/HG02717/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/93794091-482d-44c6-b0a3-73da9d65610b/HG02717.mat.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/working/HPRC/HG02717/raw_data/Illumina/child/HG02717.final.cram"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "comparisonQC.x_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoY_odb10_mb_download.tar.gz",
+  "comparisonQC.y_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoX_odb10_mb_download.tar.gz",
+  "comparisonQC.x_hap_compleasm_lineage": "primatesnoY_odb10",
+  "comparisonQC.y_hap_compleasm_lineage": "primatesnoX_odb10",
+  "comparisonQC.isMaleSample": true
+}
