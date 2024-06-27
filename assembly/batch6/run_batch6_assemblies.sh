@@ -165,7 +165,7 @@ cp HPRC_Assembly_s3Locs_batch6_w*.csv \
 cp hifiasm_input_jsons/* \
      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/hifiasm_input_jsons/
   
-cp blah.txt initial_qc/batch6_t2t_counts.txt
+cp blah.csv initial_qc/batch6_t2t_counts.csv
 
 ## git add, commit, push
 cp -r \
