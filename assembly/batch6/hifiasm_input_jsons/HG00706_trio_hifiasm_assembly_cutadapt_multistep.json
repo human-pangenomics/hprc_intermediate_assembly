@@ -1,0 +1,28 @@
+{
+  "trioHifiasmAssembly.childID": "HG00706",
+  "trioHifiasmAssembly.paternalID": "HG00704",
+  "trioHifiasmAssembly.maternalID": "HG00705",
+  "trioHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210731_145204.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210812_050522.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210813_141904.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG00706/m64055e_210814_234047.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/4D90DDB8-2EAC-4DCA-9CCF-2A85C7CC96AD--RU_Y2_topoff/HG00706/hifi_reads/m84091_230817_140121_s1.hifi_reads.bc1011.bam"
+  ],
+  "trioHifiasmAssembly.paternalReadsILM": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG00706/Illumina/parents/HG00704/HG00704.final.cram"
+  ],
+  "trioHifiasmAssembly.maternalReadsILM": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG00706/Illumina/parents/HG00705/HG00705.final.cram"
+  ],
+  "trioHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_1_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_2_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/working/HPRC/HG00706/raw_data/nanopore/guppy_6/07_13_21_R941_HG00706_3_Guppy_6.4.6_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "trioHifiasmAssembly.minOntReadLength": 50000,
+  "trioHifiasmAssembly.homCov": 61,
+  "trioHifiasmAssembly.filterAdapters": true,
+  "trioHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "trioHifiasmAssembly.threadCount": 64
+}
