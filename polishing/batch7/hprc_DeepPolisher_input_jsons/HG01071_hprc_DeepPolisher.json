@@ -18,8 +18,8 @@
     "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01071/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01071.m64043_220520_191036.dc.q20.fastq.gz",
     "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01071/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01071.m64043_220522_151822.dc.q20.fastq.gz"
   ],
-  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch6/HG01071/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/897ca8ef-091c-4578-a03e-3353eb5fd05f/HG01071.pat.fa.gz",
-  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch6/HG01071/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/897ca8ef-091c-4578-a03e-3353eb5fd05f/HG01071.mat.fa.gz",
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch6/HG01071/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/5b7bd44f-2807-48b8-b6bc-88ff95bcec61/HG01071.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch6/HG01071/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/5b7bd44f-2807-48b8-b6bc-88ff95bcec61/HG01071.mat.fa.gz",
   "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
   "hprc_DeepPolisher.sampleName": "HG01071"
 }

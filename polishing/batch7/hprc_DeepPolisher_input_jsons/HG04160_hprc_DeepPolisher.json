@@ -10,8 +10,8 @@
     "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m64055e_210711_053617.hifi_reads.bam",
     "s3://human-pangenomics/submissions/746FF75B-3C32-42AF-92BB-290BA92CF89A--RU_Y2_HIFI/HG04160/m64055e_210715_181933.hifi_reads.bam"
   ],
-  "hprc_DeepPolisher.Hap1RawFasta": NaN,
-  "hprc_DeepPolisher.Hap2RawFasta": NaN,
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch6/HG04160/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1f241021-d571-4fd1-8ab8-6a2d36c11f27/HG04160.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch6/HG04160/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1f241021-d571-4fd1-8ab8-6a2d36c11f27/HG04160.mat.fa.gz",
   "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
   "hprc_DeepPolisher.sampleName": "HG04160"
 }

@@ -9,7 +9,7 @@
 cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch7/hprc_DeepPolisher_input_jsons
 
 python3 ../../../hpc/launch_from_table.py \
-     --data_table ../HPRC_Assembly_s3Locs_batch6_w_hifiasm.csv \
+     --data_table ../HPRC_Assembly_s3Locs_batch6_w_hifiasm_w_QC.csv \
      --field_mapping ../hprc_DeepPolisher_input_mapping.csv \
      --workflow_name hprc_DeepPolisher
 
@@ -36,10 +36,10 @@ cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch7
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
-# submit job. slurm # 21,40,42 failed assembly so skipping for now
+# submit job. skip slurm # 3,10
 sbatch \
      --job-name=hprc-DeepPolisher-batch7 \
-     --array=[1-20,22-39,41,42]%25 \
+     --array=[1-2,4-9,11-42]%40 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
