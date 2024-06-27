@@ -139,10 +139,15 @@ mkdir -p ${LOCAL_FOLDER}
 mkdir -p toil_logs
 mkdir -p "${SHARED_FILESYSTEM_RUNFOLDER}/analysis/${WDL_NAME}_outputs"
 
+# Set cache and coordination directories if not already set.
+SINGULARITY_CACHEDIR=${SINGULARITY_CACHEDIR:-/data/tmp/$(whoami)/cache/singularity}
+MINIWDL__SINGULARITY__IMAGE_CACHE=${MINIWDL__SINGULARITY__IMAGE_CACHE:-/data/tmp/$(whoami)/cache/miniwdl}
+TOIL_COORDINATION_DIR=${TOIL_COORDINATION_DIR:-/data/tmp}
 
-export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
-export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
-export TOIL_COORDINATION_DIR=/data/tmp
+export SINGULARITY_CACHEDIR
+export MINIWDL__SINGULARITY__IMAGE_CACHE
+export TOIL_COORDINATION_DIR
+
 
 toil clean "${LOCAL_FOLDER}/jobstore"
 

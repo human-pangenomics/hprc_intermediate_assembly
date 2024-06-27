@@ -144,10 +144,16 @@ mkdir -p "${SHARED_FILESYSTEM_RUNFOLDER}/toil_logs"
 mkdir -p "${SHARED_FILESYSTEM_RUNFOLDER}/analysis/${WDL_NAME}_outputs"
 
 
-export SINGULARITY_CACHEDIR=`pwd`/../cache/.singularity/cache
-export MINIWDL__SINGULARITY__IMAGE_CACHE=`pwd`/../cache/.cache/miniwdl
-export TOIL_SLURM_ARGS="--time=3-0:00 --partition=${SLURM_JOB_PARTITION}"
-export TOIL_COORDINATION_DIR=/data/tmp
+# Set cache and coordination directories if not already set.
+SINGULARITY_CACHEDIR=${SINGULARITY_CACHEDIR:-/data/tmp/$(whoami)/cache/singularity}
+MINIWDL__SINGULARITY__IMAGE_CACHE=${MINIWDL__SINGULARITY__IMAGE_CACHE:-/data/tmp/$(whoami)/cache/miniwdl}
+TOIL_COORDINATION_DIR=${TOIL_COORDINATION_DIR:-/data/tmp}
+TOIL_SLURM_ARGS="--time=3-0:00 --partition=${SLURM_JOB_PARTITION}"
+
+export SINGULARITY_CACHEDIR
+export MINIWDL__SINGULARITY__IMAGE_CACHE
+export TOIL_COORDINATION_DIR
+export TOIL_SLURM_ARGS
 
 echo "This job is running in the ${SLURM_JOB_PARTITION} partition."
 
