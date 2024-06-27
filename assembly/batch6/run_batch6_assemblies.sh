@@ -60,6 +60,23 @@ sbatch \
      --sample_csv HPRC_Assembly_s3Locs_batch6.csv \
      --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_trio_hifiasm_assembly_cutadapt_multistep.json'  
 
+## the following samples had parents swapped mat -> pat
+## update the github and clean out the directories.
+## regenerate the input jsons wholesale above.
+rm -rf HG00438 HG00673 HG01071 HG01358 HG01361 HG01928 HG01978 HG02257 HG02717 HG03516 HG03579
+
+sbatch \
+     --job-name=HPRC-asm-batch6 \
+     --array=[31-33,35-42]  \
+     --cpus-per-task=64 \
+     --mem=650gb \
+     --partition=high_priority \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/trio_hifiasm_assembly_cutadapt_multistep.wdl \
+     --sample_csv HPRC_Assembly_s3Locs_batch6.csv \
+     --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_trio_hifiasm_assembly_cutadapt_multistep.json'  
+
+
 # ###############################################################################
 # ##                         Update table with outputs                         ##
 # ###############################################################################
@@ -97,8 +114,6 @@ python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py
 ###############################################################################
 
 cd /private/groups/hprc/assembly/batch6
-
-mkdir qc_submit_logs
 
 
 sbatch \
@@ -150,9 +165,10 @@ cp HPRC_Assembly_s3Locs_batch6_w*.csv \
 cp hifiasm_input_jsons/* \
      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/hifiasm_input_jsons/
   
+cp blah.txt initial_qc/batch6_t2t_counts.txt
 
-# ## git add, commit, push
-# cp -r \
-#      initial_qc/ \
-#      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/
+## git add, commit, push
+cp -r \
+     initial_qc/ \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch6/
 

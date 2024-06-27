@@ -128,7 +128,7 @@ mkdir qc_submit_logs
 
 sbatch \
      --job-name=HPRC-qc-batch7 \
-     --array=[1-7,9,10]  \
+     --array=[1-10]  \
      --cpus-per-task=64 \
      --mem=400gb \
      --partition=high_priority \
