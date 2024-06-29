@@ -13,17 +13,17 @@ cd batch8
 git -C /private/groups/hprc/hprc_intermediate_assembly pull
 
 ## get sample sheet
-cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch8/HPRC_Assembly_s3Locs_batch8.csv ./
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch8/HPRC_Assembly_s3Locs_Batch8.csv ./
 
 mkdir hifiasm_input_jsons
 cd hifiasm_input_jsons
 
-## get input mapping
+## get input mapping; make sure to include q-score cutoff!
 cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch5/hifiasm_input_jsons/hifiasm_hic_input_mapping.csv ./
 
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../HPRC_Assembly_s3Locs_batch8.csv \
+     --data_table ../HPRC_Assembly_s3Locs_Batch8.csv \
      --field_mapping hifiasm_hic_input_mapping.csv \
      --workflow_name hic_hifiasm_assembly_cutadapt_multistep
 
@@ -44,12 +44,13 @@ sbatch \
      --job-name=HPRC-asm-batch8 \
      --array=[1-30] \
      --cpus-per-task=64 \
-     --mem=400gb \
+     --mem=430gb \
      --partition=high_priority \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-     --sample_csv HPRC_Assembly_s3Locs_batch8.csv \
+     --sample_csv HPRC_Assembly_s3Locs_Batch8.csv \
      --input_json_path '../hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json' 
+
 
 ###############################################################################
 ##                         Update table with outputs                         ##
@@ -58,7 +59,7 @@ sbatch \
 cd /private/groups/hprc/assembly/batch8
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch8.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_Batch8.csv  \
       --output_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
       --json_location '{sample_id}_hic_hifiasm_assembly_cutadapt_multistep_outputs.json'
 
