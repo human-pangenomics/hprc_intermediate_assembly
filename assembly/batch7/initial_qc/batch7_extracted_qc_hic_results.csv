@@ -1,0 +1,3 @@
+sample_id,hap2_num_contigs,hap2_total_len,hap2_AUN,hap2_full_sgl,hap2_full_dup,hap2_perc_sgl,hap2_qv,hap1_num_contigs,hap1_total_len,hap1_AUN,hap1_full_sgl,hap1_full_dup,hap1_perc_sgl,hap1_qv
+HG03225,69,3.0433,151.05,34618,120,0.9811608529868663,55.28,58,2.9421,144.98,34663,118,0.9823753707103516,55.83
+NA19159,55,3.0202,144.80,34601,128,0.9809066516028809,56.89,63,3.0506,146.13,34611,119,0.9809348962011015,56.95
