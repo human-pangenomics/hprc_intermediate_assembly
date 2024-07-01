@@ -195,11 +195,10 @@ cp blah.csv initial_qc/batch7_hic_t2t_counts.csv
 cp HPRC_Assembly_s3Locs_batch7*.csv \
      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch7/
 
-cp hifiasm_input_jsons/* \
-     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch7/hifiasm_input_jsons/
+cp -r hifiasm_input_jsons/ \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly/batch7/
   
-cp -r \
-     initial_qc/ \
+cp -r initial_qc/ \
      /private/groups/hprc/hprc_intermediate_assembly/assembly/batch7/
 
 ## git add, commit, push
