@@ -1,0 +1,19 @@
+{
+  "hprc_polishing_QC.polishedHap1Fasta": NaN,
+  "hprc_polishing_QC.polishedHap2Fasta": NaN,
+  "hprc_polishing_QC.polishingVcf": NaN,
+  "hprc_polishing_QC.sampleReadsIlm": [
+    "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG04187/Illumina/child/HG04187.final.cram"
+  ],
+  "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch6/HG04187/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/66831f17-f32f-4bd5-a93e-6b3323275929/HG04186.yak",
+  "hprc_polishing_QC.paternalYak": "/private/groups/hprc/assembly/batch6/HG04187/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/65f6878d-b1a0-4a4f-a6a3-811959b27592/HG04185.yak",
+  "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.rawHap1Fasta": "/private/groups/hprc/assembly/batch6/HG04187/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/2c57918f-cf1b-433a-8841-8a4a2898331c/HG04187.pat.fa.gz",
+  "hprc_polishing_QC.rawHap2Fasta": "/private/groups/hprc/assembly/batch6/HG04187/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/2c57918f-cf1b-433a-8841-8a4a2898331c/HG04187.mat.fa.gz",
+  "hprc_polishing_QC.grch38Fasta": "/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta",
+  "hprc_polishing_QC.sampleID": "HG04187",
+  "hprc_polishing_QC.yakMerylKmerSize": 31,
+  "hprc_polishing_QC.enableYakTrioEval": true
+}

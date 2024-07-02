@@ -40,12 +40,13 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 # submit job
 sbatch \
      --job-name=hprc-polishing_QC_k21-batch6 \
-     --array=[1-14]%14 \
+     --array=[1-5]%6 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
      --mail-type=FAIL,END \
      --mail-user=mmastora@ucsc.edu \
+     --exclude=phoenix-[09,10,22,23,24] \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
      --sample_csv HPRC_Assembly_s3Locs_Batch5_w_hifiasm.polished.csv \
@@ -62,3 +63,7 @@ python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_tab
       --input_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm.polished.csv \
       --output_data_table HPRC_Assembly_s3Locs_Batch5_w_hifiasm.polished.QC.k21.csv  \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
+
+
+ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
+ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
