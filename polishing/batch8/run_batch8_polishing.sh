@@ -31,12 +31,11 @@ git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 mkdir -p batch8
 cd batch8
 
-cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch7/* ./
+cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch8/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
-# submit job. skip slurm # 3,10
 sbatch \
      --job-name=hprc-DeepPolisher-batch8 \
      --array=[1-7]%7 \
@@ -60,6 +59,6 @@ cd /private/groups/hprc/polishing/batch8
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch6_w_hifiasm_w_QC.csv  \
-      --output_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.csv  \
+      --output_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.polished.csv  \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'

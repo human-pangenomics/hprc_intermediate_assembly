@@ -1,0 +1,19 @@
+{
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/hprc/polishing/batch8/HG00423/analysis/hprc_DeepPolisher_outputs/HG00423_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/hprc/polishing/batch8/HG00423/analysis/hprc_DeepPolisher_outputs/HG00423_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/hprc/polishing/batch8/HG00423/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
+  "hprc_polishing_QC.sampleReadsIlm": [
+    "s3://human-pangenomics/submissions/325b4b1c-9f20-49be-b03a-596da89c466e--1000G_CHILDREN/HG00423/1000G_data/HG00423.final.cram"
+  ],
+  "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch7/HG00423/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/4c1dda68-d7d4-48d4-9219-1fa318dff9d7/HG00422.yak",
+  "hprc_polishing_QC.paternalYak": "/private/groups/hprc/assembly/batch7/HG00423/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/d9482d86-6273-4a9c-8c07-45186ace1f09/HG00421.yak",
+  "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.rawHap1Fasta": "/private/groups/hprc/assembly/batch7/HG00423/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/b79d4388-71c2-4125-90ac-54645ce31e76/HG00423.pat.fa.gz",
+  "hprc_polishing_QC.rawHap2Fasta": "/private/groups/hprc/assembly/batch7/HG00423/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/b79d4388-71c2-4125-90ac-54645ce31e76/HG00423.mat.fa.gz",
+  "hprc_polishing_QC.grch38Fasta": "/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta",
+  "hprc_polishing_QC.sampleID": "HG00423",
+  "hprc_polishing_QC.yakMerylKmerSize": 31,
+  "hprc_polishing_QC.enableYakTrioEval": true
+}
