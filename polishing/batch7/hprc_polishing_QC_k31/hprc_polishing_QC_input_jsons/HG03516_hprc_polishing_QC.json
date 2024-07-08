@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": NaN,
-  "hprc_polishing_QC.polishedHap2Fasta": NaN,
-  "hprc_polishing_QC.polishingVcf": NaN,
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/hprc/polishing/batch7/HG03516/analysis/hprc_DeepPolisher_outputs/HG03516_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/hprc/polishing/batch7/HG03516/analysis/hprc_DeepPolisher_outputs/HG03516_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/hprc/polishing/batch7/HG03516/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "s3://human-pangenomics/working/HPRC/HG03516/raw_data/Illumina/child/HG03516.final.cram"
   ],
