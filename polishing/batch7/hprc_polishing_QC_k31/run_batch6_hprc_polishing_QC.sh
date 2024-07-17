@@ -6,7 +6,7 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/polishing/batch7/hprc_polishing_QC_k31/hprc_polishing_QC_input_jsons
+cd /Users/miramastoras/Desktop/github_repos/hprc_intermediate_assembly/polishing/batch7/hprc_polishing_QC_k31/hprc_polishing_QC_input_jsons
 
 python3 ../../../../hpc/launch_from_table.py \
      --data_table ../HPRC_Assembly_s3Locs_batch6_w_hifiasm_w_QC.polished.csv \
@@ -40,7 +40,7 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 # submit job
 sbatch \
      --job-name=hprc-polishing_QC_k31-batch7 \
-     --array=[1-2,4-9,11-14,16-19,21-25,27-40,42]%10 \
+     --array=[3,10,15,20,26,41]%10  \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \

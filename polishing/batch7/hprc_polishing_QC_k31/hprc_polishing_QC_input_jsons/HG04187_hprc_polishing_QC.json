@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": NaN,
-  "hprc_polishing_QC.polishedHap2Fasta": NaN,
-  "hprc_polishing_QC.polishingVcf": NaN,
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/hprc/polishing/batch7/HG04187/analysis/hprc_DeepPolisher_outputs/HG04187_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/hprc/polishing/batch7/HG04187/analysis/hprc_DeepPolisher_outputs/HG04187_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/hprc/polishing/batch7/HG04187/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG04187/Illumina/child/HG04187.final.cram"
   ],
