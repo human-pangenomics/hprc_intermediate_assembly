@@ -170,7 +170,6 @@ toil-wdl-runner \
     --stats \
     --clean=never \
     --batchSystem slurm \
-    --writeLogs job_logs \    
     --batchLogsDir "${SHARED_FILESYSTEM_RUNFOLDER}/toil_logs" \
     "${WDL_PATH}" \
     "${JSON_PATH}" \
