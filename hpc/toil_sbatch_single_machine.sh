@@ -165,6 +165,7 @@ toil-wdl-runner \
     --clean=never \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
+    --writeLogs "${SHARED_FILESYSTEM_RUNFOLDER}/job_logs" \
     --batchLogsDir "${SHARED_FILESYSTEM_RUNFOLDER}/toil_logs" \
     "${WDL_PATH}" \
     "${JSON_PATH}" \
