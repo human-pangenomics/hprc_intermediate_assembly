@@ -40,7 +40,7 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 # submit job
 sbatch \
      --job-name=hprc-polishing_QC_k21-batch7 \
-     --array=[1-7]%7 \
+     --array=[7]%1 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
@@ -56,12 +56,12 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/hprc/polishing/batch7/hprc_polishing_QC_k21
+cd /private/groups/hprc/polishing/batch8/hprc_polishing_QC_k21
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch6_w_hifiasm_w_QC.polished.csv \
-      --output_data_table HPRC_Assembly_s3Locs_batch6_w_hifiasm_w_QC.polished.QC.k21.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.polished.csv \
+      --output_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.polished.k21QC.csv  \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
 
 
