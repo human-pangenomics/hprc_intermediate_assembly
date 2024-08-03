@@ -1,0 +1,37 @@
+{
+  "hicHifiasmAssembly.childID": "NA18620",
+  "hicHifiasmAssembly.isMaleSample": true,
+  "hicHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/PacBio_HiFi/m84091_230703_172326_s3.hifi_reads.bc1009.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/PacBio_HiFi/m84091_230707_165735_s1.hifi_reads.bc1009.bam"
+  ],
+  "hicHifiasmAssembly.childReadsHiC1": [
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-1_FC1_S13_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-1_FC2_S13_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-2_FC1_S14_L001_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-2_FC2_S14_L001_R1_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsHiC2": [
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-1_FC1_S13_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-1_FC2_S13_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-2_FC1_S14_L001_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/hic/NA18620-2_FC2_S14_L001_R2_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/01_16_24_R1041_HPRC_NA18620_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_NA18620_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/01_16_24_R1041_HPRC_NA18620_3_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/01_16_24_R1041_HPRC_NA18620_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_NA18620_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/NA18620/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_NA18620_3_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam"
+  ],
+  "hicHifiasmAssembly.minOntReadLength": 50000,
+  "hicHifiasmAssembly.homCov": 68,
+  "hicHifiasmAssembly.filterAdapters": true,
+  "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hicHifiasmAssembly.threadCount": 64,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak",
+  "hicHifiasmAssembly.hicHifiasm.min_ont_qscore": 10
+}

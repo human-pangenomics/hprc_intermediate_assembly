@@ -1,0 +1,36 @@
+{
+  "hicHifiasmAssembly.childID": "HG00128",
+  "hicHifiasmAssembly.isMaleSample": false,
+  "hicHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/PacBio_HiFi/m84046_230617_043254_s3.hifi_reads.bc2044.bam",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/PacBio_HiFi/m84046_230602_203207_s4.hifi_reads.bc2044.bam",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/PacBio_HiFi/m84046_230617_050400_s4.hifi_reads.bc2044.bam",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/PacBio_HiFi/m84046_230630_233157_s3.bc2069--bc2069.bam"
+  ],
+  "hicHifiasmAssembly.childReadsHiC1": [
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-1_FC1_S9_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-1_FC2_S9_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-2_FC1_S10_L004_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-2_FC2_S10_L004_R1_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsHiC2": [
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-1_FC1_S9_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-1_FC2_S9_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-2_FC1_S10_L004_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/hic/HG00128-2_FC2_S10_L004_R2_001.fastq.gz"
+  ],
+  "hicHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_7_23_R1041_HPRC_HG00128_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_7_23_R1041_HPRC_HG00128_3_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG00128/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_7_23_R1041_HPRC_HG00128_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam"
+  ],
+  "hicHifiasmAssembly.minOntReadLength": 50000,
+  "hicHifiasmAssembly.homCov": 66,
+  "hicHifiasmAssembly.filterAdapters": true,
+  "hicHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hicHifiasmAssembly.threadCount": 64,
+  "hicHifiasmAssembly.chrY_no_par_yak": "/private/groups/hprc/ref_files/yak/chrY-no-par.yak",
+  "hicHifiasmAssembly.chrX_no_par_yak": "/private/groups/hprc/ref_files/yak/chrX-no-par.yak",
+  "hicHifiasmAssembly.par_yak": "/private/groups/hprc/ref_files/yak/par.yak",
+  "hicHifiasmAssembly.hicHifiasm.min_ont_qscore": 10
+}
