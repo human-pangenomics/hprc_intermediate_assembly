@@ -11,7 +11,7 @@ git clone git@github.com:human-pangenomics/hpp_production_workflows.git
 git clone git@github.com:human-pangenomics/hprc_intermediate_assembly.git
 
 ## get sample sheet
-cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch8/HPRC_Assembly_s3Locs_Batch8.csv ./
+cp /private/groups/hprc/hprc_intermediate_assembly/assembly/batch8/HPRC_Assembly_s3Locs_batch8.csv ./
 
 mkdir hifiasm_input_jsons
 cd hifiasm_input_jsons
@@ -20,7 +20,7 @@ cd hifiasm_input_jsons
 # create hifiasm_hic_input_mapping.csv
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../HPRC_Assembly_s3Locs_Batch8.csv \
+     --data_table ../HPRC_Assembly_s3Locs_batch8.csv \
      --field_mapping hifiasm_hic_input_mapping.csv \
      --workflow_name hic_hifiasm_assembly_cutadapt_multistep
 
@@ -55,7 +55,7 @@ sbatch \
      --partition=high_priority \
      /private/groups/hprc/assembly/batch8/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/assembly/batch8/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-     --sample_csv /private/groups/hprc/assembly/batch8/HPRC_Assembly_s3Locs_Batch8.csv \
+     --sample_csv /private/groups/hprc/assembly/batch8/HPRC_Assembly_s3Locs_batch8.csv \
      --input_json_path '/private/groups/hprc/assembly/batch8/hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json'
 
 ###############################################################################
@@ -65,7 +65,7 @@ sbatch \
 cd /private/groups/hprc/assembly/batch8
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_Batch8.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch8.csv  \
       --output_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
       --json_location '{sample_id}_hic_hifiasm_assembly_cutadapt_multistep_outputs.json'
 
