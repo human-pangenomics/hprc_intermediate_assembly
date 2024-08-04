@@ -19,20 +19,23 @@ cd hifiasm_input_jsons
 ## get input mapping; make sure to include q-score cutoff!
 # create hifiasm_hic_input_mapping.csv
 
-python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../HPRC_Assembly_s3Locs_batch8.csv \
-     --field_mapping hifiasm_hic_input_mapping.csv \
-     --workflow_name hic_hifiasm_assembly_cutadapt_multistep
-
 # ```rmarkdown
-# Review parameters with hifiasm_hic_input_mapping using womtools.
+
+# Review parameters with hifiasm_hic_input_mapping using womtools
 
 # java -jar /private/groups/hprc/human-pangenomics/cromwell/womtool-54.jar \
 #   inputs \
 # 	/private/groups/hprc/assembly/batch8/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl  \
 #   | grep -v "optional"
 
+
 # ```
+
+
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
+     --data_table ../HPRC_Assembly_s3Locs_Batch8.csv \
+     --field_mapping hifiasm_hic_input_mapping.csv \
+     --workflow_name hic_hifiasm_assembly_cutadapt_multistep
 
 
 ###############################################################################
@@ -55,7 +58,7 @@ sbatch \
      --partition=high_priority \
      /private/groups/hprc/assembly/batch8/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/assembly/batch8/hpp_production_workflows/assembly/wdl/workflows/hic_hifiasm_assembly_cutadapt_multistep.wdl \
-     --sample_csv /private/groups/hprc/assembly/batch8/HPRC_Assembly_s3Locs_batch8.csv \
+     --sample_csv /private/groups/hprc/assembly/batch8/HPRC_Assembly_s3Locs_Batch8.csv \
      --input_json_path '/private/groups/hprc/assembly/batch8/hifiasm_input_jsons/${SAMPLE_ID}_hic_hifiasm_assembly_cutadapt_multistep.json'
 
 ###############################################################################
@@ -65,7 +68,7 @@ sbatch \
 cd /private/groups/hprc/assembly/batch8
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch8.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_Batch8.csv  \
       --output_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
       --json_location '{sample_id}_hic_hifiasm_assembly_cutadapt_multistep_outputs.json'
 
@@ -104,15 +107,6 @@ sbatch \
      --sample_csv HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
      --input_json_path '/private/groups/hprc/assembly/batch8/initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json'
 
-# ```rmarkdown
-# Review comparison_qc.wdl parameters 
-
-# java -jar /private/groups/hprc/human-pangenomics/cromwell/womtool-54.jar \
-#   inputs \
-# 	/private/groups/hprc/assembly/batch8/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl  \
-#   | grep -v "optional"
-# ```
-
 ###############################################################################
 ##                           Create QC Input JSONs                           ##   
 ###############################################################################
@@ -146,8 +140,8 @@ sbatch \
      --job-name=HPRC-qc-batch8 \
      --array=[1-30]%30 \
      --partition=high_priority \
-     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
-     --wdl /private/home/juklucas/github/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
+     /private/groups/hprc/assembly/batch8/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
+     --wdl /private/groups/hprc/assembly/batch8/hpp_production_workflows/QC/wdl/workflows/comparison_qc.wdl \
      --sample_csv HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
      --input_json_path '../initial_qc/qc_input_jsons/${SAMPLE_ID}_initial_qc.json'
 
