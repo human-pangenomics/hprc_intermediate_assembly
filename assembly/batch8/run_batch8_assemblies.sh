@@ -19,9 +19,14 @@ cd hifiasm_input_jsons
 ## get input mapping; make sure to include q-score cutoff!
 # create hifiasm_hic_input_mapping.csv
 
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
+     --data_table ../HPRC_Assembly_s3Locs_batch8.csv \
+     --field_mapping hifiasm_hic_input_mapping.csv \
+     --workflow_name hic_hifiasm_assembly_cutadapt_multistep
+
 # ```rmarkdown
 
-# Review parameters with hifiasm_hic_input_mapping using womtools
+# Review parameters for hifiasm_hic_input_mapping using womtools
 
 # java -jar /private/groups/hprc/human-pangenomics/cromwell/womtool-54.jar \
 #   inputs \
@@ -30,12 +35,6 @@ cd hifiasm_input_jsons
 
 
 # ```
-
-
-python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../HPRC_Assembly_s3Locs_Batch8.csv \
-     --field_mapping hifiasm_hic_input_mapping.csv \
-     --workflow_name hic_hifiasm_assembly_cutadapt_multistep
 
 
 ###############################################################################
