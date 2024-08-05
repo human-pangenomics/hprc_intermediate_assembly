@@ -167,14 +167,25 @@ sbatch \
 
 cd /private/groups/hprc/assembly/batch9
 
-## collect location of QC results
-python3 /private/groups/hprc/assembly/batch8/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch9_hic_w_hifiasm.csv  \
-      --output_data_table HPRC_Assembly_s3Locs_batch9_hic_w_hifiasm_w_QC.csv  \
+# collect location of QC results
+python3 /private/groups/hprc/assembly/batch9/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+      --input_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm.csv  \
+      --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC.csv  \
       --json_location '{sample_id}_comparison_qc_outputs.json'
 
-python3 /private/groups/hprc/assembly/batch8/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-     --input_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm.csv  \
-     --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC.csv  \
+# collect location of QC results
+python3 /private/groups/hprc/assembly/batch9/hprc_intermediate_assembly/hpc/misc/extract_initial_qc.py \
+     --qc_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC.csv \
+     --extract_column_name filtQCStats \
+     --output initial_qc/batch9_extracted_qc_trio_results.csv
+
+# hic
+python3 /private/groups/hprc/assembly/batch9/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
+     --input_data_table HPRC_Assembly_s3Locs_batch9_hic_w_hifiasm.csv  \
+     --output_data_table HPRC_Assembly_s3Locs_batch9_hic_w_hifiasm_w_QC.csv  \
      --json_location '{sample_id}_comparison_qc_outputs.json'
 
+python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_initial_qc_non_trio.py \
+     --qc_data_table HPRC_Assembly_s3Locs_batch9_hic_w_hifiasm_w_QC.csv \
+     --extract_column_name filtQCStats \
+     --output initial_qc/batch9_extracted_qc_hic_results.csv
