@@ -1,0 +1,13 @@
+﻿input,type,value
+trioHifiasmAssembly.childID,scalar,$input.sample_id
+trioHifiasmAssembly.paternalID,scalar,$input.paternal_id
+trioHifiasmAssembly.maternalID,scalar,$input.maternal_id
+trioHifiasmAssembly.childReadsHiFi,array,$input.hifi
+trioHifiasmAssembly.paternalReadsILM,array,$input.pat_ilmn
+trioHifiasmAssembly.maternalReadsILM,array,$input.mat_ilmn
+trioHifiasmAssembly.childReadsONT,array,$input.nanopore
+trioHifiasmAssembly.minOntReadLength,scalar,50000
+trioHifiasmAssembly.homCov,scalar,$input.hifi_cov
+trioHifiasmAssembly.filterAdapters,scalar,TRUE
+trioHifiasmAssembly.referenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
+trioHifiasmAssembly.threadCount,scalar,64
