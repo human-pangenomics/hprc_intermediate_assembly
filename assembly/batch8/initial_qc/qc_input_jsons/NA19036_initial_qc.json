@@ -1,0 +1,21 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "NA19036",
+  "comparisonQC.breakFasta": false,
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch8/NA19036/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/f3927b3d-483c-4e46-a014-97250a94f08a/NA19036.hap1.xygrouped.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch8/NA19036/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/f3927b3d-483c-4e46-a014-97250a94f08a/NA19036.hap2.xygrouped.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/working/HPRC/NA19036/raw_data/Illumina/child/NA19036.final.cram"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "comparisonQC.x_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoY_odb10_mb_download.tar.gz",
+  "comparisonQC.y_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoX_odb10_mb_download.tar.gz",
+  "comparisonQC.x_hap_compleasm_lineage": "primatesnoY_odb10",
+  "comparisonQC.y_hap_compleasm_lineage": "primatesnoX_odb10",
+  "comparisonQC.isMaleSample": false
+}

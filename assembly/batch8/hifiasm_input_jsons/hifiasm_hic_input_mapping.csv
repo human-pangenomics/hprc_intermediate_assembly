@@ -1,0 +1,16 @@
+﻿input,type,value
+hicHifiasmAssembly.childID,scalar,$input.sample_id
+hicHifiasmAssembly.isMaleSample,scalar,$input.isMaleSample
+hicHifiasmAssembly.childReadsHiFi,array,$input.hifi
+hicHifiasmAssembly.childReadsHiC1,array,$input.hic_r1
+hicHifiasmAssembly.childReadsHiC2,array,$input.hic_r2
+hicHifiasmAssembly.childReadsONT,array,$input.nanopore
+hicHifiasmAssembly.minOntReadLength,scalar,50000
+hicHifiasmAssembly.homCov,scalar,$input.hifi_cov
+hicHifiasmAssembly.filterAdapters,scalar,TRUE
+hicHifiasmAssembly.referenceFasta,scalar,/private/groups/hprc/ref_files/grch38/hs38DH.fa
+hicHifiasmAssembly.threadCount,scalar,64
+hicHifiasmAssembly.chrY_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrY-no-par.yak
+hicHifiasmAssembly.chrX_no_par_yak,scalar,/private/groups/hprc/ref_files/yak/chrX-no-par.yak
+hicHifiasmAssembly.par_yak,scalar,/private/groups/hprc/ref_files/yak/par.yak
+hicHifiasmAssembly.hicHifiasm.min_ont_qscore,scalar,10
