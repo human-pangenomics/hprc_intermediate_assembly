@@ -1,0 +1,18 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/01_23_24_R1041_HPRC_HG03874_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_HG03874_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_HG03874_3_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/11_14_23_R1041_HPRC_HG03874_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/01_23_24_R1041_HPRC_HG03874_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/PacBio_HiFi/m84091_230712_163213_s1.hifi_reads.bc1012.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/PacBio_HiFi/m84091_230719_155016_s1.hifi_reads.bc1012.bam",
+    "s3://human-pangenomics/working/HPRC/HG03874/raw_data/PacBio_HiFi/m84091_230731_130312_s1.hifi_reads.bc1012.bam"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch8/HG03874/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/0c5766a9-295b-4233-93b1-33f91705ae8b/HG03874.hap1.xygrouped.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch8/HG03874/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/0c5766a9-295b-4233-93b1-33f91705ae8b/HG03874.hap2.xygrouped.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG03874"
+}
