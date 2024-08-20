@@ -12,5 +12,7 @@
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch8/HG00867/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/535d7670-31f7-4ed9-82fb-cb9c502a566a/HG00867.hap1.xygrouped.fa.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch8/HG00867/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/535d7670-31f7-4ed9-82fb-cb9c502a566a/HG00867.hap2.xygrouped.fa.gz",
   "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
-  "hprc_DeepPolisher.sampleName": "HG00867"
+  "hprc_DeepPolisher.sampleName": "HG00867",
+  "hprc_DeepPolisher.enableHiFiDownsampling":true,
+  "hprc_DeepPolisher.HiFiDownsamplingCoverage":40
 }

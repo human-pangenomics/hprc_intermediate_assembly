@@ -65,5 +65,5 @@ python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_tab
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
 
 
-ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
-ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
+ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch7_k31.csv
+ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch7_k31.csv

@@ -46,7 +46,7 @@ sbatch \
      --mem=400gb \
      --mail-type=FAIL,END \
      --mail-user=mmastora@ucsc.edu \
-     --exclude=phoenix-[09,10,22,23,24] \
+     --exclude=phoenix-[09,10,22,23,24,18] \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC.wdl \
      --sample_csv HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.polished.csv \
@@ -65,5 +65,5 @@ python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_tab
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
 
 
-ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
-ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples.csv
+ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k21.csv
+ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k21.csv

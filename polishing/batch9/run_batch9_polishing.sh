@@ -38,16 +38,34 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 sbatch \
      --job-name=hprc-DeepPolisher-batch9 \
-     --array=[1-30]%30 \
+     --array=[29]%1 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
      --mail-type=FAIL,END \
+     --ntasks-per-node=1 \
+     --nodelist=phoenix-03 \
      --exclude=phoenix-[09,10,22,23,24,18] \
-     --ntasks-per-node=2 \
      --mail-user=mmastora@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
+     --sample_csv HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
+     --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
+
+
+# trying out downsampling wdl on number 8
+sbatch \
+     --job-name=hprc-DeepPolisher-batch9 \
+     --array=[8]%1 \
+     --partition=high_priority \
+     --cpus-per-task=32 \
+     --mem=400gb \
+     --exclude=phoenix-[09,10,22,23,24,18] \
+     --mail-type=FAIL,END \
+     --ntasks-per-node=1 \
+     --mail-user=mmastora@ucsc.edu \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+     --wdl /private/home/mmastora/progs/polishing_branch_hpp_master/hpp_production_workflows/polishing/wdl/workflows/hprc_DeepPolisher.wdl \
      --sample_csv HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv \
      --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
 
@@ -55,10 +73,10 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/hprc/polishing/batch8
+cd /private/groups/hprc/polishing/batch9
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.csv  \
-      --output_data_table HPRC_Assembly_s3Locs_batch7_trioandhic_for_polishing.polished.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv  \
+      --output_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.polished.csv  \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'
