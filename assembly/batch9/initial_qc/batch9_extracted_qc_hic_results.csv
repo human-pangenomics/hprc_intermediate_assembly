@@ -1,0 +1,2 @@
+sample_id,hap2_num_contigs,hap2_total_len,hap2_AUN,hap2_full_sgl,hap2_full_dup,hap2_perc_sgl,hap2_qv,hap1_num_contigs,hap1_total_len,hap1_AUN,hap1_full_sgl,hap1_full_dup,hap1_perc_sgl,hap1_qv
+NA20799,53,3.0206,143.41,34739,114,0.9844089817822341,56.43,78,3.0466,139.25,34738,117,0.9844654709786753,56.02
