@@ -38,7 +38,7 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 sbatch \
      --job-name=hprc-DeepPolisher-batch10 \
-     --array=[1-5]%5 \
+     --array=[4]%1 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
@@ -55,10 +55,10 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/hprc/polishing/batch9
+cd /private/groups/hprc/polishing/batch10
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.csv  \
-      --output_data_table HPRC_Assembly_s3Locs_batch8_w_hifiasm.polished.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.csv  \
+      --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.csv  \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'
