@@ -14,6 +14,6 @@
   "hprc_polishing_QC.rawHap2Fasta": "/private/groups/hprc/assembly/batch9/HG02841/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/90ef24d4-b0be-4bb9-9a3b-8a209b66d336/HG02841.mat.fa.gz",
   "hprc_polishing_QC.grch38Fasta": "/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta",
   "hprc_polishing_QC.sampleID": "HG02841",
-  "hprc_polishing_QC.yakMerylKmerSize": 31,
+  "hprc_polishing_QC.yakMerylKmerSize": 21,
   "hprc_polishing_QC.enableYakTrioEval": true
 }
