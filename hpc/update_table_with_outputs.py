@@ -105,11 +105,12 @@ def update_csv_with_json(csv_file_path, output_csv_path, json_pattern, mapping_c
                         fieldnames.append(column_name)
                         header_updated = True
 
-                    # Check if value is not None before joining
-                    if value is not None:
+                    if isinstance(value, list):
+                        value_with_path = json.dumps(value)
+                    elif value is not None:
                         value_with_path = os.path.join(sample_dir, value)
                     else:
-                        value_with_path = "N/A"  # or any other placeholder you prefer for None values
+                        value_with_path = "N/A" 
 
                     row[column_name] = value_with_path
 
