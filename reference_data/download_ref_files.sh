@@ -28,6 +28,53 @@ gsutil cp \
     gs://fc-5e531b40-db4b-4522-b4a6-99295c647c25/ref_files/chm13v2.0_SD.flattened.bed \
     /private/groups/hprc/ref_files/chm13/
 
+## PARs
+aws s3 cp \
+    s3://human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0_PAR.bed \
+    /private/groups/hprc/ref_files/chm13/
+
+
+awk 'BEGIN{OFS="\t"} {print $1, $2, $3, "censat"}' /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed \
+    | cat - <(awk 'BEGIN{OFS="\t"} {print $1, $2, $3, "par"}' /private/groups/hprc/ref_files/chm13/chm13v2.0_PAR.bed ) \
+    | sort -k1,1 -k2,2n \
+    | bedtools merge \
+        -i - \
+        -d 10000 \
+        | awk 'BEGIN{OFS="\t"} {if ($3 - $2 >= 1000000) {print $1, $2, $3, "censat_or_par";}}' \
+    > /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_par_10k_merge_gt1mbp.bed
+
+## misjoin check centromere + PAR bed file
+## note 1: adding PARs to avoid false positives in those regions (only PAR1 will be kept)
+## note 2: only keep large (1Mbp) sequences because we want to detect large events
+cat \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_PAR.bed \
+    | grep -vP '\t.*\(q_arm|\t.*\(p_arm' \
+    | awk 'BEGIN{OFS="\t"} {if ($3 - $2 >= 1000) print $1, $2, $3, "censat_or_par";}' \
+    | sort -k1,1 -k2,2n \
+    | bedtools merge \
+    -i - \
+    -d 10000 \
+    | awk 'BEGIN{OFS="\t"} {if ($3 - $2 >= 1000000) print $1, $2, $3, "censat_or_par";}' \
+    > /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_par_10k_merge_gt1mbp.bed
+    
+
+cat \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_PAR.bed \
+    | awk 'BEGIN{OFS="\t"} $4 !~ /^ct_/ {print $1, $2, $3, "censat_or_par";}' \
+    | sort -k1,1 -k2,2n \
+    | bedtools merge \
+    -i - \
+    -d 10000 \
+    | awk 'BEGIN{OFS="\t"} {if ($3 - $2 >= 500000) print $1, $2, $3, "censat_or_par";}' \
+    > /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_par_10k_merge_gt1mbp.bed
+
+cat \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed \
+    /private/groups/hprc/ref_files/chm13/chm13v2.0_PAR.bed \
+    | awk 'BEGIN{OFS="\t"} $4 !~ /^ct_/ {print $0;}' 
+
 
 ###############################################################################
 ##                                   GRCh38                                  ##
@@ -55,6 +102,7 @@ cd /private/groups/hprc/ref_files/grch38
 wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz
 gunzip /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz
 samtools faidx /private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta
+
 
 ###############################################################################
 ##                              GIAB bed files                              ##
@@ -182,29 +230,12 @@ if __name__ == '__main__':
 EOF
 
 
-## create concatenated reference for mapping (to avoid problems with circularization)
-python3 << 'EOF'
+###############################################################################
+##                               NCBI's Blast DB For Mito                    ##
+###############################################################################
 
-from Bio import SeqIO
+## Currently FCS doesn't find all mito sequences. Use this DB to emulate
+## Genbanks mito screening process.
+wget -O /private/groups/hprc/ref_files/mito/ncbi_mito_blast_db_v1.1.tar.gz \
+    https://ftp.ncbi.nlm.nih.gov/blast/db/mito.tar.gz
 
-def concatenate_fasta_sequences(file1, file2, output_file):
-    # Read the sequences from the input FASTA files
-    seq1 = SeqIO.read(file1, "fasta")
-    seq2 = SeqIO.read(file2, "fasta")
-    
-    # Concatenate the sequences
-    concatenated_sequence = seq1.seq + seq2.seq
-    
-    # Create a new SeqRecord with the concatenated sequence
-    concatenated_record = SeqIO.SeqRecord(concatenated_sequence, id=seq1.id, description=seq1.description)
-    
-    # Write the concatenated sequence to the output FASTA file
-    SeqIO.write(concatenated_record, output_file, "fasta")
-
-
-file1 = "rcrs_reference/NC_012920.1.fasta"
-output_file = "rcrs_reference/NC_012920.1_concat.fasta"
-
-concatenate_fasta_sequences(file1, file1, output_file)
-
-EOF
