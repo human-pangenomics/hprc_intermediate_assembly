@@ -6,7 +6,7 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/github_repos/hprc_intermediate_assembly/polishing/batch10/hprc_polishing_QC_k31/hprc_polishing_QC_input_jsons
+cd /Users/miramastoras/Desktop/github_repos/hprc_intermediate_assembly/polishing/batch10/hprc_polishing_QC_k21/hprc_polishing_QC_input_jsons
 
 python3 ../../../../hpc/launch_from_table.py \
      --data_table ../HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.csv \
@@ -28,19 +28,19 @@ git -C /private/groups/hprc/polishing/hprc_intermediate_assembly pull
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
-mkdir -p hprc_polishing_QC_k31
-cd hprc_polishing_QC_k31
+mkdir -p hprc_polishing_QC_k21
+cd hprc_polishing_QC_k21
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch10/hprc_polishing_QC_k31/* ./
+cp -r /private/groups/hprc/polishing/hprc_intermediate_assembly/polishing/batch10/hprc_polishing_QC_k21/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 # submit job
 sbatch \
-     --job-name=hprc-polishing_QC_k31-batch10 \
-     --array=[1-3,5]%5 \
+     --job-name=hprc-polishing_QC_k21-batch10 \
+     --array=[4]%5 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
@@ -56,14 +56,14 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/hprc/polishing/batch10/hprc_polishing_QC_k31
+cd /private/groups/hprc/polishing/batch10/hprc_polishing_QC_k21
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.csv \
-      --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.k31QC.csv \
+      --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.k21QC.csv \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
 
 
-ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k31.csv
-ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k31.csv
+ls | grep "HG" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k21.csv
+ls | grep "NA" | while read line ; do echo $line ; cat $line/analysis/hprc_polishing_QC_outputs/${line}.polishing.QC.csv  ; done >> all_samples_batch8_k21.csv
