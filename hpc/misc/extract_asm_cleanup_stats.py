@@ -25,7 +25,7 @@ def read_report_file(file_path):
             skip_lines += 1
             if line.startswith("##"):
                 continue  # Skip comment lines
-            elif line.startswith("# Related")
+            elif line.startswith("# Related"):
                 continue # skip mitohifi stats pre-header line
             elif line.startswith("#"):
                 header_line = line[1:].strip()  # Strip the leading '#' from the header
