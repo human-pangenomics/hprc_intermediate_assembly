@@ -5,8 +5,8 @@
   "hprc_polishing_QC.sampleReadsIlm": [
     "s3://human-pangenomics/submissions/325b4b1c-9f20-49be-b03a-596da89c466e--1000G_CHILDREN/NA20799/1000G_data/NA20799.final.cram"
   ],
-  "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch9/NA20799/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/105452e5-81cd-408c-8f94-39dde668a72e/NA20799.hap1.xygrouped.fa.gz",
-  "hprc_polishing_QC.paternalYak": "/private/groups/hprc/assembly/batch9/NA20799/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/105452e5-81cd-408c-8f94-39dde668a72e/NA20799.hap1.xygrouped.fa.gz",
+  "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch9/NA20799/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/105452e5-81cd-408c-8f94-39dde668a72e/NA20799.hap2.xygrouped.fa.gz",
+  "hprc_polishing_QC.paternalYak": "/private/groups/hprc/assembly/batch9/NA20799/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/105452e5-81cd-408c-8f94-39dde668a72e/NA20799.hap2.xygrouped.fa.gz",
   "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
   "hprc_polishing_QC.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
   "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",
