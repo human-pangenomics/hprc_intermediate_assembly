@@ -92,6 +92,9 @@ def main():
 
     args = parser.parse_args()
 
+    input_csv     = args.input_csv
+    output_prefix = args.output_prefix
+
     # Read input CSV
     input_df = pd.read_csv(args.input_csv)
 
