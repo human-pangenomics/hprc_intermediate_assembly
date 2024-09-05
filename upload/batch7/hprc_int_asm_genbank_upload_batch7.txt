@@ -1,0 +1,13 @@
+biosample_accession	sample_name	haplotype	bioproject_accession	bioproject_description	umbrella_bp	filename	assembly_date	assembly_name	assembly_method	assembly_method_version	genome_coverage	sequencing_technology	reference_genome	update_for
+SAMN26237490		paternal		Assembly of HG00423 paternal haplotype.		HG00423.hap1_for_genbank.fa.gz	2024-09	HG00423_pat_hprc_f2	Hifiasm	0.19.9	61X	"PacBio, Oxford Nanopore"		
+SAMN26237491		paternal		Assembly of HG00544 paternal haplotype.		HG00544.hap1_for_genbank.fa.gz	2024-09	HG00544_pat_hprc_f2	Hifiasm	0.19.9	67X	"PacBio, Oxford Nanopore"		
+SAMN26237499		paternal		Assembly of HG01943 paternal haplotype.		HG01943.hap1_for_genbank.fa.gz	2024-09	HG01943_pat_hprc_f2	Hifiasm	0.19.9	67X	"PacBio, Oxford Nanopore"		
+SAMN33758787		paternal		Assembly of HG02735 paternal haplotype.		HG02735.hap1_for_genbank.fa.gz	2024-09	HG02735_pat_hprc_f2	Hifiasm	0.19.9	65X	"PacBio, Oxford Nanopore"		
+SAMN26237490		maternal		Assembly of HG00423 maternal haplotype.		HG00423.hap2_for_genbank.fa.gz	2024-09	HG00423_mat_hprc_f2	Hifiasm	0.19.9	61X	"PacBio, Oxford Nanopore"		
+SAMN26237491		maternal		Assembly of HG00544 maternal haplotype.		HG00544.hap2_for_genbank.fa.gz	2024-09	HG00544_mat_hprc_f2	Hifiasm	0.19.9	67X	"PacBio, Oxford Nanopore"		
+SAMN26237499		maternal		Assembly of HG01943 maternal haplotype.		HG01943.hap2_for_genbank.fa.gz	2024-09	HG01943_mat_hprc_f2	Hifiasm	0.19.9	67X	"PacBio, Oxford Nanopore"		
+SAMN33758787		maternal		Assembly of HG02735 maternal haplotype.		HG02735.hap2_for_genbank.fa.gz	2024-09	HG02735_mat_hprc_f2	Hifiasm	0.19.9	65X	"PacBio, Oxford Nanopore"		
+SAMN33621957		haplotype 1		Assembly of HG03225 haplotype 1.		HG03225.hap1_for_genbank.fa.gz	2024-09	HG03225_hap1_hprc_f2	Hifiasm	0.19.9	75X	"PacBio, Oxford Nanopore"		
+SAMN37797089		haplotype 1		Assembly of NA19159 haplotype 1.		NA19159.hap1_for_genbank.fa.gz	2024-09	NA19159_hap1_hprc_f2	Hifiasm	0.19.9	65X	"PacBio, Oxford Nanopore"		
+SAMN33621957		haplotype 2		Assembly of HG03225 haplotype 2.		HG03225.hap2_for_genbank.fa.gz	2024-09	HG03225_hap2_hprc_f2	Hifiasm	0.19.9	75X	"PacBio, Oxford Nanopore"		
+SAMN37797089		haplotype 2		Assembly of NA19159 haplotype 2.		NA19159.hap2_for_genbank.fa.gz	2024-09	NA19159_hap2_hprc_f2	Hifiasm	0.19.9	65X	"PacBio, Oxford Nanopore"		

@@ -1,19 +1,12 @@
 
-cd /private/groups/hprc/genbank_upload/batch1
+cd /private/groups/hprc/genbank_upload/
 
+mkdir -p batch3
+cd batch3
 
 ###############################################################################
 ##                            Run Cleanup WDL                                ##
 ###############################################################################
-
-## copy in polishing results
-cp /private/groups/hprc/hprc_intermediate_assembly/polishing/batch2/apply_GQ_filter/hprc_polishing_QC_k31/intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv ./
-
-
-## remove HG01975 until we figure out if it has a misjoin or a robertsonian
-## translocation with chr13/chr21 q-arms
-grep -v "HG01975" intermAssembl_batch1_sample_table_20231204_WUSTLonly_s3_mira_polishing_batch2_noTopUp_updated.filterVcf.polished.csv \
- > hprc_int_asm_batch1_polished.csv
 
 cat <<EOF > assembly_cleanup_input_mapping.csv
 input,type,value
@@ -32,12 +25,21 @@ assembly_cleanup_wf.related_mito_fasta,scalar,/private/groups/hprc/ref_files/mit
 assembly_cleanup_wf.related_mito_genbank,scalar,/private/groups/hprc/ref_files/mito/rcrs_reference/NC_012920.1.gb
 EOF
 
+
+## copy in polishing results
+cp /private/groups/hprc/hprc_intermediate_assembly/polishing/batch4/apply_GQ_filter/hprc_polishing_QC_k31/HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv ./
+
+## no need to filter out any samples (which feels weird)
+cat \
+    HPRC_Intermediate_Assembly_s3Locs_Batch3_w_hifiasm_w_qc.polished.filterVcf.polished.csv \
+    > hprc_int_asm_batch3_polished.csv
+
 mkdir input_jsons
 cd input_jsons
 
 ## create input jsons for assembly cleanup
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/launch_from_table.py \
-     --data_table ../hprc_int_asm_batch1_polished.csv \
+     --data_table ../hprc_int_asm_batch3_polished.csv \
      --field_mapping ../assembly_cleanup_input_mapping.csv \
      --workflow_name assembly_cleanup
 
@@ -47,18 +49,30 @@ mkdir -p slurm_logs
 
 ## run assembly cleanup
 sbatch \
-     --job-name=HPRC-cleanup \
-     --array=[1-9] \
+     --job-name=cleanup_b3 \
+     --array=[1-17] \
      --partition=long \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
      --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/assembly_cleanup.wdl \
-     --sample_csv hprc_int_asm_batch1_polished.csv \
+     --sample_csv hprc_int_asm_batch3_polished.csv \
+     --input_json_path '../input_jsons/${SAMPLE_ID}_assembly_cleanup.json' 
+
+
+rm -rf HG02486
+
+sbatch \
+     --job-name=cleanup_b3 \
+     --array=[2] \
+     --partition=long \
+     /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_slurm.sh \
+     --wdl /private/home/juklucas/github/hpp_production_workflows/assembly/wdl/workflows/assembly_cleanup.wdl \
+     --sample_csv hprc_int_asm_batch3_polished.csv \
      --input_json_path '../input_jsons/${SAMPLE_ID}_assembly_cleanup.json' 
 
 ## collect results into data table    
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-    --input_data_table hprc_int_asm_batch1_polished.csv \
-    --output_data_table batch1_genbank_upload_prep_outputs.csv  \
+    --input_data_table hprc_int_asm_batch3_polished.csv \
+    --output_data_table batch3_genbank_upload_prep_outputs.csv  \
     --json_location '{sample_id}_assembly_cleanup_outputs.json'
 
 
@@ -70,20 +84,21 @@ mkdir asm_cleanup_stats
 cd asm_cleanup_stats
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/extract_asm_cleanup_stats.py \
-    --input_csv ../batch1_genbank_upload_prep_outputs.csv \
-    --output_prefix hprc_int_asm_batch1
+    --input_csv ../batch3_genbank_upload_prep_outputs.csv \
+    --output_prefix hprc_int_asm_batch3
 
 
 ###############################################################################
 ##                  Soft Link Assemblies To Upload Folder                    ##
 ###############################################################################
 
-cd /private/groups/hprc/genbank_upload/batch1/
+cd /private/groups/hprc/genbank_upload/batch3/
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/link_to_folder.py \
-    --data_table_csv batch1_genbank_upload_prep_outputs.csv \
+    --data_table_csv batch3_genbank_upload_prep_outputs.csv \
     --columns_to_link hap1_output_fasta_gz hap2_output_fasta_gz \
-    --target_dir batch1_genbank_upload_pt1
+    --target_dir batch3_genbank_upload
+
 
 ###############################################################################
 ##                      Upload Assemblies To Genbank                         ##
@@ -94,16 +109,18 @@ ascp \
     -QT \
     -l100m \
     -k1 \
-    -d batch1_genbank_upload_pt1 \
-    subasp@upload.ncbi.nlm.nih.gov:uploads/juklucas_ucsc.edu_tD3gRQfz/int_asm_batch1_pt1_rerun
+    -d batch3_genbank_upload \
+    subasp@upload.ncbi.nlm.nih.gov:uploads/juklucas_ucsc.edu_tD3gRQfz/int_asm_batch3
 
 
 ###############################################################################
 ##                      Upload Assemblies To S3.                             ##
 ###############################################################################
 
-mkdir batch1_s3_upload_pt1
-cd batch1_s3_upload_pt1
+cd /private/groups/hprc/genbank_upload/batch3
+
+mkdir batch3_s3_upload
+cd batch3_s3_upload
 
 cat <<EOF > upload_linking_map.csv
 column_name,destination
@@ -124,15 +141,14 @@ hap1_output_fasta_gz,upload/{sample_id}/assemblies/freeze_2/assembly_pipeline/nc
 EOF
 
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/misc/link_to_subfolder.py \
-     --csv_file ../batch1_genbank_upload_prep_outputs.csv \
+     --csv_file ../batch3_genbank_upload_prep_outputs.csv \
      --mapping_csv upload_linking_map.csv
 
 
 ssds staging upload \
     --submission-id DC27718F-5F38-43B0-9A78-270F395F13E8 \
-    --name INT_ASM_PRODUCTION \
     upload \
-    &>>batch1_s3_upload_pt1.upload.stderr
+    &>>batch3_s3_upload_pt1.upload.stderr
 
 
 ###############################################################################
