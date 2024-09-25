@@ -1,0 +1,37 @@
+{
+  "trioHifiasmAssembly.childID": "HG005",
+  "trioHifiasmAssembly.paternalID": "HG006",
+  "trioHifiasmAssembly.maternalID": "HG007",
+  "trioHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200723_190224.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200730_190124.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200801_011415.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200802_073944.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200304_195708.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200309_192110.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200311_013444.dc.q20.fastq.gz"
+  ],
+  "trioHifiasmAssembly.paternalReadsILM": [
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/raw_data/Illumina/parents/HG006/brain-genomics/HG006.novaseq.pcr-free.30x.R1.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/raw_data/Illumina/parents/HG006/brain-genomics/HG006.novaseq.pcr-free.30x.R2.fastq.gz"
+  ],
+  "trioHifiasmAssembly.maternalReadsILM": [
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/raw_data/Illumina/parents/HG007/brain-genomics/HG007.novaseq.pcr-free.30x.R1.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/raw_data/Illumina/parents/HG007/brain-genomics/HG007.novaseq.pcr-free.30x.R2.fastq.gz"
+  ],
+  "trioHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_3X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_2.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_3.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/HG005_Circulomics_GridION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/HG005_Circulomics_GridION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/HG005_Circulomics_PromethION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/HG005_Circulomics_PromethION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "trioHifiasmAssembly.minOntReadLength": 50000,
+  "trioHifiasmAssembly.homCov": 57,
+  "trioHifiasmAssembly.filterAdapters": true,
+  "trioHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "trioHifiasmAssembly.threadCount": 64
+}
