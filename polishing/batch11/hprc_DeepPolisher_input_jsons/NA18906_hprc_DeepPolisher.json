@@ -1,0 +1,17 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/submissions/3471c92c-5b6a-4c20-9953-13e3a851debc--UCSC_HPRC_PLUS_nanopore_WashU_samples/GM18906/02_15_23_R1041_GM18906_1_Guppy_6.4.6_prom_sup_pass.bam",
+    "s3://human-pangenomics/submissions/3471c92c-5b6a-4c20-9953-13e3a851debc--UCSC_HPRC_PLUS_nanopore_WashU_samples/GM18906/02_15_23_R1041_GM18906_2_Guppy_6.4.6_prom_sup_pass.bam",
+    "s3://human-pangenomics/submissions/3471c92c-5b6a-4c20-9953-13e3a851debc--UCSC_HPRC_PLUS_nanopore_WashU_samples/GM18906/02_15_23_R1041_GM18906_3_Guppy_6.4.6_prom_sup_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/NA18906/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA18906.m64136_200521_171936.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/NA18906/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA18906.m64136_200523_195722.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/NA18906/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA18906.m64136_200525_021027.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/NA18906/raw_data/PacBio_HiFi/deepconsensus/v1pt2/NA18906.m64136_200526_083627.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch10/NA18906/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/a70fab8a-9d67-4d29-bd86-936b08331ef8/NA18906.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch10/NA18906/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/a70fab8a-9d67-4d29-bd86-936b08331ef8/NA18906.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "NA18906"
+}
