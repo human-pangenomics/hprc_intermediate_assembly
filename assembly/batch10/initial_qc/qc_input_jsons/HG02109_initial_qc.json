@@ -12,18 +12,8 @@
   "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c1fb0796-1d93-4ec0-a75f-d37111346939/HG02109.mat.fa.gz",
   "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
   "childReadsILM": [
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L005_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L006_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L007_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L005_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L006_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L007_R1_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L005_R2_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L006_R2_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L007_R2_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L005_R2_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L006_R2_001.fastq.gz",
-    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L007_R2_001.fastq.gz"
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/10X/H_IJ-HG02109-HMW-Tube_2-lib1_S3_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/10X/H_IJ-HG02109-HMW-Tube_2-lib1_S3_L003_R2_001.fastq.gz"
   ],
   "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
   "comparisonQC.x_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoY_odb10_mb_download.tar.gz",
