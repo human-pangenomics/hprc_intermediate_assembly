@@ -1,0 +1,24 @@
+{
+  "comparisonQC.annotationBed": "/private/groups/hprc/ref_files/chm13/chm13v2.0_GenomeFeature_v1.0.bed",
+  "comparisonQC.annotationCENSAT": "/private/groups/hprc/ref_files/chm13/chm13v2.0_censat_v2.0.bed",
+  "comparisonQC.annotationSD": "/private/groups/hprc/ref_files/chm13/chm13v2.0_SD.flattened.bed",
+  "comparisonQC.genesFasta": "/private/groups/hprc/ref_files/grch38/Homo_sapiens.GRCh38.cdna.all.fa",
+  "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
+  "comparisonQC.sampleName": "HG02109",
+  "comparisonQC.breakFasta": true,
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/8644b4c9-83be-4c97-a4cd-0cdbb382772c/HG02107.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/85d9fed7-0f3e-4c72-90b2-008089da68c4/HG02108.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c1fb0796-1d93-4ec0-a75f-d37111346939/HG02109.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c1fb0796-1d93-4ec0-a75f-d37111346939/HG02109.mat.fa.gz",
+  "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "childReadsILM": [
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/10X/H_IJ-HG02109-HMW-Tube_2-lib1_S3_L003_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/10X/H_IJ-HG02109-HMW-Tube_2-lib1_S3_L003_R2_001.fastq.gz"
+  ],
+  "extractReadsReferenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "comparisonQC.x_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoY_odb10_mb_download.tar.gz",
+  "comparisonQC.y_hap_compleasm_db": "/private/groups/hprc/ref_files/compleasm/primatesnoX_odb10_mb_download.tar.gz",
+  "comparisonQC.x_hap_compleasm_lineage": "primatesnoY_odb10",
+  "comparisonQC.y_hap_compleasm_lineage": "primatesnoX_odb10",
+  "comparisonQC.isMaleSample": false
+}

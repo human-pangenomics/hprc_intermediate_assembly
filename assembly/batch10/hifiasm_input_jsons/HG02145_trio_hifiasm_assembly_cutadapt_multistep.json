@@ -1,0 +1,34 @@
+{
+  "trioHifiasmAssembly.childID": "HG02145",
+  "trioHifiasmAssembly.paternalID": "HG02143",
+  "trioHifiasmAssembly.maternalID": "HG02144",
+  "trioHifiasmAssembly.childReadsHiFi": [
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG02145/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02145.m64043_200924_175630.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG02145/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02145.m64043_200928_195132.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG02145/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02145.m64043_200930_020605.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG02145/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG02145.m64136_201019_093412.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/548dd68a-3e67-44a6-8b39-954b7a8eb835--HPRC_REVIO_EA_2023/bc2014-HG02145/m84036_230317_175945_s2.hifi_reads.bc2014.bam",
+    "s3://human-pangenomics/submissions/548dd68a-3e67-44a6-8b39-954b7a8eb835--HPRC_REVIO_EA_2023/bc2014-HG02145/m84039_230303_012244_s3.hifi_reads.bc2014.bam",
+    "s3://human-pangenomics/submissions/548dd68a-3e67-44a6-8b39-954b7a8eb835--HPRC_REVIO_EA_2023/bc2014-HG02145/m84039_230314_213047_s2.hifi_reads.bc2014.bam",
+    "s3://human-pangenomics/submissions/548dd68a-3e67-44a6-8b39-954b7a8eb835--HPRC_REVIO_EA_2023/bc2014-HG02145/m84039_230316_193003_s2.hifi_reads.bc2014.bam"
+  ],
+  "trioHifiasmAssembly.paternalReadsILM": [
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02145/raw_data/Illumina/parents/HG02143/HG02143.final.cram"
+  ],
+  "trioHifiasmAssembly.maternalReadsILM": [
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02145/raw_data/Illumina/parents/HG02144/HG02144.final.cram"
+  ],
+  "trioHifiasmAssembly.childReadsONT": [
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_1_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_1_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_1_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_2_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_2_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/f9c83549-5414-4058-8422-ba653cde20e5--UCSC_HPRC_PLUS_nanopore/HG02145/guppy_6/04_19_22_R941_HG02145_2_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "trioHifiasmAssembly.minOntReadLength": 50000,
+  "trioHifiasmAssembly.homCov": 81,
+  "trioHifiasmAssembly.filterAdapters": true,
+  "trioHifiasmAssembly.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "trioHifiasmAssembly.threadCount": 64
+}
