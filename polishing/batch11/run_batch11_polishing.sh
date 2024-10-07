@@ -38,13 +38,13 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 
 sbatch \
      --job-name=hprc-DeepPolisher-batch11 \
-     --array=[1-5,7-17]%10 \
+     --array=[17]%1 \
      --partition=high_priority \
      --cpus-per-task=32 \
      --mem=400gb \
      --mail-type=FAIL,END \
      --ntasks-per-node=1 \
-     --exclude=phoenix-[09,10,22,23,24,18] \
+     --nodelist=phoenix-12 \
      --mail-user=mmastora@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
@@ -59,6 +59,6 @@ cd /private/groups/hprc/polishing/batch11
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.csv  \
-      --output_data_table HPRC_Assembly_s3Locs_batch9_trio_w_hifiasm_w_QC_hic.polished.csv  \
+      --input_data_table HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_w_QC.csv \
+      --output_data_table HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_w_QC.polished.csv  \
       --json_location '{sample_id}_hprc_DeepPolisher_outputs.json'
