@@ -1,0 +1,30 @@
+{
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/hprc/polishing/batch11/HG02109/analysis/hprc_DeepPolisher_outputs/HG02109_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/hprc/polishing/batch11/HG02109/analysis/hprc_DeepPolisher_outputs/HG02109_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/hprc/polishing/batch11/HG02109/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
+  "hprc_polishing_QC.sampleReadsIlm": [
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L005_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L006_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L007_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L005_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L006_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L007_R1_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L005_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L006_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29554_S56_L007_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L005_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L006_R2_001.fastq.gz",
+    "s3://human-pangenomics/working/HPRC_PLUS/HG02109/raw_data/hic/SE5313_FT-SA29555_S57_L007_R2_001.fastq.gz"
+  ],
+  "hprc_polishing_QC.maternalYak": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/85d9fed7-0f3e-4c72-90b2-008089da68c4/HG02108.yak",
+  "hprc_polishing_QC.paternalYak": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/8644b4c9-83be-4c97-a4cd-0cdbb382772c/HG02107.yak",
+  "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
+  "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",
+  "hprc_polishing_QC.rawHap1Fasta": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c1fb0796-1d93-4ec0-a75f-d37111346939/HG02109.pat.fa.gz",
+  "hprc_polishing_QC.rawHap2Fasta": "/private/groups/hprc/assembly/batch10/HG02109/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c1fb0796-1d93-4ec0-a75f-d37111346939/HG02109.mat.fa.gz",
+  "hprc_polishing_QC.grch38Fasta": "/private/groups/hprc/ref_files/grch38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta",
+  "hprc_polishing_QC.sampleID": "HG02109",
+  "hprc_polishing_QC.yakMerylKmerSize": 31,
+  "hprc_polishing_QC.enableYakTrioEval": true
+}
