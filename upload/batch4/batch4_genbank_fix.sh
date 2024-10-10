@@ -158,9 +158,11 @@ cp \
 
 ssds staging upload \
     --submission-id DC27718F-5F38-43B0-9A78-270F395F13E8 \
-    batch4_fixes_genbank_upload \
+    batch4_fixes_s3_upload \
     &>>batch4_s3_upload_fixes.upload.stderr
     
+
+
 
 ###############################################################################
 ##                                   DONE                                    ##
