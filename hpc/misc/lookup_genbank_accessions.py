@@ -17,8 +17,7 @@
 # genome_acc, principal_alt, bioproject_accession, filename
 
 ## Returns a file with the following columns:
-# sample_id   paternal_bioproject_accession   paternal_genome_acc paternal_genbank_accession  maternal_bioproject_accession   maternal_genome_acc maternal_genbank_accession
-# HG00408 PRJNA1153491    JBHDVK000000000 GCA_041900255.1 PRJNA1153498    JBHDVL000000000 GCA_041900245.1
+# sample_id   hap1_bioproject_accession   hap1_genome_acc hap1_genbank_accession  hap2_bioproject_accession   hap2_genome_acc hap2_genbank_accession hap1_str hap2_str
 
 import argparse
 import json
@@ -57,7 +56,7 @@ def fetch_genbank_accession(bioproject_accession: str) -> str:
 
 def process_data(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Process the DataFrame to add GenBank accessions and extract sample IDs.
+    Process the DataFrame to add GenBank accessions, extract sample IDs, and create new columns.
 
     Args:
         df (pd.DataFrame): Input DataFrame.
@@ -70,6 +69,25 @@ def process_data(df: pd.DataFrame) -> pd.DataFrame:
     
     # Extract sample ID from filename
     df['sample_id'] = df['filename'].str.split('.').str[0]
+    
+    # Convert spaces to underscores in principal_alt
+    df['principal_alt'] = df['principal_alt'].str.replace(' ', '_')
+    
+    # Create hap_str column
+    df['hap_str'] = df['principal_alt'].map({
+        'paternal': 'pat',
+        'maternal': 'mat',
+        'haplotype_1': 'hap1',
+        'haplotype_2': 'hap2'
+    })
+    
+    # Create haplotype column
+    df['haplotype'] = df['principal_alt'].map({
+        'paternal': 'hap1',
+        'maternal': 'hap2',
+        'haplotype_1': 'hap1',
+        'haplotype_2': 'hap2'
+    })
     
     return df
 
@@ -87,11 +105,12 @@ def convert_to_wide_format(df: pd.DataFrame) -> pd.DataFrame:
     column_mapping = {
         'bioproject_accession': 'bioproject_accession',
         'genome_acc': 'genome_acc',
-        'genbank_accession': 'genbank_accession'
+        'genbank_accession': 'genbank_accession',
+        'hap_str': 'hap_str'
     }
 
     # Pivot the DataFrame
-    wide_df = df.pivot(index='sample_id', columns='principal_alt', values=list(column_mapping.keys()))
+    wide_df = df.pivot(index='sample_id', columns='haplotype', values=list(column_mapping.keys()))
 
     # Flatten column names
     wide_df.columns = [f'{col[1]}_{col[0]}' for col in wide_df.columns]
@@ -100,7 +119,7 @@ def convert_to_wide_format(df: pd.DataFrame) -> pd.DataFrame:
     wide_df = wide_df.reset_index()
 
     # Reorder columns
-    column_order = ['sample_id'] + [f'{alt}_{col}' for alt in ['paternal', 'maternal'] for col in column_mapping.values()]
+    column_order = ['sample_id'] + [f'{hap}_{col}' for hap in ['hap1', 'hap2'] for col in column_mapping.values()]
     wide_df = wide_df[column_order]
 
     return wide_df
