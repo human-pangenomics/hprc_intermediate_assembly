@@ -1,0 +1,15 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/working/HPRC/HG04153/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/09_06_23_R1041_HPRC_HG04153_1_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG04153/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/09_06_23_R1041_HPRC_HG04153_2_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam",
+    "s3://human-pangenomics/working/HPRC/HG04153/raw_data/nanopore/dorado0.6.0_sup4.3.0_5mCG_5hmCG/09_06_23_R1041_HPRC_HG04153_3_dorado0.6.0_sup4.3.0_5mCG_5hmCG.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/working/HPRC/HG04153/raw_data/PacBio_HiFi/m84091_230727_125753_s1.hifi_reads.bc1016.bam",
+    "s3://human-pangenomics/working/HPRC/HG04153/raw_data/PacBio_HiFi/m84091_230802_170158_s1.hifi_reads.bc1016.bam"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": NaN,
+  "hprc_DeepPolisher.Hap2RawFasta": NaN,
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG04153"
+}
