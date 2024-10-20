@@ -6,8 +6,8 @@
   "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
   "comparisonQC.sampleName": "NA20346",
   "comparisonQC.breakFasta": false,
-  "comparisonQC.hap1Fasta": NaN,
-  "comparisonQC.hap2Fasta": NaN,
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch11.1/NA20346/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/f50b0259-0ef3-48c2-9ca6-482c48cb0059/NA20346.hap1.xygrouped.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch11.1/NA20346/analysis/hic_hifiasm_assembly_cutadapt_multistep_outputs/f50b0259-0ef3-48c2-9ca6-482c48cb0059/NA20346.hap2.xygrouped.fa.gz",
   "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
   "childReadsILM": [
     "s3://human-pangenomics/submissions/59C50DDF-5FAF-4841-AC3E-6C02D636C57F--Y4_1000G_DATA/NA20346.final.cram"
