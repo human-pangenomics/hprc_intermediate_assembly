@@ -1,5 +1,5 @@
-,sample_id,mat_num_contigs,mat_total_len,mat_AUN,mat_full_sgl,mat_full_dup,mat_perc_sgl,mat_switch,mat_hamming,mat_qv,pat_num_contigs,pat_total_len,pat_AUN,pat_full_sgl,pat_full_dup,pat_perc_sgl,pat_switch,pat_hamming,pat_qv,asm_batch
-0,HG03492,60,3.03 Gbp,143.4 Mbp,34734,148,98.52 %,0.00649,0.006896,56.02,99,2.95 Gbp,140.2 Mbp,34712,146,98.46 %,0.003339,0.002497,56.79,10
-1,HG01243,431,3.1 Gbp,55.7 Mbp,34042,685,98.09 %,0.0069199999999999,0.016708,54.0,435,2.99 Gbp,54.6 Mbp,33964,758,98.07 %,0.005231,0.014858,54.89,10
-0,HG00733,78,3.04 Gbp,128.6 Mbp,34718,132,98.43 %,0.008565,0.009376,56.77,68,3.03 Gbp,128.2 Mbp,34777,104,98.52 %,0.008354,0.00675,56.84,10
-0,HG005,98,3.03 Gbp,132.6 Mbp,34721,117,98.4 %,0.020762,0.01709,57.4,81,2.93 Gbp,131.5 Mbp,34689,143,98.38 %,0.009901,0.007749,58.48,10
+sample_id,mat_num_contigs,mat_total_len,mat_AUN,mat_full_sgl,mat_full_dup,mat_perc_sgl,mat_switch,mat_hamming,mat_qv,pat_num_contigs,pat_total_len,pat_AUN,pat_full_sgl,pat_full_dup,pat_perc_sgl,pat_switch,pat_hamming,pat_qv,asm_batch
+HG03492,60,3.03 Gbp,143.4 Mbp,34734,148,98.52 %,0.00649,0.006896,56.02,99,2.95 Gbp,140.2 Mbp,34712,146,98.46 %,0.003339,0.002497,56.79,10
+HG01243,431,3.1 Gbp,55.7 Mbp,34042,685,98.09 %,0.0069199999999999,0.016708,54.0,435,2.99 Gbp,54.6 Mbp,33964,758,98.07 %,0.005231,0.014858,54.89,10
+HG00733,78,3.04 Gbp,128.6 Mbp,34718,132,98.43 %,0.008565,0.009376,56.77,68,3.03 Gbp,128.2 Mbp,34777,104,98.52 %,0.008354,0.00675,56.84,10
+HG005,98,3.03 Gbp,132.6 Mbp,34721,117,98.4 %,0.020762,0.01709,57.4,81,2.93 Gbp,131.5 Mbp,34689,143,98.38 %,0.009901,0.007749,58.48,10
