@@ -1,0 +1,18 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/submissions/8ced218e-9699-458e-9708-eef6969a8065--EXTRAMURAL_SAMPLES/HG00733/nanopore/Guppy_6.5.7_5mc/HG00733_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/8ced218e-9699-458e-9708-eef6969a8065--EXTRAMURAL_SAMPLES/HG00733/nanopore/Guppy_6.5.7_5mc/HG00733_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/8ced218e-9699-458e-9708-eef6969a8065--EXTRAMURAL_SAMPLES/HG00733/nanopore/Guppy_6.5.7_5mc/HG00733_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/f87501a1-c910-4128-994e-e35c3dc6595c--HG00733_T2T_UW_HiFi_ONT/raw_data/PacBio_HiFi/m64076_211214_012715.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/f87501a1-c910-4128-994e-e35c3dc6595c--HG00733_T2T_UW_HiFi_ONT/raw_data/PacBio_HiFi/m64076_211215_225159.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/f87501a1-c910-4128-994e-e35c3dc6595c--HG00733_T2T_UW_HiFi_ONT/raw_data/PacBio_HiFi/m64076_211217_081943.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/f87501a1-c910-4128-994e-e35c3dc6595c--HG00733_T2T_UW_HiFi_ONT/raw_data/PacBio_HiFi/m64076_211218_173901.hifi_reads.bam",
+    "s3://human-pangenomics/submissions/f87501a1-c910-4128-994e-e35c3dc6595c--HG00733_T2T_UW_HiFi_ONT/raw_data/PacBio_HiFi/m64076_211221_015212.hifi_reads.bam"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/batch10/HG00733/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/5ba81ee9-dab1-44c2-9a5c-f5e38370246d/HG00733.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/batch10/HG00733/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/5ba81ee9-dab1-44c2-9a5c-f5e38370246d/HG00733.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG00733"
+}
