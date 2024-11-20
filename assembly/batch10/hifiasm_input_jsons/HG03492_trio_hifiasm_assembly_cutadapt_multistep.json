@@ -20,8 +20,15 @@
   "trioHifiasmAssembly.childReadsONT": [
     "s3://human-pangenomics/submissions/c8bdd146-1066-465e-b80f-b217c5084819--SHASTA-DATA/HG03492/nanopore/Guppy_6.5.7_5mc/HG03492_1_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
     "s3://human-pangenomics/submissions/c8bdd146-1066-465e-b80f-b217c5084819--SHASTA-DATA/HG03492/nanopore/Guppy_6.5.7_5mc/HG03492_2_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
-    "s3://human-pangenomics/submissions/c8bdd146-1066-465e-b80f-b217c5084819--SHASTA-DATA/HG03492/nanopore/Guppy_6.5.7_5mc/HG03492_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
-  ],
+    "s3://human-pangenomics/submissions/c8bdd146-1066-465e-b80f-b217c5084819--SHASTA-DATA/HG03492/nanopore/Guppy_6.5.7_5mc/HG03492_3_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAK40676_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAK43966_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAK44362_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAK46312_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAK46408_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/submissions/cba22311-fce1-4304-af41-cdbe34bc5079--NISC_ONT_TopUp_2022/HG03492/guppy_6.5.7_5mc_cg/HG03492_PAM34995_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+]
+,
   "trioHifiasmAssembly.minOntReadLength": 50000,
   "trioHifiasmAssembly.homCov": 76,
   "trioHifiasmAssembly.filterAdapters": true,
