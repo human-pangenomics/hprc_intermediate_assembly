@@ -6,10 +6,10 @@
   "comparisonQC.hs38Paf": "/private/groups/hprc/ref_files/grch38/hs38.paf",
   "comparisonQC.sampleName": "HG03492",
   "comparisonQC.breakFasta": true,
-  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/7bb07a9f-9ff3-4741-868f-2bf864c0f20b/HG03490.yak",
-  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/c7809246-9c46-4264-ab6c-9fc9335aab0b/HG03491.yak",
-  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1c8d7579-5a41-4afe-b65d-7b9685b91a56/HG03492.pat.fa.gz",
-  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/1c8d7579-5a41-4afe-b65d-7b9685b91a56/HG03492.mat.fa.gz",
+  "comparisonQC.patYak": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/cf715488-83be-4890-a0f1-6fb0e54e8a20/HG03490.yak",
+  "comparisonQC.matYak": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/d67053e8-c8ca-4291-95d5-ae72fc53dba8/HG03491.yak",
+  "comparisonQC.hap1Fasta": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/a360b8f2-676f-4c1f-becf-797ae835fb24/HG03492.pat.fa.gz",
+  "comparisonQC.hap2Fasta": "/private/groups/hprc/assembly/batch10/HG03492/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/a360b8f2-676f-4c1f-becf-797ae835fb24/HG03492.mat.fa.gz",
   "comparisonQC.reference": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
   "childReadsILM": [
     "s3://human-pangenomics/working/HPRC_PLUS/HG03492/raw_data/Illumina/child/HG03492.final.cram"
