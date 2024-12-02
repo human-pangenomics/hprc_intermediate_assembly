@@ -44,11 +44,11 @@ sbatch \
      --mem=400gb \
      --mail-type=FAIL,END \
      --ntasks-per-node=1 \
-     --nodelist=phoenix-12 \
+     --exclude=phoenix-[09,10,22,23,24,18] \
      --mail-user=mmastora@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl /private/groups/hprc/polishing/hpp_production_workflows/QC/wdl/workflows/hprc_DeepPolisher.wdl \
-     --sample_csv HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_w_QC.csv \
+     --sample_csv HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_QC_rerun.csv \
      --input_json_path '../hprc_DeepPolisher_input_jsons/${SAMPLE_ID}_hprc_DeepPolisher.json'
 
 ###############################################################################

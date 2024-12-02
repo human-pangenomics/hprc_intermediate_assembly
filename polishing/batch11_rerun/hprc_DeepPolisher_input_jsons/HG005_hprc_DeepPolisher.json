@@ -1,0 +1,21 @@
+{
+  "hprc_DeepPolisher.ONTReads": [
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_3X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_2.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam",
+    "s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_3.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam"
+  ],
+  "hprc_DeepPolisher.HifiReads": [
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200723_190224.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200730_190124.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200801_011415.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64017_200802_073944.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200304_195708.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200309_192110.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/FFC78D9F-296E-41DD-9E50-C4B5806613EE--HPRC_PLUS_GIAB/HG005/m64109_200311_013444.dc.q20.fastq.gz"
+  ],
+  "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/assembly/sandbox/batch10.3/HG005/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/cf9340c8-0b58-4667-a05d-b864a960ab6c/HG005.pat.fa.gz",
+  "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/assembly/sandbox/batch10.3/HG005/analysis/trio_hifiasm_assembly_cutadapt_multistep_outputs/cf9340c8-0b58-4667-a05d-b864a960ab6c/HG005.mat.fa.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.sampleName": "HG005"
+}

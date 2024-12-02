@@ -60,7 +60,7 @@ cd /private/groups/hprc/polishing/batch11_rerun/hprc_polishing_QC_k31
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
-      --input_data_table HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_w_QC.polished.csv \
+      --input_data_table HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_QC_rerun.polished.csv \
       --output_data_table HPRC_Assembly_s3Locs_batch10_trio_w_hifiasm_w_QC.polished.K31.csv \
       --json_location '{sample_id}_hprc_polishing_QC_outputs.json'
 
