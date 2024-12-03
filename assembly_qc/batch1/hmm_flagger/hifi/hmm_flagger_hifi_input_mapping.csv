@@ -1,0 +1,36 @@
+input,type,value
+HMMFlaggerEndToEndWithMapping.sampleName,scalar,$input.sample_id
+HMMFlaggerEndToEndWithMapping.readFiles,array,$input.read_files
+HMMFlaggerEndToEndWithMapping.enableOutputtingBam,scalar,true
+HMMFlaggerEndToEndWithMapping.enableOutputtingBigWig,scalar,true
+HMMFlaggerEndToEndWithMapping.suffixForFlagger,scalar,"hmm_flagger_v1.1.0"
+HMMFlaggerEndToEndWithMapping.suffixForMapping,scalar,"hifi_DC_minimap2_2.28"
+HMMFlaggerEndToEndWithMapping.windowLen,scalar,$input.hmm_flagger_window_size
+HMMFlaggerEndToEndWithMapping.hap1AssemblyFasta,scalar,$input.asm_hap1
+HMMFlaggerEndToEndWithMapping.hap2AssemblyFasta,scalar,$input.asm_hap2
+HMMFlaggerEndToEndWithMapping.alphaTsv,scalar,$input.hmm_flagger_alpha_tsv
+HMMFlaggerEndToEndWithMapping.binSizeArrayTsv,scalar,"/private/groups/patenlab/masri/t2t/HG002_v1.1/falsifier_runs_oct_2024/training_validation/tune_alpha/bin_size_array.tsv"
+HMMFlaggerEndToEndWithMapping.flaggerThreadCount,scalar,32
+HMMFlaggerEndToEndWithMapping.cntrBed,scalar,$input.censat_diploid_bed
+HMMFlaggerEndToEndWithMapping.enableDecomposingCntrBed,scalar,true
+HMMFlaggerEndToEndWithMapping.SDBedToBeProjected,scalar,"https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sd/chm13v2.0_SD.all.bed"
+HMMFlaggerEndToEndWithMapping.sexBedToBeProjected,scalar,"https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sex/chm13v2.0_sex.bed"
+HMMFlaggerEndToEndWithMapping.annotationsBedArrayToBeProjected,array,"['https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g99.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g98_le99.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g90_le98.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.le90.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.all.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_le6_STR.bed','https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_ge7_VNTR.bed']"
+HMMFlaggerEndToEndWithMapping.annotationsBedArray,array,$input.additional_annotations_array
+HMMFlaggerEndToEndWithMapping.projectionReferenceFasta,scalar,"https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz"
+HMMFlaggerEndToEndWithMapping.flaggerDockerImage,scalar,mobinasri/flagger:v1.1.0
+HMMFlaggerEndToEndWithMapping.modelType,scalar,trunc_exp_gaussian
+HMMFlaggerEndToEndWithMapping.flaggerMemSize,scalar,32
+HMMFlaggerEndToEndWithMapping.presetForMapping,scalar,$input.mapper_preset
+HMMFlaggerEndToEndWithMapping.alignerOptions,scalar,"--cs --eqx -L"
+HMMFlaggerEndToEndWithMapping.readExtractionOptions,scalar," "
+HMMFlaggerEndToEndWithMapping.alignerDockerImage,scalar,"mobinasri/long_read_aligner:v1.1.0"
+HMMFlaggerEndToEndWithMapping.enableSplittingReadsEqually,scalar,false
+HMMFlaggerEndToEndWithMapping.alignerThreadCount,scalar,$input.number_of_cores_per_task
+HMMFlaggerEndToEndWithMapping.aligner,scalar,minimap2
+HMMFlaggerEndToEndWithMapping.kmerSize,scalar,$input.kmer_size
+HMMFlaggerEndToEndWithMapping.alignerMemSize,scalar,48
+HMMFlaggerEndToEndWithMapping.enableAddingMDTag,scalar,false
+HMMFlaggerEndToEndWithMapping.enableRunningCorrectBam,scalar,true
+HMMFlaggerEndToEndWithMapping.correctBamOptions,scalar,"--primaryOnly --minReadLen 5000 --minAlignment 5000 --maxDiv 0.1"
+HMMFlaggerEndToEndWithMapping.enableRunningSecphase,scalar,false
