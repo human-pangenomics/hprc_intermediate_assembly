@@ -24,7 +24,6 @@
     "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g98_le99.bed",
     "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g90_le98.bed",
     "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.le90.bed",
-    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.all.bed",
     "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_le6_STR.bed",
     "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_ge7_VNTR.bed"
   ],

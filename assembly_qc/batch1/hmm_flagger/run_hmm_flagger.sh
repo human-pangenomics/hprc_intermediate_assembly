@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assem
 # get metadata for Year1 samples since I want to run Year1 samples first
 wget https://raw.githubusercontent.com/human-pangenomics/HPP_Year1_Data_Freeze_v1.0/refs/heads/main/sample_metadata/hprc_year1_sample_metadata.txt
 
-# run jupyter notebook organizing_tables.ipynb
+# run jupyter notebook make_hmm_flagger_data_tables.ipynb
 # this notebook:
 # - Opens batch1_censat_outputs_done.csv and hprc_year1_sample_metadata.txt
 # - Makes diploid censat bed files and add links to the final table
@@ -53,6 +53,14 @@ wget https://raw.githubusercontent.com/human-pangenomics/HPP_Year1_Data_Freeze_v
 # - Makes separate data tables for HiFi and ONT runs (both will contain diploid censat bed files)
 # - The final data tables will be saved in hifi and ont subdirectories and they will be used for creating input json files
 
+
+###########################################
+##        Create input jsons   (HiFi)    ##
+###########################################
+
+# set working directory
+WORKING_DIR="/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/hifi"
+cd ${WORKING_DIR}
 
 # check that flagger repo is up to date
 FLAGGER_DIR="/private/groups/patenlab/masri/apps/flagger_v1.1.0/flagger"
