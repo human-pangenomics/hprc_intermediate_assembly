@@ -1,0 +1,7 @@
+{
+  "centromereAnnotation.fasta": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02572/assemblies/freeze_2/HG02572_pat_hprc_r2_v1.fa.gz",
+  "centromereAnnotation.rDNAhmm_profile": "/private/home/juklucas/github/alphaAnnotation/utilities/rDNA1.0.hmm",
+  "centromereAnnotation.AS_hmm_profile": "/private/home/juklucas/github/alphaAnnotation/utilities/AS-HORs-hmmer3.4-071024.hmm",
+  "centromereAnnotation.AS_hmm_profile_SF": "/private/home/juklucas/github/alphaAnnotation/utilities/AS-SFs-hmmer3.0.290621.hmm",
+  "centromereAnnotation.additionalRMModels": "/private/home/juklucas/github/alphaAnnotation/utilities/xy_apes_y_human_newmodels.embl"
+}
