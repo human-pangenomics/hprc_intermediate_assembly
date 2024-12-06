@@ -115,13 +115,90 @@ sbatch      --job-name=${WDL_NAME}_${USERNAME} \
             --mail-user=${EMAIL} \
             --mail-type=FAIL,END \
             --output=${WDL_NAME}_logs/${WDL_NAME}_%A_%a.log \
-            --array=[1-60]%30  \
+            --array=[1-141]%30  \
             --time=${TIME_LIMIT} \
             --partition=${PARTITION} \
             /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
             --wdl ${WDL_PATH} \
             --sample_csv  ${WORKING_DIR}/hmm_flagger_hifi_data_table.csv \
             --input_json_path ${WORKING_DIR}/runs_toil_slurm/${WDL_NAME}_input_jsons/\${SAMPLE_ID}_${WDL_NAME}.json
+
+
+############################################################
+##      HG002_T2T_v1.1.0:  Create input jsons   (HiFi)    ##
+############################################################
+
+
+# set working directory
+WORKING_DIR="/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/hifi"
+cd ${WORKING_DIR}
+
+# check that flagger repo is up to date
+FLAGGER_DIR="/private/groups/patenlab/masri/apps/flagger_v1.1.0/flagger"
+git -C ${FLAGGER_DIR} pull
+
+## Save WDL path and name in environment variables
+WDL_PATH=${FLAGGER_DIR}/wdls/workflows/hmm_flagger_end_to_end_with_mapping.wdl
+WDL_FILENAME=$(basename ${WDL_PATH})
+WDL_NAME=${WDL_FILENAME%%.wdl}
+
+
+## Make a folder for saving files related to run e.g. input and output jsons
+cd ${WORKING_DIR}
+mkdir -p runs_toil_slurm_HG002_v1.1
+cd runs_toil_slurm_HG002_v1.1
+
+## Make a directory for saving input json files
+mkdir -p ${WDL_NAME}_input_jsons
+cd ${WDL_NAME}_input_jsons
+
+python3 /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/hpc/launch_from_table.py \
+     --data_table ${WORKING_DIR}/hmm_flagger_hifi_data_table_HG002_v1.1.csv \
+     --field_mapping ${WORKING_DIR}/hmm_flagger_hifi_input_mapping.csv \
+     --workflow_name ${WDL_NAME}
+
+
+##################################################################################################
+##         HG002_T2T_v1.1.0:      Launch Mapping + HMM-Flagger     (HiFi)                       ##
+##################################################################################################
+
+#####
+# Exclude phoenix-[23]
+# This node is always failing
+#####
+
+## Make sure you are in the working directory
+cd ${WORKING_DIR}
+
+## Set environment variables for sbatch
+USERNAME="masri"
+EMAIL="masri@ucsc.edu"
+TIME_LIMIT="70:00:00"
+
+## Partition should be modifed based on the available partitions on the server
+PARTITION="high_priority"
+
+
+## Go to the execution directory
+mkdir -p runs_toil_slurm_HG002_v1.1/${WDL_NAME}_logs
+cd runs_toil_slurm_HG002_v1.1
+
+## Run jobs arrays
+sbatch      --job-name=${WDL_NAME}_${USERNAME} \
+            --cpus-per-task=64 \
+            --mem=256G \
+            --mail-user=${EMAIL} \
+            --mail-type=FAIL,END \
+            --output=${WDL_NAME}_logs/${WDL_NAME}_%A_%a.log \
+            --array=[1]%1  \
+            --exclude=phoenix-[23] \
+            --time=${TIME_LIMIT} \
+            --partition=${PARTITION} \
+            /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
+            --wdl ${WDL_PATH} \
+            --sample_csv  ${WORKING_DIR}/hmm_flagger_hifi_data_table_HG002_v1.1.csv \
+            --input_json_path ${WORKING_DIR}/runs_toil_slurm_HG002_v1.1/${WDL_NAME}_input_jsons/\${SAMPLE_ID}_${WDL_NAME}.json
+
 
 
 ###############################################################################
