@@ -1,0 +1,6 @@
+input,type,value
+centromereAnnotation.fasta,scalar,$input.aws_fasta
+centromereAnnotation.RMOut,scalar,$input.public_link_rm
+centromereAnnotation.HSatBed,scalar,$input.public_link_hsat
+centromereAnnotation.hor_and_sf_bed,scalar,$input.public_link_asat
+centromereAnnotation.rDNAhmm_profile,scalar,https://raw.githubusercontent.com/mobinasri/alphaAnnotation/refs/heads/main/utilities/rDNA1.0.hmm
