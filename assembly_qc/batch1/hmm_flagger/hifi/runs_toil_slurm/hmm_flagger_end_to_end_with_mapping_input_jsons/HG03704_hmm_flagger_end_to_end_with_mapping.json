@@ -37,7 +37,7 @@
   "HMMFlaggerEndToEndWithMapping.modelType": "trunc_exp_gaussian",
   "HMMFlaggerEndToEndWithMapping.flaggerMemSize": 32,
   "HMMFlaggerEndToEndWithMapping.presetForMapping": "lr:hqae",
-  "HMMFlaggerEndToEndWithMapping.alignerOptions": "--cs --eqx -L",
+  "HMMFlaggerEndToEndWithMapping.alignerOptions": "--cs --eqx -L -I8g",
   "HMMFlaggerEndToEndWithMapping.readExtractionOptions": " ",
   "HMMFlaggerEndToEndWithMapping.alignerDockerImage": "mobinasri/long_read_aligner:v1.1.0",
   "HMMFlaggerEndToEndWithMapping.enableSplittingReadsEqually": false,

@@ -213,4 +213,4 @@ cd ${WORKING_DIR}/runs_toil_slurm
 python3 /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table ${WORKING_DIR}/hmm_flagger_hifi_data_table.csv  \
       --output_data_table ${WORKING_DIR}/hmm_flagger_hifi_data_table.output.csv  \
-      --json_location '{sample_id}/{sample_id}_hmm_flagger_end_to_end_with_mapping_outputs.json'
+      --json_location '{sample_id}_hmm_flagger_end_to_end_with_mapping_outputs.json'
