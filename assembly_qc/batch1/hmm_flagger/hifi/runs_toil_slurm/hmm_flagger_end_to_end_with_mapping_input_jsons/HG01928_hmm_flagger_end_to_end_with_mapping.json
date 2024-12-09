@@ -1,0 +1,53 @@
+{
+  "HMMFlaggerEndToEndWithMapping.sampleName": "HG01928",
+  "HMMFlaggerEndToEndWithMapping.readFiles": [
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64043_200612_200936.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64043_200614_191756.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64043_200616_013031.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/3A25CF8A-1F36-42EE-BC9F-D29CECAA2A99--HPRC_DEEPCONSENSUS_v1pt2_2023_12_q20/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64043_200617_075530.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64136_220611_150915.dc.q20.fastq.gz",
+    "s3://human-pangenomics/submissions/B4B0B5DC-5FD5-42D5-8434-10DEF7D99E98--HPRC_DEEPCONSENSUS_v1pt2_2024_02_q20_re-run/HG01928/raw_data/PacBio_HiFi/deepconsensus/v1pt2/HG01928.m64136_220609_181426.dc.q20.fastq.gz"
+  ],
+  "HMMFlaggerEndToEndWithMapping.enableOutputtingBam": true,
+  "HMMFlaggerEndToEndWithMapping.enableOutputtingBigWig": true,
+  "HMMFlaggerEndToEndWithMapping.suffixForFlagger": "hmm_flagger_v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.suffixForMapping": "hifi_DC_minimap2_2.28",
+  "HMMFlaggerEndToEndWithMapping.windowLen": 16000,
+  "HMMFlaggerEndToEndWithMapping.hap1AssemblyFasta": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01928/assemblies/freeze_2/HG01928_pat_hprc_r2_v1.fa.gz",
+  "HMMFlaggerEndToEndWithMapping.hap2AssemblyFasta": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01928/assemblies/freeze_2/HG01928_mat_hprc_r2_v1.fa.gz",
+  "HMMFlaggerEndToEndWithMapping.alphaTsv": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/alpha_tsv/HiFi_DC_1.2/alpha_optimum_trunc_exp_gaussian_w_16000_n_50.HiFi_DC_1.2_DEC_2024.v1.1.0.tsv",
+  "HMMFlaggerEndToEndWithMapping.binSizeArrayTsv": "/private/groups/patenlab/masri/t2t/HG002_v1.1/falsifier_runs_oct_2024/training_validation/tune_alpha/bin_size_array.tsv",
+  "HMMFlaggerEndToEndWithMapping.flaggerThreadCount": 32,
+  "HMMFlaggerEndToEndWithMapping.cntrBed": "/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/diploid_censat_beds/HG01928_dip_hprc_r2_v1.cenSat.bed",
+  "HMMFlaggerEndToEndWithMapping.enableDecomposingCntrBed": true,
+  "HMMFlaggerEndToEndWithMapping.SDBedToBeProjected": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sd/chm13v2.0_SD.all.bed",
+  "HMMFlaggerEndToEndWithMapping.sexBedToBeProjected": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sex/chm13v2.0_sex.bed",
+  "HMMFlaggerEndToEndWithMapping.annotationsBedArrayToBeProjected": [
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g99.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g98_le99.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g90_le98.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.le90.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_le6_STR.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_ge7_VNTR.bed"
+  ],
+  "HMMFlaggerEndToEndWithMapping.annotationsBedArray": [
+    "/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/diploid_censat_beds/HG01928_dip_hprc_r2_v1.cenSat.rDNA.bed"
+  ],
+  "HMMFlaggerEndToEndWithMapping.projectionReferenceFasta": "https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz",
+  "HMMFlaggerEndToEndWithMapping.flaggerDockerImage": "mobinasri/flagger:v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.modelType": "trunc_exp_gaussian",
+  "HMMFlaggerEndToEndWithMapping.flaggerMemSize": 32,
+  "HMMFlaggerEndToEndWithMapping.presetForMapping": "lr:hqae",
+  "HMMFlaggerEndToEndWithMapping.alignerOptions": "--cs --eqx -L -I8g",
+  "HMMFlaggerEndToEndWithMapping.readExtractionOptions": " ",
+  "HMMFlaggerEndToEndWithMapping.alignerDockerImage": "mobinasri/long_read_aligner:v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.enableSplittingReadsEqually": false,
+  "HMMFlaggerEndToEndWithMapping.alignerThreadCount": 10,
+  "HMMFlaggerEndToEndWithMapping.aligner": "minimap2",
+  "HMMFlaggerEndToEndWithMapping.kmerSize": 25,
+  "HMMFlaggerEndToEndWithMapping.alignerMemSize": 48,
+  "HMMFlaggerEndToEndWithMapping.enableAddingMDTag": false,
+  "HMMFlaggerEndToEndWithMapping.enableRunningCorrectBam": true,
+  "HMMFlaggerEndToEndWithMapping.correctBamOptions": "--primaryOnly --minReadLen 5000 --minAlignment 5000 --maxDiv 0.1",
+  "HMMFlaggerEndToEndWithMapping.enableRunningSecphase": false
+}

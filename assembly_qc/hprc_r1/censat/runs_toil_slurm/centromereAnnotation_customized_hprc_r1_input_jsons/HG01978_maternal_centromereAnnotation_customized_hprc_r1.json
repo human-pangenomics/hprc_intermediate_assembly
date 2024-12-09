@@ -1,0 +1,7 @@
+{
+  "centromereAnnotation.fasta": "s3://human-pangenomics/working/HPRC/HG01978/assemblies/year1_f1_assembly_v2_genbank/HG01978.maternal.f1_assembly_v2_genbank.fa.gz",
+  "centromereAnnotation.RMOut": "https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC/HG01978/assemblies/year1_f1_assembly_v2_genbank/annotation/repeat_masker/HG01978.maternal.f1_assembly_v2_genbank_rm.bed",
+  "centromereAnnotation.HSatBed": "https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC/HG01978/assemblies/year1_f1_assembly_v2_genbank/annotation/hsat/HG01978.maternal.f1_assembly_v2_genbank.HSat2and3_Regions.bed",
+  "centromereAnnotation.hor_and_sf_bed": "https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC/HG01978/assemblies/year1_f1_assembly_v2_genbank/annotation/asat/AS-HOR%2BSF-vs-HG01978-maternal.bed",
+  "centromereAnnotation.rDNAhmm_profile": "https://raw.githubusercontent.com/mobinasri/alphaAnnotation/refs/heads/main/utilities/rDNA1.0.hmm"
+}

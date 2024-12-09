@@ -1,0 +1,51 @@
+{
+  "HMMFlaggerEndToEndWithMapping.sampleName": "HG002_T2T_v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.readFiles": [
+    "https://storage.googleapis.com/brain-genomics/kishwar/share/polishing/deepconsensus_runs/run_deepconsensus_hg002_20230630/m64011_190830_220126.dc.q20.fastq.gz",
+    "https://storage.googleapis.com/brain-genomics/kishwar/share/polishing/deepconsensus_runs/run_deepconsensus_hg002_20230630/m64011_190901_095311.dc.q20.fastq.gz",
+    "https://storage.googleapis.com/brain-genomics/kishwar/share/polishing/deepconsensus_runs/run_deepconsensus_hg002_20230630/m64012_190920_173625.dc.q20.fastq.gz",
+    "https://storage.googleapis.com/brain-genomics/kishwar/share/polishing/deepconsensus_runs/run_deepconsensus_hg002_20230630/m64012_190921_234837.dc.q20.fastq.gz"
+  ],
+  "HMMFlaggerEndToEndWithMapping.enableOutputtingBam": true,
+  "HMMFlaggerEndToEndWithMapping.enableOutputtingBigWig": true,
+  "HMMFlaggerEndToEndWithMapping.suffixForFlagger": "hmm_flagger_v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.suffixForMapping": "hifi_DC_minimap2_2.28",
+  "HMMFlaggerEndToEndWithMapping.windowLen": 16000,
+  "HMMFlaggerEndToEndWithMapping.hap1AssemblyFasta": "https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/hg002v1.1.pat.fasta.gz",
+  "HMMFlaggerEndToEndWithMapping.hap2AssemblyFasta": "https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/hg002v1.1.mat.fasta.gz",
+  "HMMFlaggerEndToEndWithMapping.alphaTsv": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/alpha_tsv/HiFi_DC_1.2/alpha_optimum_trunc_exp_gaussian_w_16000_n_50.HiFi_DC_1.2_DEC_2024.v1.1.0.tsv",
+  "HMMFlaggerEndToEndWithMapping.binSizeArrayTsv": "/private/groups/patenlab/masri/t2t/HG002_v1.1/falsifier_runs_oct_2024/training_validation/tune_alpha/bin_size_array.tsv",
+  "HMMFlaggerEndToEndWithMapping.flaggerThreadCount": 32,
+  "HMMFlaggerEndToEndWithMapping.cntrBed": "/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/diploid_censat_beds/hg002v1.1.cenSatv2.0.bed",
+  "HMMFlaggerEndToEndWithMapping.enableDecomposingCntrBed": true,
+  "HMMFlaggerEndToEndWithMapping.SDBedToBeProjected": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sd/chm13v2.0_SD.all.bed",
+  "HMMFlaggerEndToEndWithMapping.sexBedToBeProjected": "https://raw.githubusercontent.com/mobinasri/flagger/refs/heads/main/misc/stratifications/sex/chm13v2.0_sex.bed",
+  "HMMFlaggerEndToEndWithMapping.annotationsBedArrayToBeProjected": [
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g99.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g98_le99.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.g90_le98.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/sd/chm13v2.0_SD.le90.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_le6_STR.bed",
+    "https://raw.githubusercontent.com/mobinasri/flagger/v0.4.0/misc/stratifications/repeat_masker/chm13v2.0_RM_4.1.2p1_ge7_VNTR.bed"
+  ],
+  "HMMFlaggerEndToEndWithMapping.annotationsBedArray": [
+    "/private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/batch1/hmm_flagger/diploid_censat_beds/hg002v1.1.cenSatv2.0.rDNA.bed"
+  ],
+  "HMMFlaggerEndToEndWithMapping.projectionReferenceFasta": "https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz",
+  "HMMFlaggerEndToEndWithMapping.flaggerDockerImage": "mobinasri/flagger:v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.modelType": "trunc_exp_gaussian",
+  "HMMFlaggerEndToEndWithMapping.flaggerMemSize": 32,
+  "HMMFlaggerEndToEndWithMapping.presetForMapping": "lr:hqae",
+  "HMMFlaggerEndToEndWithMapping.alignerOptions": "--cs --eqx -L",
+  "HMMFlaggerEndToEndWithMapping.readExtractionOptions": " ",
+  "HMMFlaggerEndToEndWithMapping.alignerDockerImage": "mobinasri/long_read_aligner:v1.1.0",
+  "HMMFlaggerEndToEndWithMapping.enableSplittingReadsEqually": false,
+  "HMMFlaggerEndToEndWithMapping.alignerThreadCount": 16,
+  "HMMFlaggerEndToEndWithMapping.aligner": "minimap2",
+  "HMMFlaggerEndToEndWithMapping.kmerSize": 25,
+  "HMMFlaggerEndToEndWithMapping.alignerMemSize": 48,
+  "HMMFlaggerEndToEndWithMapping.enableAddingMDTag": false,
+  "HMMFlaggerEndToEndWithMapping.enableRunningCorrectBam": true,
+  "HMMFlaggerEndToEndWithMapping.correctBamOptions": "--primaryOnly --minReadLen 5000 --minAlignment 5000 --maxDiv 0.1",
+  "HMMFlaggerEndToEndWithMapping.enableRunningSecphase": false
+}
