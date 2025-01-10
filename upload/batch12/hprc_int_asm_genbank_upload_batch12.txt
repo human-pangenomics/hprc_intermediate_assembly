@@ -1,0 +1,9 @@
+biosample_accession	sample_name	haplotype	bioproject_accession	bioproject_description	umbrella_bp	filename	assembly_date	assembly_name	assembly_method	assembly_method_version	genome_coverage	sequencing_technology	reference_genome	update_for
+SAMN41021650	NA20827	haplotype 1		Assembly of NA20827 haplotype 1.		NA20827.hap1_for_genbank.fa.gz	2024-12	NA20827_hap1_hprc_f2	Verkko	2.2.1	49X	"PacBio, Oxford Nanopore"		
+SAMN41021652	NA20762	haplotype 1		Assembly of NA20762 haplotype 1.		NA20762.hap1_for_genbank.fa.gz	2024-12	NA20762_hap1_hprc_f2	Verkko	2.2.1	46X	"PacBio, Oxford Nanopore"		
+SAMN41021648	NA20806	haplotype 1		Assembly of NA20806 haplotype 1.		NA20806.hap1_for_genbank.fa.gz	2024-12	NA20806_hap1_hprc_f2	Verkko	2.2.1	47X	"PacBio, Oxford Nanopore"		
+SAMN41021630	NA20503	haplotype 1		Assembly of NA20503 haplotype 1.		NA20503.hap1_for_genbank.fa.gz	2024-12	NA20503_hap1_hprc_f2	Verkko	2.2.1	42X	"PacBio, Oxford Nanopore"		
+SAMN41021650	NA20827	haplotype 2		Assembly of NA20827 haplotype 2.		NA20827.hap2_for_genbank.fa.gz	2024-12	NA20827_hap2_hprc_f2	Verkko	2.2.1	49X	"PacBio, Oxford Nanopore"		
+SAMN41021652	NA20762	haplotype 2		Assembly of NA20762 haplotype 2.		NA20762.hap2_for_genbank.fa.gz	2024-12	NA20762_hap2_hprc_f2	Verkko	2.2.1	46X	"PacBio, Oxford Nanopore"		
+SAMN41021648	NA20806	haplotype 2		Assembly of NA20806 haplotype 2.		NA20806.hap2_for_genbank.fa.gz	2024-12	NA20806_hap2_hprc_f2	Verkko	2.2.1	47X	"PacBio, Oxford Nanopore"		
+SAMN41021630	NA20503	haplotype 2		Assembly of NA20503 haplotype 2.		NA20503.hap2_for_genbank.fa.gz	2024-12	NA20503_hap2_hprc_f2	Verkko	2.2.1	42X	"PacBio, Oxford Nanopore"		
