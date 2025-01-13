@@ -181,6 +181,29 @@ ssds staging upload \
     upload \
     &>>batch1_liftoff_s3_upload.stderr
 
+
+###############################################################################
+##                          Update GitHub Repo.                              ##
+###############################################################################
+
+cd /private/groups/hprc/qc/liftoff/batch1
+
+## copy to github repo for notetaking
+cp batch1_liftoff.csv \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch1/
+
+cp batch1_liftoff_2.csv \
+    /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch1/
+    
+cp batch1_liftoff_outputs.csv \
+    /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch1/  
+    
+cp -r \
+     input_jsons/ \
+     /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch1/
+
+## git add, commit, push
+
 ###############################################################################
 ##                                   DONE                                    ##
 ###############################################################################
