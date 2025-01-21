@@ -12,7 +12,7 @@ If you want to download all of the assembly files using the index file, you can 
 
 ```
 ## get a local copy of the assembly index file
-wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.4.index.csv
+wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.5.index.csv
 
 ## S3 locations for assembly are stored in column 13
 ASSEMBLY_COLUMN_NUM=13
@@ -49,8 +49,6 @@ The assembly locations along with some metadata are collected in an index file. 
 The following samples have assemblies forthcoming
 * HG03492: waiting on Genbank updates
   * Sample was in Year 1 (Release 1) sample set
-* Technopole samples: waiting on Genbank release
-  * 4 Samples assembled as part of HPP collaboration with Human Technopole (NA20503/NA20762/NA20806/NA20827)
 
 ### Assembly Index Change Log
 
@@ -62,6 +60,8 @@ The following samples have assemblies forthcoming
 * v0.4 (2025 Jan 12): Added 11 samples (bringing the total number to 227)
   * 10 samples from AMED project
   * 1 sample from WashU Pedigree project
+* v0.5 (2025 Jan 21): Added 4 samples (bringing the total number to 231)
+  * 4 samples from Human Technopole
 ```
 
 ## Annotations
