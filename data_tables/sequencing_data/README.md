@@ -29,18 +29,25 @@ The R2 technology sequence index tables provide data processing summaries per fi
 ### Oxford Nanopore Technologies
 
 [data_ont_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_ont_pre_release.index.csv)
+* In BAM format and basecalled to include methylation information. 
+* Metadata data processing summary:
+   * 100kb+ with a target of 30x coverage per sample.
+   * R9/R10 sequencing_chemistry kits.
+   * basecaller_model indicates the model version.
 
 ### PacBio HiFi
 [data_hifi_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_pre_release.index.csv)
-
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
+* Combination of Revio and Sequel II instrument models.
+* DeepConsensus rebase called Y1-Y3 Sequel II.
+* MM_tag column indicates methylation information.
 
 ### HiC
 [data_hic_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hic_pre_release.index.csv)
 
 ### Illumina 1K Genomes
 [data_illumina_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_illumina_pre_release.index.csv)
-* NHGRI AnVIL Dataset Catalog Consortia: 1000G Workspace (Terra): [1000G-high-coverage-2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019)
+* **NHGRI AnVIL Dataset Catalog Consortia**: [1000G](https://anvilproject.org/data/consortia/1000G/workspaces) **Workspace (Terra)**: [1000G-high-coverage-2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019)
 
 ## Sequence Index File Change Log
 ```
