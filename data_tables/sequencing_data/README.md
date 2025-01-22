@@ -24,6 +24,7 @@ $ data_pull_example.sh
 ```
 
 ## Sequence Index File
+The R2 technology sequence index tables provide data processing summaries per file produced by the [hpp_production WDL workflows](https://github.com/human-pangenomics/hpp_production_workflows/tree/master/data_processing/wdl/workflows). Following, the sequence files are released to the sample's working path directory (s3://human-pangenomics/working/HPRC/)[https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/].
 
 ### Oxford Nanopore Technologies
 
