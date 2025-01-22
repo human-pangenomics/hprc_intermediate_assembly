@@ -2,6 +2,8 @@
 
 The release 2 sequencing data tables is synchronized to the latest samples in [assemblies_pre_release_version.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/assemblies_pre_release_v0.5.index.csv) from the most recent [HPRC_metadata/main/data/hprc-data-explorer-tables](https://github.com/human-pangenomics/HPRC_metadata/tree/main/data/hprc-data-explorer-tables).
 
+[Google Spreadsheet: R2 Sequencing Data Index](https://docs.google.com/spreadsheets/d/1EuZNw2sdijKYpJLqgHUYBOF6F4ECry8EWKZzVPjAw4Y/edit?usp=sharing)
+
 ## How to download
 Assembly sequencing data can be downloaded using the path column in the data_SequencingTechnology_pre_release.index.csv file.
 
