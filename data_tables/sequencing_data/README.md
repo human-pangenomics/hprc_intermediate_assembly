@@ -37,6 +37,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 ### PacBio HiFi
 [data_hifi_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_pre_release.index.csv)
+
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 * Combination of Revio and Sequel II instrument models.
 * DeepConsensus rebase called Y1-Y3 Sequel II.
