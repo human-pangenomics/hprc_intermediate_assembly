@@ -18,12 +18,8 @@ aws s3 --no-sign-request cp \
 
 ### Downloading All Files Using the Sequencing Technology Index Files:
 
-If you want to download all the assembly sequencing data files listed in the technology index files, you can use the following script:
+If you want to download all the assembly sequencing data files listed in the technology index files, you can use the [data_pull_example.sh](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_pull_example.sh)
 
-```bash
-$ data_pull_example.sh
-
-```
 
 ## Sequence Index File
 The R2 technology sequence index tables provide data processing summaries per file produced by the [hpp_production WDL workflows](https://github.com/human-pangenomics/hpp_production_workflows/tree/master/data_processing/wdl/workflows). Following, the sequence files are released to the sample's working path directory [s3://human-pangenomics/working/HPRC/](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/).
@@ -35,7 +31,6 @@ The R2 technology sequence index tables provide data processing summaries per fi
 * Metadata data processing summary:
    * 100kb+ with a target of 30x coverage per sample.
    * R9/R10 sequencing_chemistry kits.
-   * basecaller_model indicates the model version.
 
 ### PacBio HiFi
 [data_hifi_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_pre_release.index.csv)
@@ -54,6 +49,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 ## Sequence Index File Change Log
 ```
-* v0.5 (2025 Jan 22): Add assembly phasing metadata to Illumina table.
+* v0.5 (2025 Jan 27): Add DeepConsensus metadata to HiFi data table.
+* v0.5 (2025 Jan 22): Add assembly phasing metadata to Illumina data table.
 ```
 
