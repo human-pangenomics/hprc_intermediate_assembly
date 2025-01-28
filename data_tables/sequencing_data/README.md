@@ -40,6 +40,80 @@ The R2 technology sequence index tables provide data processing summaries per fi
 * DeepConsensus rebase called Y1-Y3 Sequel II.
 * MM_tag column indicates methylation information.
 
+#### Primary Metadata Identifiers
+
+- **sample_ID**: Unique identifier for the sample.
+- **filetype**: Type of the file (e.g., FASTQ, BAM).
+- **filename**: Name of the file associated with the sample.
+- **path**: Filepath to the associated data file.
+
+#### General Metadata
+
+- **study**: Name or description of the study the data is associated with.
+- **title**: Title of the sequencing project or dataset.
+- **accession**: Accession number for the dataset or sample.
+- **bioproject_accession**: BioProject ID linking the data to a broader study.
+- **biosample_accession**: BioSample ID providing metadata on the sample.
+- **design_description**: Description of the experimental design.
+- **notes**: Additional notes or comments about the sample or dataset.
+
+#### Sample Information
+
+- **generator_contact**: Contact information of the data generator.
+- **generator_facility**: Facility where the sequencing or data generation occurred.
+
+#### Library Information
+
+- **library_ID**: Unique identifier for the library preparation.
+- **library_strategy**: Library preparation strategy (e.g., WGS, RNA-seq).
+- **library_source**: Source material used for library preparation (e.g., genomic DNA, RNA).
+- **library_selection**: Method used for library selection (e.g., size-selection, random priming).
+- **library_layout**: Layout of the library (e.g., single-end, paired-end).
+- **shear_method**: Method used to fragment the DNA or RNA.
+- **size_selection**: Information about the size selection process.
+
+#### Instrument and Sequencing Details
+
+- **platform**: Sequencing platform used (e.g., PacBio, Illumina).
+- **instrument_model**: Specific instrument model used for sequencing.
+- **seq_plate_chemistry_version**: Chemistry version of the sequencing plate.
+- **polymerase_version**: Version of the polymerase enzyme used.
+
+#### Algorithm and Software Versions
+
+- **ccs_algorithm**: Version or type of circular consensus sequencing (CCS) algorithm used.
+- **DeepConsensus_version**: Version of the DeepConsensus software used for consensus generation.
+
+#### File Information
+
+- **filename**: Name of the file associated with the sample.
+- **path**: Filepath to the associated data file.
+- **deepconsensus_file**: Name of the DeepConsensus-generated file.
+- **deepconsensus_path**: Filepath to the DeepConsensus file.
+
+#### Production and Coverage
+
+- **production**: Indicates if the dataset is part of a production pipeline.
+- **coverage**: Sequencing coverage of the sample.
+- **deepconsensus_coverage**: Coverage calculated after applying DeepConsensus.
+
+#### Metrics and Statistics
+
+- **total_reads**: Total number of reads in the dataset.
+- **total_bp**: Total base pairs in the dataset.
+- **total_Gbp**: Total gigabase pairs in the dataset.
+- **mean**: Mean read length.
+- **min**: Minimum read length.
+- **max**: Maximum read length.
+- **N25**: N25 value (length of the shortest read contributing to 25% of the total dataset).
+- **N50**: N50 value (length of the shortest read contributing to 50% of the total dataset).
+- **N75**: N75 value (length of the shortest read contributing to 75% of the total dataset).
+- **quartile_25**: First quartile of read lengths.
+- **quartile_50**: Median of read lengths.
+- **quartile_75**: Third quartile of read lengths.
+- **ntsm_score**: Score calculated using the NTSM method.
+- **MM_tag**: Indicates methylation tagging or other molecular tags.
+
 ### HiC
 [data_hic_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hic_pre_release.index.csv)
 
