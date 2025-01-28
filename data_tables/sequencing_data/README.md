@@ -40,7 +40,6 @@ The R2 technology sequence index tables provide data processing summaries per fi
 #### User Notes
 * Combination of Revio and Sequel II instrument models.
 * DeepConsensus rebase called Y1-Y3 Sequel II.
-* MM_tag column indicates methylation information.
 
 #### Primary Metadata Identifiers
 
