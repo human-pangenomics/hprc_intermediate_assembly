@@ -40,6 +40,22 @@ The R2 technology sequence index tables provide data processing summaries per fi
 #### User Notes
 * Combination of Revio and Sequel II instrument models.
 * DeepConsensus rebase called Y1-Y3 Sequel II.
+* 13 samples only have DeepConsensus. 
+```Python
+['NA18906',
+ 'NA21309',
+ 'NA20762',
+ 'HG005',
+ 'NA20827',
+ 'NA20503',
+ 'NA19240',
+ 'HG03486',
+ 'HG03098',
+ 'NA20806',
+ 'HG01109',
+ 'NA20129',
+ 'HG02818']
+```
 
 #### Primary Metadata Identifiers
 
