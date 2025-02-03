@@ -40,7 +40,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 #### User Notes
 * Combination of Revio and Sequel II instrument models.
 * DeepConsensus rebase called Y1-Y3 Sequel II.
-* 13 samples only have DeepConsensus. 
+* 13 samples have only DeepConsensus. 
 ```Python
 ['NA18906',
  'NA21309',
@@ -59,18 +59,18 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 #### Primary Metadata Identifiers
 
-- **sample_ID**: Unique identifier for the sample.
-- **filetype**: Type of the file (e.g., FASTQ, BAM).
-- **filename**: Name of the file associated with the sample.
-- **path**: Filepath to the associated data file.
+- **sample_ID**: Coriell sample identifier.
+- **filetype**: The file type (e.g., FASTQ, BAM).
+- **filename**: Name of the sequence file associated with the sample.
+- **path**: AWS S3 path to the sequence data file.
 
 #### General Metadata
 
-- **study**: Name or description of the study the data is associated with.
+- **study**: Name or description of the study the sequence data is associated with.
 - **title**: Title of the sequencing project or dataset.
 - **accession**: Accession number for the dataset or sample.
-- **bioproject_accession**: BioProject ID linking the data to a broader study.
-- **biosample_accession**: BioSample ID providing metadata on the sample.
+- **bioproject_accession**: BioProject identifier.
+- **biosample_accession**: BioSample identifier
 - **design_description**: Description of the experimental design.
 - **notes**: Additional notes or comments about the sample or dataset.
 
@@ -83,7 +83,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 - **library_ID**: Unique identifier for the library preparation.
 - **library_strategy**: Library preparation strategy (e.g., WGS, RNA-seq).
-- **library_source**: Source material used for library preparation (e.g., genomic DNA, RNA).
+- **library_source**: Source material for library preparation (e.g., genomic DNA, RNA).
 - **library_selection**: Method used for library selection (e.g., size-selection, random priming).
 - **library_layout**: Layout of the library (e.g., single-end, paired-end).
 - **shear_method**: Method used to fragment the DNA or RNA.
@@ -98,38 +98,33 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 #### Algorithm and Software Versions
 
-- **ccs_algorithm**: Version or type of circular consensus sequencing (CCS) algorithm used.
-- **DeepConsensus_version**: Version of the DeepConsensus software used for consensus generation.
-
-#### File Information
-
-- **filename**: Name of the file associated with the sample.
-- **path**: Filepath to the associated data file.
+- **ccs_algorithm**: Version of the circular consensus sequencing (CCS) algorithm used.
+- **DeepConsensus_version**: Version of the DeepConsensus software used for consensus generation.y
 - **deepconsensus_file**: Name of the DeepConsensus-generated file.
-- **deepconsensus_path**: Filepath to the DeepConsensus file.
+- **deepconsensus_path**:  AWS S3 path to the DeepConsensus sequence file.
 
 #### Production and Coverage
 
-- **production**: Indicates if the dataset is part of a production pipeline.
+- **production**: Indicates the sequence production center where the sequence file was generated.
 - **coverage**: Sequencing coverage of the sample.
 - **deepconsensus_coverage**: Coverage calculated after applying DeepConsensus.
 
 #### Metrics and Statistics
 
-- **total_reads**: Total number of reads in the dataset.
-- **total_bp**: Total base pairs in the dataset.
-- **total_Gbp**: Total gigabase pairs in the dataset.
+- **total_reads**: Total number of reads in the sequence file.
+- **total_bp**: Total base pairs in the sequence file.
+- **total_Gbp**: Total gigabase pairs in the sequence file.
 - **mean**: Mean read length.
 - **min**: Minimum read length.
 - **max**: Maximum read length.
-- **N25**: N25 value (length of the shortest read contributing to 25% of the total dataset).
-- **N50**: N50 value (length of the shortest read contributing to 50% of the total dataset).
-- **N75**: N75 value (length of the shortest read contributing to 75% of the total dataset).
-- **quartile_25**: First quartile of read lengths.
-- **quartile_50**: Median of read lengths.
-- **quartile_75**: Third quartile of read lengths.
+- **N25**: N25 value (length of the shortest read contributing to 25% of the total sequence file).
+- **N50**: The contiguity of sequencing reads is determined by the read length at which 50% of the total bases are contained in reads of that length or longer.
+- **N75**: The contiguity of sequencing reads is determined by the read length at which 75% of the total bases are contained in reads of that length or longer.
+- **quartile_25**: First quartile of read lengths, indicating the read length below which 25% of the reads fall.
+- **quartile_50**: Median of read lengths, representing the middle value where 50% of the reads are shorter, and 50% are longer.
+- **quartile_75**: Third quartile of read lengths, indicating the read length below which 75% of the reads fall.
 - **ntsm_score**: Score calculated using the NTSM method.
-- **MM_tag**: Indicates methylation tagging or other molecular tags.
+- **MM_tag**: Methylation tag (TRUE or FALSE)
 
 ### HiC
 [data_hic_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hic_pre_release.index.csv)
