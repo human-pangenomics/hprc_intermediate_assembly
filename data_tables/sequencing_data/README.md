@@ -38,30 +38,29 @@ The R2 technology sequence index tables provide data processing summaries per fi
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
 ```Python
-[
-    "HG00438",
-    "HG00735",
-    "HG01106",
-    "HG02622",
-    "HG02630",
-    "HG02717",
-    "HG02886",
-    "HG03453",
-    "HG03471",
-    "HG03540",
-    "HG03579",
-    "HG00733",
-    "NA18940",
-    "NA18943",
-    "NA18944",
-    "NA18945",
-    "NA18948",
-    "NA18959",
-    "NA18960",
-    "NA18967",
-    "NA18970",
-    "NA18982"
-]
+["HG00438",
+"HG00735",
+"HG01106",
+"HG02622",
+"HG02630",
+"HG02717",
+"HG02886",
+"HG03453",
+"HG03471",
+"HG03540",
+"HG03579",
+"HG00733",
+"NA18940",
+"NA18943",
+"NA18944",
+"NA18945",
+"NA18948",
+"NA18959",
+"NA18960",
+"NA18967",
+"NA18970",
+"NA18982"]
+
 ```
 
 #### User Notes
