@@ -37,32 +37,31 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
-```markdown
-| Sample ID | Production Submission              |
-|-----------|-----------------------------------|
-| HG00438   | WUSTL_HPRC_HiFi_Year1             |
-| HG00735   | WUSTL_HPRC_HiFi_Year1             |
-| HG01106   | WUSTL_HPRC_HiFi_Year1             |
-| HG02622   | WUSTL_HPRC_HiFi_Year1             |
-| HG02630   | WUSTL_HPRC_HiFi_Year1             |
-| HG02717   | WUSTL_HPRC_HiFi_Year1             |
-| HG02886   | WUSTL_HPRC_HiFi_Year1             |
-| HG03453   | WUSTL_HPRC_HiFi_Year1             |
-| HG03471   | WUSTL_HPRC_HiFi_Year1             |
-| HG03540   | WUSTL_HPRC_HiFi_Year1             |
-| HG03579   | WUSTL_HPRC_HiFi_Year1             |
-| HG00733   | HG00733_T2T_UW_HiFi_ONT           |
-| NA18940   | HPRC_AMED                         |
-| NA18943   | HPRC_AMED                         |
-| NA18944   | HPRC_AMED                         |
-| NA18945   | HPRC_AMED                         |
-| NA18948   | HPRC_AMED                         |
-| NA18959   | HPRC_AMED                         |
-| NA18960   | HPRC_AMED                         |
-| NA18967   | HPRC_AMED                         |
-| NA18970   | HPRC_AMED                         |
-| NA18982   | HPRC_AMED                         |
-```
+| **Sample ID** | **Production Submission**      |
+|:-------------:|:-------------------------------|
+| HG00438       | WUSTL_HPRC_HiFi_Year1          |
+| HG00735       | WUSTL_HPRC_HiFi_Year1          |
+| HG01106       | WUSTL_HPRC_HiFi_Year1          |
+| HG02622       | WUSTL_HPRC_HiFi_Year1          |
+| HG02630       | WUSTL_HPRC_HiFi_Year1          |
+| HG02717       | WUSTL_HPRC_HiFi_Year1          |
+| HG02886       | WUSTL_HPRC_HiFi_Year1          |
+| HG03453       | WUSTL_HPRC_HiFi_Year1          |
+| HG03471       | WUSTL_HPRC_HiFi_Year1          |
+| HG03540       | WUSTL_HPRC_HiFi_Year1          |
+| HG03579       | WUSTL_HPRC_HiFi_Year1          |
+| HG00733       | HG00733_T2T_UW_HiFi_ONT        |
+| NA18940       | HPRC_AMED                      |
+| NA18943       | HPRC_AMED                      |
+| NA18944       | HPRC_AMED                      |
+| NA18945       | HPRC_AMED                      |
+| NA18948       | HPRC_AMED                      |
+| NA18959       | HPRC_AMED                      |
+| NA18960       | HPRC_AMED                      |
+| NA18967       | HPRC_AMED                      |
+| NA18970       | HPRC_AMED                      |
+| NA18982       | HPRC_AMED                      |
+
 #### User Notes
 * Combination of Revio and Sequel II instrument models.
 * DeepConsensus rebase called Y1-Y3 Sequel II.
