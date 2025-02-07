@@ -37,6 +37,30 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
+
+
+#### User Notes
+* 219/232 PacBio HiFi samples present
+* Combination of Revio and Sequel II instrument models.
+* DeepConsensus rebase called Y1-Y3 Sequel II.
+* 13 samples have only DeepConsensus. 
+```Python
+['NA18906',
+ 'NA21309',
+ 'NA20762',
+ 'HG005',
+ 'NA20827',
+ 'NA20503',
+ 'NA19240',
+ 'HG03486',
+ 'HG03098',
+ 'NA20806',
+ 'HG01109',
+ 'NA20129',
+ 'HG02818']
+```
+
+* 22 samples have no MM modification tags.
 ```Python
 ["HG00438",
 "HG00735",
@@ -61,26 +85,6 @@ The R2 technology sequence index tables provide data processing summaries per fi
 "NA18970",
 "NA18982"]
 
-```
-
-#### User Notes
-* Combination of Revio and Sequel II instrument models.
-* DeepConsensus rebase called Y1-Y3 Sequel II.
-* 13 samples have only DeepConsensus. 
-```Python
-['NA18906',
- 'NA21309',
- 'NA20762',
- 'HG005',
- 'NA20827',
- 'NA20503',
- 'NA19240',
- 'HG03486',
- 'HG03098',
- 'NA20806',
- 'HG01109',
- 'NA20129',
- 'HG02818']
 ```
 
 #### Primary Metadata Identifiers
