@@ -37,7 +37,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
-```
+```markdown
 | Sample ID | Production Submission              |
 |-----------|-----------------------------------|
 | HG00438   | WUSTL_HPRC_HiFi_Year1             |
