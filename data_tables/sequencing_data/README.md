@@ -5,7 +5,7 @@ The release 2 sequencing data tables is synchronized to the latest samples in [a
 **Google Spreadsheet**:[R2 Sequencing Data Index](https://docs.google.com/spreadsheets/d/1EuZNw2sdijKYpJLqgHUYBOF6F4ECry8EWKZzVPjAw4Y/edit?usp=sharing)
 
 ## How to download
-Assembly sequencing data can be downloaded using the path column in the data_SequencingTechnology_pre_release.index.csv file.
+Assembly sequencing data can be downloaded using the path column in the data_SequencingTechnology_pre_release.index.csv file (e.g., data_ont_pre_release.index.csv).
 
 ### Example:
 Individual sequence files can be downloaded via the AWS CLI using the following command:
@@ -38,7 +38,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
 #### User Notes
-* 219 PacBio HiFi samples present
+* 219 PacBio HiFi samples present.
 * Combination of Revio and Sequel II instrument models.
 
 * 163 samples have DeepConsensus fastq sequence files available.
