@@ -1,0 +1,6 @@
+{
+  "assign_chromosomes.assembly_name": "hg002v1.1.mat_MT",
+  "assign_chromosomes.input_asm": "s3://human-pangenomics/T2T/HG002/assemblies/hg002v1.1.mat_MT.fasta.gz",
+  "assign_chromosomes.chrom_assignment_ignore_bed": "/private/groups/hprc/ref_files/chm13/chm13_ignore_rDNA_PARs.bed",
+  "assign_chromosomes.ref_asm": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz"
+}

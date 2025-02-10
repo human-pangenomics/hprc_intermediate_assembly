@@ -1,0 +1,6 @@
+{
+  "assign_chromosomes.assembly_name": "NA18967_hap1_hprc_r2_v1.0.1",
+  "assign_chromosomes.input_asm": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/NA18967/assemblies/freeze_2/NA18967_hap1_hprc_r2_v1.0.1.fa.gz",
+  "assign_chromosomes.chrom_assignment_ignore_bed": "/private/groups/hprc/ref_files/chm13/chm13_ignore_rDNA_PARs.bed",
+  "assign_chromosomes.ref_asm": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz"
+}

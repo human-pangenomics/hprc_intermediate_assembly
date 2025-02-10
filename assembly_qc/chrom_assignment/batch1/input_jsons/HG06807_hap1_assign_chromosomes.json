@@ -1,0 +1,6 @@
+{
+  "assign_chromosomes.assembly_name": "HG06807_pat_v1",
+  "assign_chromosomes.input_asm": "s3://human-pangenomics/working/HPRC_PLUS/HG06807/assemblies/genbank/HG06807_pat_v1.0.genbank.fa.gz",
+  "assign_chromosomes.chrom_assignment_ignore_bed": "/private/groups/hprc/ref_files/chm13/chm13_ignore_rDNA_PARs.bed",
+  "assign_chromosomes.ref_asm": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz"
+}
