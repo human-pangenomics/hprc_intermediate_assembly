@@ -207,16 +207,12 @@ HG01960,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F
 HG01960,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01960/assemblies/freeze_2/annotation/repeat_masker/HG01960_mat_hprc_r2_v1.RepeatMasker.bed
 HG01969,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01969/assemblies/freeze_2/annotation/repeat_masker/HG01969_pat_hprc_r2_v1.RepeatMasker.bed
 HG01969,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01969/assemblies/freeze_2/annotation/repeat_masker/HG01969_mat_hprc_r2_v1.RepeatMasker.bed
-HG01978,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01978/assemblies/freeze_2/annotation/repeat_masker/HG01978_pat_hprc_r2_v1.RepeatMasker.bed
-HG01978,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG01978/assemblies/freeze_2/annotation/repeat_masker/HG01978_mat_hprc_r2_v1.RepeatMasker.bed
 HG02071,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02071/assemblies/freeze_2/annotation/repeat_masker/HG02071_pat_hprc_r2_v1.RepeatMasker.bed
 HG02071,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02071/assemblies/freeze_2/annotation/repeat_masker/HG02071_mat_hprc_r2_v1.RepeatMasker.bed
 HG02074,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02074/assemblies/freeze_2/annotation/repeat_masker/HG02074_pat_hprc_r2_v1.RepeatMasker.bed
 HG02074,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02074/assemblies/freeze_2/annotation/repeat_masker/HG02074_mat_hprc_r2_v1.RepeatMasker.bed
 HG02135,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02135/assemblies/freeze_2/annotation/repeat_masker/HG02135_pat_hprc_r2_v1.RepeatMasker.bed
 HG02135,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02135/assemblies/freeze_2/annotation/repeat_masker/HG02135_mat_hprc_r2_v1.RepeatMasker.bed
-HG02257,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02257/assemblies/freeze_2/annotation/repeat_masker/HG02257_pat_hprc_r2_v1.RepeatMasker.bed
-HG02257,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02257/assemblies/freeze_2/annotation/repeat_masker/HG02257_mat_hprc_r2_v1.RepeatMasker.bed
 HG02668,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02668/assemblies/freeze_2/annotation/repeat_masker/HG02668_pat_hprc_r2_v1.RepeatMasker.bed
 HG02668,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02668/assemblies/freeze_2/annotation/repeat_masker/HG02668_mat_hprc_r2_v1.RepeatMasker.bed
 HG02717,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02717/assemblies/freeze_2/annotation/repeat_masker/HG02717_pat_hprc_r2_v1.RepeatMasker.bed
@@ -229,8 +225,6 @@ HG03041,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F
 HG03041,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03041/assemblies/freeze_2/annotation/repeat_masker/HG03041_mat_hprc_r2_v1.RepeatMasker.bed
 HG03239,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03239/assemblies/freeze_2/annotation/repeat_masker/HG03239_pat_hprc_r2_v1.RepeatMasker.bed
 HG03239,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03239/assemblies/freeze_2/annotation/repeat_masker/HG03239_mat_hprc_r2_v1.RepeatMasker.bed
-HG03516,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03516/assemblies/freeze_2/annotation/repeat_masker/HG03516_pat_hprc_r2_v1.RepeatMasker.bed
-HG03516,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03516/assemblies/freeze_2/annotation/repeat_masker/HG03516_mat_hprc_r2_v1.RepeatMasker.bed
 HG03804,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03804/assemblies/freeze_2/annotation/repeat_masker/HG03804_pat_hprc_r2_v1.RepeatMasker.bed
 HG03804,hap2,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03804/assemblies/freeze_2/annotation/repeat_masker/HG03804_mat_hprc_r2_v1.RepeatMasker.bed
 HG03942,hap1,s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG03942/assemblies/freeze_2/annotation/repeat_masker/HG03942_pat_hprc_r2_v1.RepeatMasker.bed

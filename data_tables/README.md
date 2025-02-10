@@ -12,7 +12,7 @@ If you want to download all of the assembly files using the index file, you can 
 
 ```
 ## get a local copy of the assembly index file
-wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.5.index.csv
+wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.6.index.csv
 
 ## S3 locations for assembly are stored in column 13
 ASSEMBLY_COLUMN_NUM=13
@@ -56,12 +56,14 @@ The following samples have assemblies forthcoming
 * v0.1 (2024 Oct 11): Added 156 samples to index
 * v0.2 (2024 Nov 07): Added 40 more samples (bringing total number to 196)
 * v0.3 (2024 Dec 20): Added 20 more samples (bringing the total number to 216)
-  * The original fasta files did not have sequences in natural sort order. All prior assemblies were reuploaded as sorted fastas. To reflect the fact that there was a change, but it is not expected to alter any analysis outputs the assembly names (and filenames) were changed from v1 to v1.0.1.
+  * prior assemblies were re-uploaded to correct fasta sort order (see issue below)
 * v0.4 (2025 Jan 12): Added 11 samples (bringing the total number to 227)
   * 10 samples from AMED project
   * 1 sample from WashU Pedigree project
 * v0.5 (2025 Jan 21): Added 4 samples (bringing the total number to 231)
   * 4 samples from Human Technopole
+* v0.6 (2025 Feb 09): Added reference assemblies HG002, CHM13, GRCh38
+  * Fixed haplotype swap in three samples (see issue below). 
 ```
 
 ## Annotations
@@ -86,3 +88,17 @@ CenSat annotations from [CAW (Centromere Annotation Workflow)](https://github.co
 Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/tasks/liftoff.wdl) using CHM13 annotations derived from [JHU RefSeqv110 + Liftoff v5.2](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_RefSeq_Liftoff_v5.2.gff3.gz). Note that the input gff3 was manually fixed ([available here](https://public.gi.ucsc.edu/~pnhebbar/chm13v2.0_RefSeq_Liftoff_v5.1.gff3)) with the introduction unique postfixes that fix duplicate IDs which were present.
 
 * Output GFF3
+
+
+### Known Issues
+
+- **Assemblies not in proper sort order** – ✅ Fixed in **v0.3**
+  - The original fasta files did not have sequences in natural sort order. All prior assemblies were reuploaded as sorted fastas. To reflect the fact that there was a change, but it is not expected to alter any analysis outputs the assembly names (and filenames) were changed from v1 to v1.0.1.
+- **Three samples were labeled with wrong haplotype** – ✅ Fixed in **v0.6**  
+  - Three samples were haplotype swapped (in versions 1.0 and 1.0.1):
+    - HG01978  
+    - HG02257  
+    - HG03516  
+  - New corrected assemblies are assigned version v1.1.0  
+  - To maintain records and intentionally break prior URIs included in assembly data tables, the old (incorrect) versions and their annotations have been moved to the haplotype_swapped folder of the relevant assembly folders.  
+
