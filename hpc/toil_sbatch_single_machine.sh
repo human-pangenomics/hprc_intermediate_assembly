@@ -49,7 +49,8 @@ while [ $# -gt 0 ]; do
       sbatch toil_sbatch_single_machine.sh \
         --wdl /path/to/your/workflow.wdl \
         --sample_csv /path/your/sample_table.csv \
-        --input_json_path '../your_input_jsons/${SAMPLE_ID}_myworkflow.json'
+        --input_json_path '../your_input_jsons/${SAMPLE_ID}_myworkflow.json' \
+        --toil_args '--container docker'        
 
       Options:
 
@@ -61,6 +62,7 @@ while [ $# -gt 0 ]; do
       -i, --input_json_path    The path for all JSON files created by launch_from_table.py
                                should be of the form: '../your_input_jsons/${SAMPLE_ID}_myworkflow.json'
                                so that this script can enter the sample ID.
+      -t, --toil_args          (optional) Arguments to pass to Toil call                               
 
 EOF
       exit 0
@@ -95,6 +97,16 @@ EOF
       fi
       shift
       ;;
+    -t|--toil_args)
+      shift
+      if [ $# -gt 0 ]; then
+        TOIL_ARGS="$1"
+      else
+        TOIL_ARGS=""
+        echo "No toil args set. Running normally."
+      fi
+      shift
+      ;;      
     *)
       break
       ;;
@@ -173,6 +185,7 @@ toil-wdl-runner \
     --runLocalJobsOnWorkers \
     --retryCount 1 \
     --disableProgress \
+    ${TOIL_ARGS} \
     2>&1 | tee "${SAMPLE_ID}_${WDL_NAME}_log.txt"
 
 ## Calculate run statistics
