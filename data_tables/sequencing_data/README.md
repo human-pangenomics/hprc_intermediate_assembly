@@ -5,7 +5,7 @@ The release 2 sequencing data tables is synchronized to the latest samples in [a
 **Google Spreadsheet**:[R2 Sequencing Data Index](https://docs.google.com/spreadsheets/d/1EuZNw2sdijKYpJLqgHUYBOF6F4ECry8EWKZzVPjAw4Y/edit?usp=sharing)
 
 ## How to download
-Assembly sequencing data can be downloaded using the path column in the data_SequencingTechnology_pre_release.index.csv file.
+Assembly sequencing data can be downloaded using the path column in the data_SequencingTechnology_pre_release.index.csv file (e.g., data_ont_pre_release.index.csv).
 
 ### Example:
 Individual sequence files can be downloaded via the AWS CLI using the following command:
@@ -38,7 +38,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 [data_deepconsensus_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_pre_release.index.csv)
 
 #### User Notes
-* 219 PacBio HiFi samples present
+* 219 PacBio HiFi samples present.
 * Combination of Revio and Sequel II instrument models.
 
 * 163 samples have DeepConsensus fastq sequence files available.
@@ -46,47 +46,21 @@ The R2 technology sequence index tables provide data processing summaries per fi
 * DeepConsensus rebase called Y1-Y3 Sequel II.
 * 13 samples have only DeepConsensus. 
 ```Python
-['NA18906',
- 'NA21309',
- 'NA20762',
- 'HG005',
- 'NA20827',
- 'NA20503',
- 'NA19240',
- 'HG03486',
- 'HG03098',
- 'NA20806',
- 'HG01109',
- 'NA20129',
- 'HG02818']
+['NA18906', 'NA21309', 'NA20762', 'HG005', 'NA20827', 'NA20503', 'NA19240', 'HG03486', 'HG03098', 'NA20806', 'HG01109', 'NA20129', 'HG02818']
 ```
 
+* 9 samples have Revio and Sequel II rebase called with DeepConsensus. Therefore, the samples will be in the DeepConsensus and HiFi index data tables.
+```
+['HG04187', 'HG06807', 'HG02080', 'HG03492', 'HG01243', 'HG02055', 'HG02723', 'HG02109', 'HG02145']
+```
+
+* 150 samples have HiFi and DeepConsensus sequence files. In the HiFi index data table, 141 samples have DeepConsensus sequence files that match the sample Sequel II platform unit identifier.
+  
 * 22 samples have no MM modification tags.
 ```Python
-["HG00438",
-"HG00735",
-"HG01106",
-"HG02622",
-"HG02630",
-"HG02717",
-"HG02886",
-"HG03453",
-"HG03471",
-"HG03540",
-"HG03579",
-"HG00733",
-"NA18940",
-"NA18943",
-"NA18944",
-"NA18945",
-"NA18948",
-"NA18959",
-"NA18960",
-"NA18967",
-"NA18970",
-"NA18982"]
-
+["HG00438", "HG00735", "HG01106", "HG02622", "HG02630", "HG02717", "HG02886", "HG03453", "HG03471", "HG03540", "HG03579", "HG00733", "NA18940", "NA18943", "NA18944", "NA18945", "NA18948", "NA18959", "NA18960", "NA18967", "NA18970", "NA18982"]
 ```
+
 
 #### Primary Metadata Identifiers
 
