@@ -28,10 +28,10 @@ done
 The assembly locations along with some metadata are collected in an index file. Reference-level assemblies for CHM13v2, GRCh38, and HG002 (Q100) are included in the index file to help ensure that all HPRC analysis teams are using the same reference versions. The references pointed to in the assembly index have sequence IDs prepended with their sample_id and haplotype (0 for CHM13 and GRCh38) according to the [PanSN spec](https://github.com/pangenome/PanSN-spec). This is useful for pangenome applications where having multiple sequence IDs that are the same (for example chr1 from CHM13 and GRCh38) causes redundancy. Users who wish to analyze assemblies directly will want the original versions of the assemblies given below: 
 |assembly|assembly (PanSN)|
 |-|-|
-|[HG002 Mat](s3://human-pangenomics/T2T/HG002/assemblies/hg002v1.1.mat_MT.fasta.gz)|[HG002 Mat](s3://human-pangenomics/working/HPRC_PLUS/HG002/assemblies/Q100/pansn/hg002v1.1.mat_MT.PanSN.fa.gz)|
-|[HG002 Pat](s3://human-pangenomics/T2T/HG002/assemblies/hg002v1.1.pat.fasta.gz)|[HG002 Pat](s3://human-pangenomics/working/HPRC_PLUS/HG002/assemblies/Q100/pansn/hg002v1.1.pat.PanSN.fa.gz)|
-|[GRCh38](s3://human-pangenomics/working/HPRC_PLUS/GRCh38/assemblies/)|[GRCh38](s3://human-pangenomics/working/HPRC_PLUS/GRCh38/assemblies/pansn/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz)|
-|[CHM13](s3://human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0_maskedY_rCRS.fa.gz)|[CHM13](s3://human-pangenomics/working/HPRC_PLUS/CHM13/assemblies/analysis_set/pansn/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz)|
+|[HG002 Mat](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/hg002v1.1.mat_MT.fasta.gz)|[HG002 Mat](https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC_PLUS/HG002/assemblies/Q100/pansn/hg002v1.1.mat_MT.PanSN.fa.gz)|
+|[HG002 Pat](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/hg002v1.1.pat.fasta.gz)|[HG002 Pat](https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC_PLUS/HG002/assemblies/Q100/pansn/hg002v1.1.pat.PanSN.fa.gz)|
+|[GRCh38](https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC_PLUS/GRCh38/assemblies/)|[GRCh38](https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC_PLUS/GRCh38/assemblies/pansn/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz)|
+|[CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0_maskedY_rCRS.fa.gz)|[CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/working/HPRC_PLUS/CHM13/assemblies/analysis_set/pansn/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz)|
 
 The columns of the index file are as follows:
 1. **sample_id**: Sample ID from Coriell (for example HG01884). For samples with GM/NA names, use the NA prefix.
