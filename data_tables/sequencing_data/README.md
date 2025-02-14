@@ -138,8 +138,28 @@ The R2 technology sequence index tables provide data processing summaries per fi
 [data_illumina_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_illumina_pre_release.index.csv)
 * **NHGRI AnVIL Dataset Catalog Consortia**: [1000G](https://anvilproject.org/data/consortia/1000G/workspaces) **Workspace (Terra)**: [1000G-high-coverage-2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019)
 
+### Kinnex (PacBio Iso-Seq full-length RNA sequencing)
+[data_kinnex_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_kinnex_pre_release.index.csv)
+Kinnex data is provided as flnc.bams.  See [PacBio IsoSeq documentation](https://isoseq.how/) for details. 
+
+
+#### User Notes
+* 202 R2 samples have Kinnex data available.
+* IsoSeq was run per sample for a majority of the data resulting in a single flnc.bam per sample.  A subset of samples were run per smrtcell, resulting in multiple flnc.bams per sample, these data should be concatenated.  Read totals are reported per file.
+* The following R2 samples have Kinnex data generated, but are in progress.
+```
+['HG01123','HG02486','HG02559','HG03471']
+```
+* The following R2 samples do not have Kinnex data generated.  They are reference, HPRC-PLUS, and HPP samples.
+```
+['CHM13','GRCh38','HG002','HG005','HG00733','HG01109','HG01243','HG02055','HG02080','HG02109','HG02145','HG02723','HG02818','HG03098','HG03486','HG06807','NA18906','NA18940','NA18943','NA18944','NA18945','NA18948','NA18959','NA18960','NA18982','NA19240','NA20129','NA21309']
+```
+
+
+
 ## Sequence Index File Change Log
 ```
+* v0.5 (2025 Feb 12): Add Kinnex data table and documentation. 
 * v0.5 (2025 Jan 27): Add DeepConsensus metadata to HiFi data table.
 * v0.5 (2025 Jan 22): Add assembly phasing metadata to Illumina data table.
 ```
