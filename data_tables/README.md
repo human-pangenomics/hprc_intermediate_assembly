@@ -100,6 +100,14 @@ Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_
 * Output GFF3
 
 
+### Chromosome Information
+Chromosome assignments for all sequences. Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/tasks/assign_chromosomes.wdl).
+
+* chromAlias: text file with chromosome assignments
+* t2t_chromosomes: text file list of T2T chromosomes
+* gaps: bed file with gaps found in the assembly
+
+
 ### Known Issues
 
 - **Assemblies not in proper sort order** – ✅ Fixed in **v0.3**
