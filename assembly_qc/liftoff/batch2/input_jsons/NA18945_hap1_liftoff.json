@@ -1,0 +1,8 @@
+{
+  "runLiftoff.liftoff.sample": "NA18945_hap1",
+  "runLiftoff.liftoff.suffix": "hprc_r2_v1_liftoff",
+  "runLiftoff.liftoff.referenceFastaGz": "/private/groups/hprc/ref_files/chm13/chm13v2.0.fa.gz",
+  "runLiftoff.liftoff.geneGff3": "/private/groups/hprc/ref_files/liftoff/chm13v2.0_RefSeq_Liftoff_v5.1.gff3",
+  "runLiftoff.liftoff.assemblyFastaGz": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/NA18945/assemblies/freeze_2/NA18945_hap1_hprc_r2_v1.0.1.fa.gz",
+  "runLiftoff.liftoff.memSizeGB": 150
+}
