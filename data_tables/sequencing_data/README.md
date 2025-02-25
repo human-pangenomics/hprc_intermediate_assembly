@@ -65,7 +65,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 ```Python
 ['HG01074', 'HG02451', 'HG03017', 'HG03704', 'HG02735', 'HG00558', 'HG00639', 'HG01969', 'HG01150', 'HG02514', 'HG01940', 'HG03050', 'HG02984', 'HG02841', 'HG00140', 'HG00323', 'HG00408', 'HG00597','HG01261', 'HG01975', 'HG02015', 'HG02056', 'HG02129', 'HG02155', 'HG02258', 'HG02273', 'HG02965', 'HG02976', 'HG03195', 'HG03225', 'HG03834', 'NA18971', 'NA20805', 'HG02071', 'HG02074', 'HG03942','HG04204', 'HG04228', 'HG02135']
 ```
-**IMPORTANT**: Lima demultiplexing did not properly update MM, ML, and kinetics tags after demultiplexing. Stability issues were reported to be resolved in Lima versions after v2.5. As a result, we have included a column, MM_review, to identify 196 samples processed with Lima versions ≤ 2.5 (boolean = True).
+**IMPORTANT**: Lima demultiplexing did not properly update MM, ML, and kinetics tags after demultiplexing. Stability issues were reported to be resolved in Lima versions after v2.5. As a result, we have included a column, MM_review, to identify 196 samples (645 files) processed with Lima versions ≤ 2.5 (boolean = True).
 
 #### Primary Metadata Identifiers
 
