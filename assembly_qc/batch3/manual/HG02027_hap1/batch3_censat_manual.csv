@@ -1,0 +1,3 @@
+sample_id,sample_name,haplotype,phasing,assembly_method,assembly_method_version,assembly_date,assembly_name,source,genbank_accession,assembly_md5,assembly_fai,assembly_gzi,assembly
+HG02027_hap1_pt1,,,,,,,,,,,,,/private/groups/hprc/qc/batch3/censat/manual/HG02027_hap1/HG02027_pat_hprc_r2_v1.0.1_pt1.fa
+HG02027_hap1_pt2,,,,,,,,,,,,,/private/groups/hprc/qc/batch3/censat/manual/HG02027_hap1/HG02027_pat_hprc_r2_v1.0.1_pt2.fa
