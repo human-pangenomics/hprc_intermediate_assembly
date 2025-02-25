@@ -61,6 +61,10 @@ The R2 technology sequence index tables provide data processing summaries per fi
 ["HG00438", "HG00735", "HG01106", "HG02622", "HG02630", "HG02717", "HG02886", "HG03453", "HG03471", "HG03540", "HG03579", "HG00733", "NA18940", "NA18943", "NA18944", "NA18945", "NA18948", "NA18959", "NA18960", "NA18967", "NA18970", "NA18982"]
 ```
 
+* 39 samples have sequence reads adapter-trimmed; however, the kinetic tags that are used for methylation calls were not.
+```Python
+['HG01074', 'HG02451', 'HG03017', 'HG03704', 'HG02735', 'HG00558', 'HG00639', 'HG01969', 'HG01150', 'HG02514', 'HG01940', 'HG03050', 'HG02984', 'HG02841', 'HG00140', 'HG00323', 'HG00408', 'HG00597','HG01261', 'HG01975', 'HG02015', 'HG02056', 'HG02129', 'HG02155', 'HG02258', 'HG02273', 'HG02965', 'HG02976', 'HG03195', 'HG03225', 'HG03834', 'NA18971', 'NA20805', 'HG02071', 'HG02074', 'HG03942','HG04204', 'HG04228', 'HG02135']
+```
 
 #### Primary Metadata Identifiers
 
