@@ -121,12 +121,12 @@ cd /private/groups/hprc/qc/liftoff/batch2
 cp batch2_liftoff.csv \
      /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch2/
 
-cp batch2_liftoff_2.csv \
-    /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch2/
-    
 cp batch2_liftoff_outputs.csv \
     /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch2/  
-    
+
+cp s3_upload/batch2_liftoff_outputs_sample_oriented_with_s3_paths.csv \
+    /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch2/ 
+     
 cp -r \
      input_jsons/ \
      /private/groups/hprc/hprc_intermediate_assembly/assembly_qc/liftoff/batch2/
