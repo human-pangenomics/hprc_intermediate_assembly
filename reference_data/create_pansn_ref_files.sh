@@ -17,7 +17,7 @@ zcat hg002v1.1.pat.fasta.gz \
 ## Note: chrM is written chrM not chrM_MATERNAL
 zcat hg002v1.1.mat_MT.fasta.gz \
   | sed 's/>chr\([0-9X]*\)_MATERNAL/>HG002#2#chr\1/' \
-  | sed 's/>chrM/>HG002#2chrM/' \
+  | sed 's/>chrM/>HG002#2#chrM/' \
   > hg002v1.1.mat_MT.PanSN.fa
 
 
@@ -35,6 +35,11 @@ cat<<EOF > README.txt
 ## 14 Feb 2025
 ## created version of HG002 v1.1 with PanSN naming convention for HPRC use.
 
+## 02 Mar 2025: UPDATE
+## fixed PanSN convention for chrM in maternal haplotype
+## replaced sed 's/>chrM/>HG002#2chrM/' with sed 's/>chrM/>HG002#2#chrM/'
+
+
 ## download references (including version of HG002 with MT but no EBV)
 aws s3 cp s3://human-pangenomics/T2T/HG002/assemblies/hg002v1.1.pat.fasta.gz .
 aws s3 cp s3://human-pangenomics/T2T/HG002/assemblies/hg002v1.1.mat_MT.fasta.gz .
@@ -48,7 +53,7 @@ zcat hg002v1.1.pat.fasta.gz \
 ## Note: chrM is written chrM not chrM_MATERNAL
 zcat hg002v1.1.mat_MT.fasta.gz \
   | sed 's/>chr\([0-9X]*\)_MATERNAL/>HG002#2#chr\1/' \
-  | sed 's/>chrM/>HG002#2chrM/' \
+  | sed 's/>chrM/>HG002#2#chrM/' \
   > hg002v1.1.mat_MT.PanSN.fa
 
 
