@@ -41,3 +41,19 @@ while read SAMPLE; do
 	BED_PRED_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.downsample_1.0.hmm_flagger_prediction.bed
 	printf "${SAMPLE},${MAPPING_SUFFIX},${BAM},${BAI},${COV_GZ},${TSV_v1dot1},${BED_NOHAP_v1dot1},${BED_NOHAP_HAP1_v1dot1},${BED_NOHAP_HAP2_v1dot1},${BED_PRED_v1dot1}\n"
 done < samples_list_only_batch1.txt  >> ${OUTPUT_TSV}
+
+
+
+# download BED files, separate them by haplotypes, upload them to the related s3 bucket
+while read SAMPLE; do
+        MAPPING_SUFFIX="hifi_minimap2_2.28"
+        BAM=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/read_alignments/hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.bam
+        BAI=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/read_alignments/hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.bam.bai
+        COV_GZ=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.downsample_1.0.augmented.cov.gz
+        TSV_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.downsample_1.0.augmented.stats.tsv
+        BED_NOHAP_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+        BED_NOHAP_HAP1_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hap1.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+        BED_NOHAP_HAP2_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hap2.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+        BED_PRED_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.${MAPPING_SUFFIX}.corrected.downsample_1.0.hmm_flagger_prediction.bed
+        printf "${SAMPLE},${MAPPING_SUFFIX},${BAM},${BAI},${COV_GZ},${TSV_v1dot1},${BED_NOHAP_v1dot1},${BED_NOHAP_HAP1_v1dot1},${BED_NOHAP_HAP2_v1dot1},${BED_PRED_v1dot1}\n"
+done < samples_list_batch2.txt  >> ${OUTPUT_TSV}

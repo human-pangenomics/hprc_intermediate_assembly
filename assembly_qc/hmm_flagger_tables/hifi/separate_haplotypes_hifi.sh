@@ -1,3 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=separate_haps_hifi_masri
+#SBATCH --partition=long
+#SBATCH --mail-user=masri@ucsc.edu
+#SBATCH --nodes=1
+#SBATCH --mail-type=FAIL,END
+#SBATCH --mem=2gb
+#SBATCH --cpus-per-task=2
+#SBATCH --output=%x.%j.log
+#SBATCH --time=100:00:00
+
 cd /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/hmm_flagger_tables/hifi
 
 touch csv2tab && chmod u+x csv2tab
@@ -76,6 +87,40 @@ while read line; do
 done < ${WORKING_DIR}/../../batch1/hmm_flagger/hifi/hmm_flagger_hifi_data_table.output.csv > ${WORKING_DIR}/samples_list_only_batch1.txt
 
 echo "Uploading HiFi-based bed files separated by haplotype ..."
+
+
+#########
+# batch2
+#########
+
+echo "Downloading and separating HiFi-based HMM-Flagger bed files for batch2 ... "
+
+# download BED files, separate them by haplotypes, upload them to the related s3 bucket
+while read line; do
+	# here I grep ".cov.gz" to make sure the pipeline was run successfully for this sample
+        SAMPLE=$(echo $line | grep ".cov.gz" | ./csv2tab | awk -v RS='\r\n'  -F'\t' '{print $1}')
+        if [[ ${SAMPLE} == "" ]];then
+                continue
+        fi
+	# echo sample to create a list of samples whose bed files could be separated by haplotype
+	echo ${SAMPLE}
+
+	# get link
+        BED_NOHAP_v1dot1=${BASE}/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+
+	# make a directory to download bed file and create haplotype-specific bed files
+	mkdir -p ${WORKING_DIR}/s3_upload_hap_separated/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi
+	cd ${WORKING_DIR}/s3_upload_hap_separated/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi
+	wget ${BED_NOHAP_v1dot1}
+        cat ${WORKING_DIR}/s3_upload_hap_separated/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed | \
+		grep "#2#" > ${SAMPLE}.hap2.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+	cat ${WORKING_DIR}/s3_upload_hap_separated/${SAMPLE}/hprc_r2/assembly_qc/hmm_flagger/v1.1.0_hifi/${SAMPLE}.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed | \
+		grep "#1#" > ${SAMPLE}.hap1.hmm_flagger_v1.1.0.hmm_flagger.no_Hap.bed
+	cd ${WORKING_DIR}
+done < ${WORKING_DIR}/../../batch2/hmm_flagger/hifi/hmm_flagger_hifi_data_table.output.csv > ${WORKING_DIR}/samples_list_batch2.txt
+
+echo "Uploading HiFi-based bed files separated by haplotype ..."
+
 
 cd ${WORKING_DIR}
 
