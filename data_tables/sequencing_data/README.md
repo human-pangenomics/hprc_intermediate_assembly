@@ -164,6 +164,7 @@ Kinnex data is provided as flnc.bams.  See [PacBio IsoSeq documentation](https:/
 
 ## Sequence Index File Change Log
 ```
+* v0.6.1 (2025 Mar 13): Update ONT HG005 assembly sequence file s3 paths to NHGRI_UCSC_panel (XML error).
 * v0.5 (2025 Mar  4): Update ONT data table to include HPRC_PLUS, AMED, and HG002/5 and HG06807.
 * v0.5 (2025 Feb 12): Add Kinnex data table and documentation. 
 * v0.5 (2025 Jan 27): Add DeepConsensus metadata to HiFi data table.
