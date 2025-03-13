@@ -32,6 +32,27 @@ The R2 technology sequence index tables provide data processing summaries per fi
    * 100kb+ with a target of 30x coverage per sample.
    * R9/R10 sequencing_chemistry kits.
 
+#### User Notes
+
+* Please use the following S3 paths to access the sequence files used in the HG005 assembly.
+```Python
+#
+['s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_3X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_2.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_3.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam']
+```
+
+* The following reads were not used in the HG005 assembly, and their S3 working paths are currently reporting an XML error. 
+
+```Python
+ ['HG005_Circulomics_GridION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 'HG005_Circulomics_GridION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 'HG005_Circulomics_PromethION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
+ 'HG005_Circulomics_PromethION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam']
+```
+
+
 ### PacBio HiFi
 [data_hifi_pre_release.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_pre_release.index.csv)
 
