@@ -12,7 +12,7 @@ EOF
 OUTPUT_TSV="hmm_flagger_hifi_data_table.output_s3.csv"
 BASE="https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/ca366a13-5bad-487b-8a57-97344e9aa0e4--HPRC_RELEASE_2_SUPPLEMENTARY_ASSEMBLY_QC"
 
-printf "sample_id,mapping_info,bam,bai,cov_gz,stats_tsv,conservative_stats_tsv,prediction_nohap_diploid_bed,prediction_nohap_hap1_bed,prediction_nohap_hap2_bed,prediction_diploid_bed,prediction_conservative_nohap_diploid_bed,prediction_conservative_nohap_hap1_bed,prediction_conservative_nohap_hap2_bed,prediction_conservative_diploid_bed,mappable_hap1_bed,mappable_hap2_bed,bigwig,high_mapq_bigwig\n" > ${OUTPUT_TSV}
+printf "sample_id,mapping_info,bam,bai,cov_gz,stats_tsv,conservative_stats_tsv,prediction_nohap_diploid_bed,prediction_nohap_hap1_bed,prediction_nohap_hap2_bed,prediction_diploid_bed,prediction_conservative_nohap_diploid_bed,prediction_conservative_nohap_hap1_bed,prediction_conservative_nohap_hap2_bed,prediction_conservative_diploid_bed,mappable_hap1_bed,mappable_hap2_bed,bigwig,high_mapq_bigwig,high_clip_bigwig\n" > ${OUTPUT_TSV}
 
 cat /private/groups/hprc/qc_hmm_flagger/hprc_intermediate_assembly/assembly_qc/rerun_march_01_2025/hmm_flagger/hifi/hmm_flagger_hifi_data_table.csv | \
         grep -v -F -f ../samples_swapped_hap.txt | \
