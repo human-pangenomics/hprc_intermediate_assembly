@@ -1,5 +1,18 @@
 # Release 2 Assemblies
 
+## Samples
+Release 2 includes 234 samples (466 haplotypes). The samples can be broken down into three categories:
+* **216 HPRC samples**: sequenced and assembled by the HPRC in it's production efforts
+  * This includes samples which in Release 1 were designated "HPRC PLUS".
+* **14 HPP samples**: sequencing and assembly were led in other projects but which are in collaboration with the HPRC
+* **4 Extramural references**: sequenced and assembled by other projects and which are used by the HPRC as reference-level assemblies. This includes:
+  * HG06807
+  * HG002
+  * GRCh38
+  * CHM13
+
+Sample-level metadata is included in the `/sample` folder. 
+
 ## How To Download Assemblies
 The intuitive thing to do is to use the index file from this repository to get assembly URIs and then to use the AWS CLI to download the individual assemblies. Each assembly can be downloaded without egress fees by including `--no-sign-request` as shown in the example below:
 ```
@@ -107,8 +120,28 @@ Chromosome assignments for all sequences. Run from [HPRC's production workflows]
 * t2t_chromosomes: text file list of T2T chromosomes
 * gaps: bed file with gaps found in the assembly
 
+## Assembly QC
 
-### Known Issues
+### Flagger: 
+[HMM Flagger](https://github.com/mobinasri/flagger) run starting w/ Minimap2 and resulting in predictions for both ONT and HiFi as bed files. The bed files linked below are for the "conservative" predictions and do not include entries for regions predicted to be haploid. 
+* HiFi Predictions: bed file with regions predicted to be problematic
+* HIFi Mappable Regions: bed file with regions with > MAPQ10
+* ONT Predictions: bed file with regions predicted to be problematic
+* ONT Mappable Regions: bed file with regions with > MAPQ10
+
+In addition to the main outputs indexed in the above files, there is an index file (of sorts) with many other Flagger outputs:
+* HiFi/ONT Processing Metadata
+  * BAM & BAI files
+  * rmsk files for genome browsers
+  * cov_gz
+  * stats_tsv
+  * conservative_stats_tsv
+  * bigwig
+  * high_mapq_bigwig
+  * high_clip_bigwig
+
+
+## Known Issues
 
 - **Assemblies not in proper sort order** – ✅ Fixed in **v0.3**
   - The original fasta files did not have sequences in natural sort order. All prior assemblies were reuploaded as sorted fastas. To reflect the fact that there was a change, but it is not expected to alter any analysis outputs the assembly names (and filenames) were changed from v1 to v1.0.1.
