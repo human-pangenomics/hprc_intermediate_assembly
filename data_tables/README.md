@@ -4,7 +4,11 @@
 Release 2 includes 234 samples (466 haplotypes). The samples can be broken down into three categories:
 * **216 HPRC samples**: sequenced and assembled by the HPRC in it's production efforts
   * This includes samples which in Release 1 were designated "HPRC PLUS".
+  * Trio phasing was used when available, otherwise phasing was performed with Hi-C:
+    * 126 samples phased with trio information (parental Illumina data)
+    * 90 samples were phased with Hi-C
 * **14 HPP samples**: sequencing and assembly were led in other projects but which are in collaboration with the HPRC
+  * All HPP samples were phased with Hi-C
 * **4 Extramural references**: sequenced and assembled by other projects and which are used by the HPRC as reference-level assemblies. This includes:
   * HG06807
   * HG002
