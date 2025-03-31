@@ -153,11 +153,11 @@ ascp \
 
 cd /private/groups/hprc/genbank_upload/batch2/check_contam
 
-mkdir -p batch2_fixes_s3_upload/NA19159/assemblies/freeze_2/assembly_pipeline/ncbi_upload/
+mkdir -p batch2_fixes_s3_upload/HG02738/assemblies/freeze_2/assembly_pipeline/ncbi_upload/
 
 cp \
-	batch2_fixes_genbank_upload/NA19159.hap2_for_genbank.fa.gz \
-	batch2_fixes_s3_upload/NA19159/assemblies/freeze_2/assembly_pipeline/ncbi_upload/NA19159.hap2_for_genbank_fixed.fa.gz
+	batch2_fixes_genbank_upload/HG02738.hap2_for_genbank.fa.gz \
+	batch2_fixes_s3_upload/HG02738/assemblies/freeze_2/assembly_pipeline/ncbi_upload/HG02738.hap2_for_genbank_fixed.fa.gz
 
 
 ssds staging upload \

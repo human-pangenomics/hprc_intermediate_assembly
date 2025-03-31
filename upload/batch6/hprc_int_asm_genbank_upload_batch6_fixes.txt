@@ -1,0 +1,5 @@
+biosample_accession	sample_name	haplotype	bioproject_accession	bioproject_description	umbrella_bp	filename	assembly_date	assembly_name	assembly_method	assembly_method_version	genome_coverage	sequencing_technology	reference_genome	update_for
+SAMN37706908	HG03816	paternal		HPRC Assembly of HG03816 paternal haplotype.		HG03816.hap1_for_genbank.fa.gz	2024-09	HG03816_pat_hprc_f2	Hifiasm	0.19.9	60X	"PacBio, Oxford Nanopore"		
+SAMN37706908	HG03816	maternal		HPRC Assembly of HG03816 maternal haplotype.		HG03816.hap2_for_genbank.fa.gz	2024-09	HG03816_mat_hprc_f2	Hifiasm	0.19.9	60X	"PacBio, Oxford Nanopore"		
+SAMN37706905	HG00706	paternal		HPRC Assembly of HG00706 paternal haplotype.		HG00706.hap1_for_genbank.fa.gz	2024-09	HG00706_pat_hprc_f2	Hifiasm	0.19.9	61X	"PacBio, Oxford Nanopore"		
+SAMN37706905	HG00706	maternal		HPRC Assembly of HG00706 maternal haplotype.		HG00706.hap2_for_genbank.fa.gz	2024-09	HG00706_mat_hprc_f2	Hifiasm	0.19.9	61X	"PacBio, Oxford Nanopore"		
