@@ -27,3 +27,19 @@ Chromosome assignments for all sequences. Run from [HPRC's production workflows]
 * chromAlias: text file with chromosome assignments
 * t2t_chromosomes: text file list of T2T chromosomes
 * gaps: bed file with gaps found in the assembly
+
+#### Finding a sequence's chromosome assignment
+
+Chromsome Alias assignments are broken into:
+* Full T2T representations (one contig/scaffold which represents the entire chromosome)
+* Assignment to one chromosome, but not T2T
+* Not assigned (which usually means that a sequence maps to an acrocentric p-arm)
+
+Below is an example of each (in order)
+
+```
+# assembly  ucsc  genbank
+HG00097#1#CM094060.1  chr1  CM094060.1
+HG00097#1#JBIRDD010000002.1 chr13_JBIRDD010000002.1_random  JBIRDD010000002.1
+HG00097#1#JBIRDD010000019.1 chrUn_JBIRDD010000019.1 JBIRDD010000019.1
+```
