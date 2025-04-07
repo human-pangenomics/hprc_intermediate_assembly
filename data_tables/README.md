@@ -1,22 +1,15 @@
+# Overview
+
+Assemblies are indexed in `assemblies_pre_release_v0.6.1.index.csv`. See the documentation below for more information about the assemblies and the assembly index file.
+
+The rest of the data in Release 2 are organized in folder for each data type:
+* **Sample** metadata is included in the `/sample` folder.
+* **Sequencing data** index files are included in the `/sequencing_data` folder
+* **Assembly QC** index files are included in the `/assembly_qc` folder
+* **Assembly annotation** index files are included in the `/annotation` folder
+
 # Release 2 Assemblies
-
-## Samples
-Release 2 includes 234 samples (466 haplotypes). The samples can be broken down into three categories:
-* **216 HPRC samples**: sequenced and assembled by the HPRC in it's production efforts
-  * This includes samples which in Release 1 were designated "HPRC PLUS".
-  * Trio phasing was used when available, otherwise phasing was performed with Hi-C:
-    * 126 samples phased with trio information (parental Illumina data)
-    * 90 samples were phased with Hi-C
-* **14 HPP samples**: sequencing and assembly were led in other projects but which are in collaboration with the HPRC
-  * All HPP samples were phased with Hi-C
-* **4 Extramural references**: sequenced and assembled by other projects and which are used by the HPRC as reference-level assemblies. This includes:
-  * HG06807
-  * HG002
-  * GRCh38
-  * CHM13
-
-Sample-level metadata is included in the `/sample` folder. 
-
+ 
 ## How To Download Assemblies
 The intuitive thing to do is to use the index file from this repository to get assembly URIs and then to use the AWS CLI to download the individual assemblies. Each assembly can be downloaded without egress fees by including `--no-sign-request` as shown in the example below:
 ```
@@ -92,58 +85,6 @@ The following samples have assemblies forthcoming
 * v0.6.1 (2025 Feb 15): use PanSN versions of reference assemblies
   * replaced HG002, GRCh38, and CHM13 assemblies with the same assemblies but with PanSN sequence naming. For example CHM13's chr1 is now named CHM13#0#chr1.
 ```
-
-## Annotations
-
-Assembly annotations are included alongside the assemblies in the S3 bucket and have index files in the `/annotation` folder
-### RepeatMasker: 
-Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/workflows/repeat_masker.wdl)
-* Repeat Maskser OUT: out file
-* Repeat Masker BED: bed file converted from out file using RM2BED.py
-* Other files on S3 but not indexed:
-  * Masked fastas
-  * rmsk files for genome browsers
-### CenSat
-CenSat annotations from [CAW (Centromere Annotation Workflow)](https://github.com/kmiga/alphaAnnotation/tree/main)
-* CenSat: bed file of centromeric satellites (ASat, HSat, etc)
-* CenSat Centromeres: bed file of centromere regions
-* Other files on S3 but not indexed:
-  * HOR BED
-  * HOR SF BED
-  * Strand BED
-### Liftoff
-Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/tasks/liftoff.wdl) using CHM13 annotations derived from [JHU RefSeqv110 + Liftoff v5.2](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_RefSeq_Liftoff_v5.2.gff3.gz). Note that the input gff3 was manually fixed ([available here](https://public.gi.ucsc.edu/~pnhebbar/chm13v2.0_RefSeq_Liftoff_v5.1.gff3)) with the introduction unique postfixes that fix duplicate IDs which were present.
-
-* Output GFF3
-
-
-### Chromosome Information
-Chromosome assignments for all sequences. Run from [HPRC's production workflows](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/tasks/assign_chromosomes.wdl).
-
-* chromAlias: text file with chromosome assignments
-* t2t_chromosomes: text file list of T2T chromosomes
-* gaps: bed file with gaps found in the assembly
-
-## Assembly QC
-
-### Flagger: 
-[HMM Flagger](https://github.com/mobinasri/flagger) run starting w/ Minimap2 and resulting in predictions for both ONT and HiFi as bed files. The bed files linked below are for the "conservative" predictions and do not include entries for regions predicted to be haploid. 
-* HiFi Predictions: bed file with regions predicted to be problematic
-* HIFi Mappable Regions: bed file with regions with > MAPQ10
-* ONT Predictions: bed file with regions predicted to be problematic
-* ONT Mappable Regions: bed file with regions with > MAPQ10
-
-In addition to the main outputs indexed in the above files, there is an index file (of sorts) with many other Flagger outputs:
-* HiFi/ONT Processing Metadata
-  * BAM & BAI files
-  * rmsk files for genome browsers
-  * cov_gz
-  * stats_tsv
-  * conservative_stats_tsv
-  * bigwig
-  * high_mapq_bigwig
-  * high_clip_bigwig
-
 
 ## Known Issues
 
