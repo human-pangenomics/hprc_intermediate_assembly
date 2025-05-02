@@ -22,13 +22,13 @@ If you want to download all of the assembly files using the index file, you can 
 
 ```
 ## get a local copy of the assembly index file
-wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.6.index.csv
+wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.6.1.index.csv
 
 ## S3 locations for assembly are stored in column 13
 ASSEMBLY_COLUMN_NUM=13
 
 ## pull assembly column then use AWS CLI to download files
-tail -n +2 assemblies_pre_release_v0.4.index.csv | awk -F',' -v col="$ASSEMBLY_COLUMN_NUM" '{print $col}' | while read -r assembly_file; do
+tail -n +2 assemblies_pre_release_v0.6.1.index.csv | awk -F',' -v col="$ASSEMBLY_COLUMN_NUM" '{print $col}' | while read -r assembly_file; do
     echo "Downloading $assembly_file..."
     aws s3 --no-sign-request cp "$assembly_file" .
 done
