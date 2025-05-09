@@ -1,0 +1,9 @@
+{
+  "hprc_modkit_pileup.sample_id": "HG02257",
+  "hprc_modkit_pileup.methyl_bam": "s3://human-pangenomics/submissions/ca366a13-5bad-487b-8a57-97344e9aa0e4--HPRC_RELEASE_2_SUPPLEMENTARY_ASSEMBLY_QC/HG02257/hprc_r2/assembly_qc/read_alignments/ont/HG02257.R941_minimap2_2.28.corrected.bam",
+  "hprc_modkit_pileup.output_suffix": "R941_minimap2_2.28",
+  "hprc_modkit_pileup.hap1_prefix": "HG02257_pat_hprc_r2_v1.1.0",
+  "hprc_modkit_pileup.hap1_fasta": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02257/assemblies/freeze_2/HG02257_pat_hprc_r2_v1.1.0.fa.gz",
+  "hprc_modkit_pileup.hap2_prefix": "HG02257_mat_hprc_r2_v1.1.0",
+  "hprc_modkit_pileup.hap2_fasta": "s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG02257/assemblies/freeze_2/HG02257_mat_hprc_r2_v1.1.0.fa.gz"
+}
