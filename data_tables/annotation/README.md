@@ -43,3 +43,10 @@ HG00097#1#CM094060.1  chr1  CM094060.1
 HG00097#1#JBIRDD010000002.1 chr13_JBIRDD010000002.1_random  JBIRDD010000002.1
 HG00097#1#JBIRDD010000019.1 chrUn_JBIRDD010000019.1 JBIRDD010000019.1
 ```
+
+### Methylation
+Methylation (5mC) predictions for assemblies in bigwig format are extracted with [modkit](https://github.com/nanoporetech/modkit) from ONT data aligned to the assemblies (which was created during Flagger processing). The WDL used can be found [here](https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/tasks/modkit_pileup.wdl) 
+
+* ont_methylation: bigwig track with 5mC from ONT
+
+Bed files with detailed methylation information from modkit can be found next to bigwigs in the S3 bucket. The beds are not included in an index, but if you want to inspect the methylation predictions you can convert the S3 URIs included in the bigwig index with a sed command such as `sed 's/\.5mC\.bigwig/.CpG_pileup.bed/g' input.csv > output.csv`
