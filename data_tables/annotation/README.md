@@ -49,4 +49,13 @@ Methylation (5mC) predictions for assemblies in bigwig format are extracted with
 
 * ont_methylation: bigwig track with 5mC from ONT
 
-Bed files with detailed methylation information from modkit can be found next to bigwigs in the S3 bucket. The beds are not included in an index, but if you want to inspect the methylation predictions you can convert the S3 URIs included in the bigwig index with a sed command such as `sed 's/\.5mC\.bigwig/.CpG_pileup.bed/g' input.csv > output.csv`
+Bed files with detailed methylation information from modkit can be found next to bigwigs in the S3 bucket. The beds are not included in an index, but if you want to inspect the methylation predictions you can convert the S3 URIs included in the bigwig index with a sed command such as `sed 's/\.5mC\.bigwig/.CpG_pileup.bed/g' input.csv > output.csv`.
+
+### Chain Files
+Chain files to CHM13 and GRCh38 were created from the HPRC's v2 pangenomes using `cactus-hal2chains`. 
+
+
+* mc_chains_to_chm13: Minigraph-CACTUS based chains of assemblies to CHM13 (gzipped)
+* mc_chains_to_grch38: Minigraph-CACTUS based chains of assemblies to GRCh38 (gzipped)
+
+For browsers, bigChain.bb and bigChain.link.bb files can be found in the S3 bucket next to the chains. These files are not included in an index, but if want to create an index file of the bigbeds you can convert the S3 URIs included in the chain index with a sed command such as `sed 's/\.chain\.gz$/.bigChain.bb/' input.csv > output.csv` and `sed 's/\.chain\.gz$/.bigChain.link.bb/' input.csv > output.csv`.
