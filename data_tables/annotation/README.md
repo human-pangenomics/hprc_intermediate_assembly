@@ -16,6 +16,12 @@ CenSat annotations from [CAW (Centromere Annotation Workflow)](https://github.co
   * HOR SF BED
   * Strand BED
 
+### SegDups
+Segmental Duplications were produced by [SEDEF](https://github.com/vpc-ccg/sedef). Repeats in the assemblies were identified using TRF, RepeatMasker, and Windowmasker. The identified repeats were merged and used to softmask the assemblies and the soft masked assemblies were used as input to SEDEF. The output from SEDEF was filtered for pairwise sequence identity >90%, length > 1 kbp, and satellite content <70%.
+
+* SegDups BED: segmental duplications
+
+
 ## Genes
 ### Comparative Annotation Toolkit (CAT)
 The [CAT](https://github.com/ph09/CAT2) pipeline generates consensus gene annotations for a set of assemblies from annotations on a reference assembly, Cactus alignments of the assemblies, as well as RNA-seq and IsoSeq data. Release 2 gene annotations were created with the v2 pangenomes as well as kinnex data generated as part of Release 2.
