@@ -10,15 +10,20 @@ The rest of the data in Release 2 are organized in folder for each data type:
 
 # Release 2 Assemblies
  
+ Assemblies created as part of HPRC processing are accessioned in GenBank and are available both from Genbank and the HPRC S3 bucket. Versions in the S3 bucket are all in the [PanSN format](https://github.com/pangenome/PanSN-spec). This includes references such as CHM13, GRCh38, and HG002. For this reason if you want to pull the exact assembly versions used for Release 2 analysis please use the assemblies from S3 (in the assembly index file) or the AGC archive.
+
+ 
 ## How To Download Assemblies
-The intuitive thing to do is to use the index file from this repository to get assembly URIs and then to use the AWS CLI to download the individual assemblies. Each assembly can be downloaded without egress fees by including `--no-sign-request` as shown in the example below:
+
+### Using the Index File
+To download an individual assembly you can use the assembly index file (from this repository) to find the assembly URI and then to use the AWS CLI to download the individual assemblies. Each assembly can be downloaded without egress fees but users without AWS credentials need to include `--no-sign-request` as shown in the example below:
 ```
 aws s3 --no-sign-request cp \
    s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG00408/assemblies/freeze_2/HG00408_pat_hprc_r2_v1.0.1.fa.gz \
    ./
 ```
 
-If you want to download all of the assembly files using the index file, you can do something like this:
+If you want to download all of the assembly files using the index file, you can loop through the index file to create the download commands:
 
 ```
 ## get a local copy of the assembly index file
@@ -32,6 +37,32 @@ tail -n +2 assemblies_pre_release_v0.6.1.index.csv | awk -F',' -v col="$ASSEMBLY
     echo "Downloading $assembly_file..."
     aws s3 --no-sign-request cp "$assembly_file" .
 done
+```
+### From the AGC Archive
+
+Assemblies are also available as a single 3.3GB file in the
+[AGC](https://github.com/refresh-bio/agc) (Assembled Genomes Compressor) format. This archive includes the same assemblies and assembly versions as the assembly index file. Note that in order to extract sequences from the archive, users must have [AGC installed](https://github.com/refresh-bio/agc?tab=readme-ov-file#prebuild-releases).
+
+You can download all HPRC assemblies and selectively extract entire assemblies or contigs/scaffolds as shown below.
+```sh
+# download AGC archive of Release 2 assemblies
+wget https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/B4174A5F-F20E-4DCF-8470-F8A907B640BC--HPRCv2_0.6.1_pr_agc_submission/HPRC_r2_assemblies_0.6.1.agc
+
+# list all samples
+agc listset HPRC_r2_assemblies_0.6.1.agc
+
+# extract assembly for haplotype 1 of HG00097
+agc getset \
+  HPRC_r2_assemblies_0.6.1.agc \
+  HG00097_hap1_hprc_r2_v1.0.1 \
+  > HG00097_hap1_hprc_r2_v1.0.1.fa
+
+# extract a specific contig from HG00097 haplotype 1
+# this contig corresponds to chromosome 1 (according to the chromAlias file)
+agc getctg \
+  HPRC_r2_assemblies_0.6.1.agc \
+  HG00097#1#CM094060.1 \
+  > HG00097_hap1_hprc_r2_v1.0.1_CM094060.1.fa
 ```
 
 ## Assembly Index File
