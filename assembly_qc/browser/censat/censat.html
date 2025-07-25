@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CenSat Annotation Workflow Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .workflow-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .workflow-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .workflow-item strong {
+            color: #2c3e50;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .annotation-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .annotation-category {
+            margin-bottom: 20px;
+        }
+        
+        .annotation-category h4 {
+            color: #000000;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .annotation-list {
+            margin-left: 20px;
+        }
+        
+        .annotation-list li {
+            margin-bottom: 5px;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background: #dff0d8;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CenSat Annotation Workflow</h1>
+        
+        <h2>Description</h2>
+        <p>Human centromeric satellite repeats. Centromeric repeat elements including alpha satellites, human satellites, beta satellites, and others are summarized into array-based annotations.</p>
+
+        <h3>Overview of the Annotation Bins</h3>
+        
+        <div class="annotation-section">
+            <div class="annotation-category">
+                <h4>Alpha-Satellites</h4>
+                <p>Annotated with <a href="https://github.com/fedorrik/HumAS-HMMER_for_AnVIL">Fedor Ryabov's HumAS-HMMER</a> and simplified into the following bins:</p>
+                <ul class="annotation-list">
+                    <li><strong>Active alpha (active_hor)</strong></li>
+                    <li><strong>Diverged HORS (dhor)</strong></li>
+                    <li><strong>Monomeric HORs (mon)</strong></li>
+                    <li><strong>Mixed alpha (mixedAlpha)</strong> - alpha regions that can't be sorted into above categories</li>
+                </ul>
+            </div>
+            
+            <div class="annotation-category">
+                <h4>Human Satellites 2 and 3</h4>
+                <p>Annotated with <a href="https://github.com/altemose/chm13_hsat">Nick Altemose's HSAT2/3 script</a></p>
+            </div>
+            
+            <div class="annotation-category">
+                <h4>Other Centromeric Satellite Annotations</h4>
+                <p>Annotated with RepeatMasker:</p>
+                <ul class="annotation-list">
+                    <li><strong>HSAT1A</strong> - SAR in DFAM</li>
+                    <li><strong>HSAT1B</strong> - HSAT1 in DFAM</li>
+                    <li><strong>Gamma</strong> - includes all GSAT and TAR1 in DFAM</li>
+                    <li><strong>Beta</strong> - BSR, LSAU, and BSAT in DFAM</li>
+                    <li><strong>CenSat</strong> - other centromeric satellites CER, SATR, SST1, ACRO, HSAT4, HSAT5, TAF11</li>
+                </ul>
+            </div>
+            
+            <div class="annotation-category">
+                <h4>Centromere Transition (ct)</h4>
+                <p>Centromeres are defined by merging all above satellite annotations within 2MB (bedtools merge) and then identifying the region containing the active array. Any stretch of sequence not annotated within this region is marked "ct"</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>For more information</strong><br>
+            Please reference <a href="https://github.com/kmiga/alphaAnnotation">the GitHub repository</a>
+        </div>        
+
+        <h2>Methods</h2>
+        
+        <div class="workflow-list">
+            <div class="workflow-item">
+                <strong><a href="https://github.com/kmiga/alphaAnnotation/tree/main/alphaSat-HMMER/alphaSat-HMMER.wdl">AlphaSat annotation</a></strong> - This script runs Fedor Ryabov's <a href="https://github.com/fedorrik/HumAS-HMMER_for_AnVIL">HumAS-HMMER</a> and summarizes the alpha satellite annotations into the following bins: active HOR, HOR, diverged HOR, and monomeric.
+            </div>
+            
+            <div class="workflow-item">
+                <strong><a href="https://github.com/kmiga/alphaAnnotation/tree/main/identify-hSat2and3/identify-hSat2and3.wdl">HSAT2/3 annotation</a></strong> - This is <a href="https://github.com/altemose/chm13_hsat">Nick Altemose' HSAT annotation script</a>
+            </div>
+            
+            <div class="workflow-item">
+                <strong><a href="https://github.com/human-pangenomics/hpp_production_workflows/blob/master/annotation/wdl/workflows/repeat_masker.wdl">RepeatMasker Annotation</a></strong> - This script runs <a href="http://repeatmasker.org">RepeatMasker</a> on each contig from assembly and converts the output into a bed file.
+            </div>
+            
+            <div class="workflow-item">
+                <strong><a href="https://github.com/kmiga/alphaAnnotation/blob/main/cenSatAnnotation/tasks/rDNA_annotation.wdl">rDNA Annotation Script</a></strong> - This script uses an HMM built from the beginning and the end of the rDNA repeat unit and merges to find the complete annotation.
+            </div>
+            
+            <div class="workflow-item">
+                <strong><a href="https://github.com/kmiga/alphaAnnotation/blob/main/cenSatAnnotation/tasks/gap_Annotation.wdl">GAP Annotation Script</a></strong> - This script annotates the gaps that exist in the assembly using <a href="https://github.com/lh3/seqtk">seqtk gap</a>
+            </div>
+            
+            <div class="workflow-item">
+                <strong><a href="cenSatAnnotation/tasks/CenSatAnnotation.wdl">CenSat Annotation finalization script</a></strong> - The script takes the file outputs of the above scripts and combines them into a single output file. It includes logic that joins the satellites annotated by RepeatMasker, annotates the active centromere and centromere transition regions, and adds colors for easier visualization.
+            </div>
+        </div>
+
+        <h2>References</h2>
+        <p>
+            Altemose, Nicolas, et al. "Complete genomic and epigenetic maps of human centromeres." Science 376.6588 (2022): eabl4178.    
+        </p>
+
+        <h2>Contact</h2>
+        For inquiries, please contact:
+        <p><a href="mailto:hloucks@ucsc.edu">Hailey Loucks &lt;hloucks@ucsc.edu&gt;</a></p>
+        <p><a href="mailto:khmiga@ucsc.edu">Karen Miga &lt;khmiga@ucsc.edu&gt;</a></p>
+
+        <h2>Credits</h2>
+        <p>Hailey Loucks (UC Santa Cruz Genomics Institute, University of California, Santa Cruz, Santa Cruz, CA, USA)</p>
+        <p>Karen Miga (UC Santa Cruz Genomics Institute, University of California, Santa Cruz, Santa Cruz, CA, USA)</p>
+    </div>
+</body>
+</html>
