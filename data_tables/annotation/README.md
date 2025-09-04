@@ -1,3 +1,4 @@
+# Release 2 Assembly Annotation Files
 ## Repeats
 
 ### RepeatMasker: 
@@ -94,3 +95,12 @@ Methylation (5mC) predictions for assemblies in bigwig format are extracted with
 * ont_methylation: bigwig track with 5mC from ONT
 
 Bed files with detailed methylation information from modkit can be found next to bigwigs in the S3 bucket. The beds are not included in an index, but if you want to inspect the methylation predictions you can convert the S3 URIs included in the bigwig index with a sed command such as `sed 's/\.5mC\.bigwig/.CpG_pileup.bed/g' input.csv > output.csv`.
+
+
+## Annotation Indexes Change Log
+
+```
+Comparative Annotation Toolkit (CAT):
+* v1.1 (2025 Sep 04): point to updated v1.1 gff3 files for all assemblies.
+    * v1.1 files have spurious copies for genes with VNTRs removed and minor fixes to paralog assignment and CDS frame assignment 
+```
