@@ -109,4 +109,9 @@ RepeatMasker:
 * v3 (2025 Sep 11): added 80 assemblies which were missing; corrected assembly names.
     * v2 had 80 assemblies from R2 that were missing (though they were on S3). These were added to complete the index.
     * Assembly names for some samples included assembly version of the form v1 instead of the more correct v1.0.1. Both names work, but the full version makes lookups and joins easier.
+
+CenSat:
+* v3.1 (2025 Sep 11): corrected assembly names.
+    * Assembly names for some samples included assembly version of the form v1 instead of the more correct v1.0.1. Both names work, but the full version makes lookups and joins easier.
+
 ```
