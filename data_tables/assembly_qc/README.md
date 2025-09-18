@@ -28,7 +28,7 @@ In addition to the main outputs indexed in the above files, there is an index fi
 
 In addition to the outputs above, tars of images generated of problematic regions are included in S3.
 
-## Annotation Indexes Change Log
+## Assembly QC Indexes Change Log
 
 ```
 NucFlag:
