@@ -27,3 +27,16 @@ In addition to the main outputs indexed in the above files, there is an index fi
 * nucflag_second_coverage: bigwig file of coverage of second most common base in aligned HiFi reads
 
 In addition to the outputs above, tars of images generated of problematic regions are included in S3.
+
+## Annotation Indexes Change Log
+
+```
+NucFlag:
+* v0.2 (2025 Sep 18): added 6 assemblies (3 samples) that were missing
+    * v0.1 index file was missing annotations for the samples that had haplotype swaps (which have since been fixed). NucFlag results for these sample's assemblies have now been added.
+      - HG01978  
+      - HG02257  
+      - HG03516 
+    All files that were in the 0.1 index file were unchanged.
+
+```
