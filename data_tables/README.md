@@ -115,6 +115,9 @@ The following samples have assemblies forthcoming
   * Fixed haplotype swap in three samples (see issue below). 
 * v0.6.1 (2025 Feb 15): use PanSN versions of reference assemblies
   * replaced HG002, GRCh38, and CHM13 assemblies with the same assemblies but with PanSN sequence naming. For example CHM13's chr1 is now named CHM13#0#chr1.
+* v1.0 (2025 Oct 01): renamed file; pointed to assemblies in working directory
+  * assemblies were released to the working area of the bucket. This is a copy operation and the assemblies are unchaged from the prior version.
+  * removed "pre-release" from index file name and set version to 1.0
 ```
 
 ## Known Issues
