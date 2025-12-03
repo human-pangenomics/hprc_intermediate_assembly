@@ -1,0 +1,13 @@
+alignment,location,filename,hprc_version,filetype,pipeline,reference_coordinates,file_size
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.sv.gfa.gz,hprc-v2.0-mc-chm13.sv.gfa.gz,v2.0,gfa,minigraph-cactus,chm13,855.46 MB
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.gfa.gz,hprc-v2.0-mc-chm13.gfa.gz,v2.0,gfa,minigraph-cactus,chm13,59.99 GB
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.gbz,hprc-v2.0-mc-chm13.gbz,v2.0,gbz,minigraph-cactus,chm13,5.35 GB
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.hapl,hprc-v2.0-mc-chm13.hapl,v2.0,hapl,minigraph-cactus,chm13,20.10 GB
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.wave.vcf.gz,hprc-v2.0-mc-chm13.wave.vcf.gz,v2.0,vcf,minigraph-cactus,chm13,2.20 GB
+HPRC Release2: Minigraph-Cactus (CHM13),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-chm13.wave.vcf.gz.tbi,hprc-v2.0-mc-chm13.wave.vcf.gz.tbi,v2.0,tbi,minigraph-cactus,chm13,2.15 MB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.sv.gfa.gz,hprc-v2.0-mc-grch38.sv.gfa.gz,v2.0,gfa,minigraph-cactus,grch38,802.62 MB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.gfa.gz,hprc-v2.0-mc-grch38.gfa.gz,v2.0,gfa,minigraph-cactus,grch38,58.80 GB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.gbz,hprc-v2.0-mc-grch38.gbz,v2.0,gbz,minigraph-cactus,grch38,5.05 GB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.hapl,hprc-v2.0-mc-grch38.hapl,v2.0,hapl,minigraph-cactus,grch38,19.95 GB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.wave.vcf.gz,hprc-v2.0-mc-grch38.wave.vcf.gz,v2.0,vcf,minigraph-cactus,grch38,2.12 GB
+HPRC Release2: Minigraph-Cactus (GRCh38),s3://human-pangenomics/pangenomes/freeze/release2/minigraph-cactus/hprc-v2.0-mc-grch38.wave.vcf.gz.tbi,hprc-v2.0-mc-grch38.wave.vcf.gz.tbi,v2.0,tbi,minigraph-cactus,grch38,2.10 MB

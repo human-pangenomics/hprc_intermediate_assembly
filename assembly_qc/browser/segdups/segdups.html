@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegDups Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .workflow-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .workflow-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .workflow-item strong {
+            color: #2c3e50;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .annotation-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .annotation-category {
+            margin-bottom: 20px;
+        }
+        
+        .annotation-category h4 {
+            color: #000000;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .annotation-list {
+            margin-left: 20px;
+        }
+        
+        .annotation-list li {
+            margin-bottom: 5px;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background: #dff0d8;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SegDups</h1>
+        
+        <h2>Description</h2>
+        <p>Segmental Duplications identified with <a href="https://github.com/vpc-ccg/sedef">SEDEF</a>.</p>
+        
+        <h2>Methods</h2>
+        <p>Segmental Duplications were produced by <a href="https://github.com/vpc-ccg/sedef">SEDEF</a>. Repeats in the assemblies were identified using TRF, RepeatMasker, and Windowmasker. The identified repeats were merged and used to softmask the assemblies and the soft masked assemblies were used as input to SEDEF. The output from SEDEF was filtered for pairwise sequence identity >90%, length > 1 kbp, and satellite content <70%.</p>
+        
+        <h2>Contact</h2>
+        <p>For inquiries, please contact:</p>
+        <p><a href="mailto:day92@uw.edu">DongAhn Yoo &lt;day92@uw.edu&gt;</a></p>
+        <p><a href="mailto:ee3@uw.edu">Evan E. Eichler &lt;ee3@uw.edu&gt;</a></p>
+        
+        <h2>Credits</h2>
+        <p>DongAhn Yoo (Department of Genome Sciences, University of Washington School of Medicine, Seattle, WA, USA.)</p>
+        <p>Evan E. Eichler (Department of Genome Sciences, University of Washington School of Medicine, Seattle, WA, USA.)</p>
+    </div>
+</body>
+</html>
