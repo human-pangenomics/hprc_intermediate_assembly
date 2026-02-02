@@ -181,3 +181,34 @@ CHANGE LOG:
     * files are unchanged from prior version
     * renamed file to reflect release structure
 ``` 
+
+### Local Ancestry (PCLAI)
+Point Cloud Local Ancestry Inference (PCLAI) is a method to estimate local population genetic structure along the genome. For more information, see the [PCLAI GitHub repository](https://github.com/AI-sandbox/hprc-pclai). Local ancestry was painted using VCFs from Minigraph-Cactus (MC). The MC VCF was converted to be biallelic, subset to SNVs, and imputed with Beagle to harmonize with training data. Results are provided as BED files with PCA-space coordinates for windows of ~1000 SNPs.
+
+> **INDEX FILES:**
+> * **Local Ancestry in GRCh38 coordinates (BED)**: `pclai/pclai_v0.1_grch38_coord_local_hprc_r2_v1.0.index.csv`
+> * **Local Ancestry in CHM13 coordinates (BED)**: `pclai/pclai_v0.1_chm13_coord_local_hprc_r2_v1.0.index.csv`
+> * **Local Ancestry in Assembly's coordinates (BED)**: `pclai/pclai_v0.1_asm_coord_local_hprc_r2_v1.0.index.csv`
+
+**BED File Format:**
+The BED files are in standard BED9 format. Below is an example for GRCh38-coordinate results:
+```
+chr1    14486   805864  HG00097/h1/chr1_w0001_(0.438,-1.398)    991 .   14486   805864  222,162,255
+```
+
+Note the following columns:
+* **name**: The names have information about the source window and PCA coordinates: `{sample_id}/{haplotype}/{chromosome}_{window_number}_{PCA_coordinates}`
+* **score**: Per-window confidence value from PCLAI (higher scores indicate greater confidence)
+* **itemRgb**: RGB color corresponding to the PCA coordinates for visualization
+
+
+**Important Notes:**
+* **Missing Windows**: There are regions in the genome without PCLAI ancestry assignment. These break down into three main sources:
+  * No source call in VCFs: difficult regions, such as acrocentric p-arms, may not have any calls in the training or painting VCFs, resulting in region-level dropout.
+  * Low confidence assignment: windows with low confidence scores (as assigned by PCLAI) have been filtered out. 
+  * Lift over: All training and inference was performed in GRCh38 coordinates; beds in CHM13 and assembly-native coordinates were obtained via liftOver with chains from the Minigraph-Cactus Release 2 alignments. Not all regions lift over successfully causing drop outs in regions like centromeres. For guidance on interpolating ancestry in gaps, refer to the [PCLAI documentation](https://github.com/AI-sandbox/hprc-pclai).
+* **Missing Sample**: HG00272 is not included in the Release2 Minigraph-Cactus pangenome alignments and therefore does not have local ancestry predictions.
+```
+CHANGE LOG:
+* v1.0 (2026 Feb 02): initial commit
+```
