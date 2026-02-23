@@ -186,20 +186,21 @@ CHANGE LOG:
 Point Cloud Local Ancestry Inference (PCLAI) is a method to estimate local population genetic structure along the genome. For more information, see the [PCLAI GitHub repository](https://github.com/AI-sandbox/hprc-pclai). Local ancestry was painted using VCFs from Minigraph-Cactus (MC). The MC VCF was converted to be biallelic, subset to SNVs, and imputed with Beagle to harmonize with training data. Results are provided as BED files with PCA-space coordinates for windows of ~1000 SNPs.
 
 > **INDEX FILES:**
-> * **Local Ancestry in GRCh38 coordinates (BED)**: `pclai/pclai_v0.1_grch38_coord_local_hprc_r2_v1.0.index.csv`
-> * **Local Ancestry in CHM13 coordinates (BED)**: `pclai/pclai_v0.1_chm13_coord_local_hprc_r2_v1.0.index.csv`
-> * **Local Ancestry in Assembly's coordinates (BED)**: `pclai/pclai_v0.1_asm_coord_local_hprc_r2_v1.0.index.csv`
+> * **Local Ancestry in GRCh38 coordinates (BED)**: `pclai/pclai_v1.1_grch38_coord_local_hprc_r2.index.csv`
+> * **Local Ancestry in CHM13 coordinates (BED)**: `pclai/pclai_v1.1_chm13_coord_local_hprc_r2.index.csv`
+> * **Local Ancestry in Assembly's coordinates (BED)**: `pclai/pclai_v1.1_asm_coord_local_hprc_r2.index.csv`
 
 **BED File Format:**
-The BED files are in standard BED9 format. Below is an example for GRCh38-coordinate results:
+The BED files are in BED9+ format. Below is an example for GRCh38-coordinate results:
 ```
-chr1    14486   805864  HG00097/h1/chr1_w0001_(0.438,-1.398)    991 .   14486   805864  222,162,255
+chr1    14486   805864  HG00097/h1/chr1_w0001_(0.438,-1.398)    991 .   14486   805864  222,162,255 (0.445,-1.314)
 ```
 
 Note the following columns:
 * **name**: The names have information about the source window and PCA coordinates: `{sample_id}/{haplotype}/{chromosome}_{window_number}_{PCA_coordinates}`
 * **score**: Per-window confidence value from PCLAI (higher scores indicate greater confidence)
 * **itemRgb**: RGB color corresponding to the PCA coordinates for visualization
+* **centroid**: centroid assignment in PCA coordinate space. 4 centroids were created. See the GitHub for more details.
 
 
 **Important Notes:**
@@ -211,4 +212,7 @@ Note the following columns:
 ```
 CHANGE LOG:
 * v1.0 (2026 Feb 02): initial commit
+* v1.1 (2026 Feb 22): added centroid assignments, trimmed and removed overlapping annotations
+    * A tenth column was added which is the centroid which that window is assigned
+    * There were a number of 1bp overlaps that were trimmed. In addition 27 windows were found to completely overlap other regions. These typically corresponded to HSat regions in chr9 and chr16. The larger region which overlapped the other region was removed.
 ```
