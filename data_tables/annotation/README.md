@@ -59,7 +59,7 @@ CHANGE LOG:
 The [CAT](https://github.com/ph09/CAT2) generates consensus gene annotations for a set of assemblies from annotations on a reference assembly, Cactus alignments of the assemblies, including liftoff and miniprot based annotations, as well as RNA-seq and IsoSeq data. Release 2 gene annotations were created with the v2 pangenomes as well as kinnex data generated as part of Release 2.
 
 > **INDEX FILES:**
-> * **CAT genes (GFF3)**: `cat/cat_genes_hprc_r2_v1.2.index.csv`
+> * **CAT genes (GFF3)**: `cat/cat_genes_hprc_r2_v1.3.index.csv`
 
 
 **Note:** If you are looking for gene annotations for the included references, we have included exemplar annotations below. Note that these annotations are not in the PanSN spec.
@@ -75,6 +75,8 @@ CHANGE LOG:
 * v1.2 (2025 Oct 03): pointed files to release (working area of bucket)
     * files are unchanged from prior version
     * renamed file to reflect release structure
+* v1.3 (2026 Mar 19): point to updated v1.3 gff3 files for all assemblies
+    * Implemented better filtering of kinnex-derived isoforms & fixed errors in loci with multiple genes
 ```  
 
 ### Liftoff
