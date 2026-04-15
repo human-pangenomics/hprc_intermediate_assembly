@@ -1,5 +1,5 @@
 sample_id,biosample_id,population_descriptor,population_abbreviation,trio_available,family_id,paternal_id,maternal_id,sex,tissue,collection,alternative_id,notes,project,contributors
-HG06807,SAMN33621959,"African Americans living in St. Louis, Missouri",ASL,TRUE,,HG06804,HG06803,female,N/A,N/A,PAN027,,extramural,UCSC-Masaryk Universty
+HG06807,SAMN33621959,"African Americans living in St. Louis, Missouri",ASL,TRUE,,HG06804,HG06803,female,N/A,N/A,PAN027,,extramural,UCSC-Masaryk University
 HG005,SAMN03283350,N/A,N/A,TRUE,,HG003,HG004,male,B-Lymphocyte,GIAB,NA26107,,extramural,NHGRI-NIST
 HG002,SAMN03283347,N/A,N/A,TRUE,,NA24694,NA24695,male,N/A,GIAB,NA24385,,extramural,NHGRI-NIST
 GRCh38,SAMN12121739,N/A,N/A,FALSE,,,,N/A,N/A,N/A,,,extramural,Human Genome Project
