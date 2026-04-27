@@ -9,7 +9,7 @@ CLAUDE.md
 .claudeignore
 
 # OpenAI 
-.codex/
+.codex
 .codexignore
 .codex-plugin/
 codex.toml
