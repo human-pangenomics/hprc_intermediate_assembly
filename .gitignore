@@ -2,3 +2,14 @@
 .DS_Store
 scripts/*.tsv
 .Rhistory
+
+# Claude 
+.claude/
+CLAUDE.md
+.claudeignore
+
+# OpenAI 
+.codex/
+.codexignore
+.codex-plugin/
+codex.toml
