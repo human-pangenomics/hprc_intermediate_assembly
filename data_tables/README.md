@@ -1,6 +1,6 @@
 # Overview
 
-Assemblies are indexed in `assemblies_pre_release_v0.6.1.index.csv`. See the documentation below for more information about the assemblies and the assembly index file.
+Assemblies are indexed in `assemblies_release2_v1.0.index.csv`. See the documentation below for more information about the assemblies and the assembly index file.
 
 The rest of the data in Release 2 are organized in folder for each data type:
 * **Sample** metadata is included in the `/sample` folder.
@@ -19,7 +19,7 @@ The rest of the data in Release 2 are organized in folder for each data type:
 To download an individual assembly you can use the assembly index file (from this repository) to find the assembly URI and then to use the AWS CLI to download the individual assemblies. Each assembly can be downloaded without egress fees but users without AWS credentials need to include `--no-sign-request` as shown in the example below:
 ```
 aws s3 --no-sign-request cp \
-   s3://human-pangenomics/submissions/DC27718F-5F38-43B0-9A78-270F395F13E8--INT_ASM_PRODUCTION/HG00408/assemblies/freeze_2/HG00408_pat_hprc_r2_v1.0.1.fa.gz \
+   s3://human-pangenomics/working/HPRC/HG00408/assemblies/release2/HG00408_pat_hprc_r2_v1.0.1.fa.gz \
    ./
 ```
 
@@ -27,7 +27,7 @@ If you want to download all of the assembly files using the index file, you can 
 
 ```
 ## get a local copy of the assembly index file
-wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_pre_release_v0.6.1.index.csv
+wget https://raw.githubusercontent.com/human-pangenomics/hprc_intermediate_assembly/refs/heads/main/data_tables/assemblies_release2_v1.0.index.csv
 
 ## S3 locations for assembly are stored in column 13
 ASSEMBLY_COLUMN_NUM=13
