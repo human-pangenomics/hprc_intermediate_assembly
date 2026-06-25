@@ -1,4 +1,4 @@
-sample_id,population_abbreviation,project,coverage_hifi,deepconsensus_coverage_hifi,coverage_mm_hifi,production,n50_hifi,coverage_hic,coverage_ill,total_reads_kinnex,coverage_ont,coverage_100kb_ont,coverage_100kb_R1041,coverage_100kb_R941,sequencing_chemistry_ont,read_N50_ont,meth_wg_cov
+sample_id,population_abbreviation,project,coverage_hifi,deepconsensus_coverage_hifi,coverage_mm_hifi,production,n50_hifi,coverage_hic,coverage_ill,total_reads_kinnex_millions,coverage_ont,coverage_100kb_ont,coverage_100kb_R1041,coverage_100kb_R941,sequencing_chemistry_ont,read_N50_ont,meth_wg_cov
 CHM13,,extramural,,,,,,,,,,,,,,,
 GRCh38,,extramural,,,,,,,,,,,,,,,
 HG00097,GBR,HPRC,63.70,0.00,63.70,UW_HPRC_HiFi_Y4_AND_Y3_Topoff,20460.84,174.78,36.84,12.42,57.09,25.34,25.34,0.00,R1041,89210.35,63.70
