@@ -49,21 +49,11 @@ The R2 technology sequence index tables provide data processing summaries per fi
    * 100kb+ with a target of 30x coverage per sample.
    * R9/R10 sequencing_chemistry kits.
 
-#### User Notes
-
-* All 8 HG005 ONT files are included in the index. Four files use an `NHGRI_UCSC_panel` S3 path (non-standard) and four Circulomics files use `working/HPRC_PLUS/HG005/` paths.
-
 
 ### PacBio HiFi
 [data_hifi_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_release2_v1.0.index.csv)
 
 [data_deepconsensus_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_deepconsensus_release2_v1.0.index.csv)
-
-#### HiFi Methylation Working Group
-[data_hifi_meth_wg_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_meth_wg_release2_v1.0.index.csv)
-* This is a harmonized subset of HiFi data curated by the HPRC methylation working group for use in methylation analysis. It represents the authoritative HiFi dataset for that effort — not simply a copy of the main HiFi index — and has been reviewed for methylation tag quality and completeness.
-* All 232 R2 samples are included.
-* Coverage for this dataset is reported in the `meth_wg_cov` column of `data_sample_level_summary_release2_v1.0.csv`.
 
 #### User Notes
 * 219 PacBio HiFi samples present.
@@ -82,7 +72,11 @@ The R2 technology sequence index tables provide data processing summaries per fi
 ['HG04187', 'HG06807', 'HG02080', 'HG03492', 'HG01243', 'HG02055', 'HG02723', 'HG02109', 'HG02145']
 ```
 
-**IMPORTANT**: Lima demultiplexing did not properly update MM, ML, and kinetics tags after demultiplexing. Stability issues were reported to be resolved in Lima versions after v2.5. The column `MM_review` (boolean = True) identifies samples with Lima versions ≤ 2.5. The column `MM_remove` (boolean = True) identifies samples whose kinetic tags were not retained after adapter trimming.
+#### HiFi Methylation Working Group
+[data_hifi_meth_wg_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_meth_wg_release2_v1.0.index.csv)
+* This is a harmonized subset of HiFi data curated by the HPRC methylation working group for use in methylation analysis. It represents the authoritative HiFi dataset for that effort — not simply a copy of the main HiFi index — and has been reviewed for methylation tag quality and completeness.
+* All 232 R2 samples are included.
+* Coverage for this dataset is reported in the `meth_wg_cov` column of `data_sample_level_summary_release2_v1.0.csv`.
 
 #### Primary Metadata Identifiers
 
