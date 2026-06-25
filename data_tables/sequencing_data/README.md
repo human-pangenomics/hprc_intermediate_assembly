@@ -51,24 +51,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 #### User Notes
 
-* Please use the following S3 paths to access the sequence files used in the HG005 assembly.
-```Python
-# subset values from the path column
-['s3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_3X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_2.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 's3://human-pangenomics/NHGRI_UCSC_panel/HG005/nanopore/ultra-long/guppy_6.5.7_5mc/05_25_21_R941_GM24631_9X_3.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam']
-```
-
-* The following reads were not used in the HG005 assembly, and their S3 working paths are currently reporting an XML error. 
-
-```Python
-# subset sequence filenames from the filename column
- ['HG005_Circulomics_GridION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 'HG005_Circulomics_GridION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 'HG005_Circulomics_PromethION_R941.part01.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam',
- 'HG005_Circulomics_PromethION_R941.part02.UL_Guppy_6.5.7_450bps_modbases_5mc_cg_sup_prom_pass.bam']
-```
+* All 8 HG005 ONT files are included in the index. Four files use an `NHGRI_UCSC_panel` S3 path (non-standard) and four Circulomics files use `working/HPRC_PLUS/HG005/` paths.
 
 
 ### PacBio HiFi
@@ -78,8 +61,9 @@ The R2 technology sequence index tables provide data processing summaries per fi
 
 #### HiFi Methylation Working Group
 [data_hifi_meth_wg_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_hifi_meth_wg_release2_v1.0.index.csv)
-* Harmonized HiFi methylation data prepared by the HPRC methylation working group.
-* All 232 R2 samples included.
+* This is a harmonized subset of HiFi data curated by the HPRC methylation working group for use in methylation analysis. It represents the authoritative HiFi dataset for that effort — not simply a copy of the main HiFi index — and has been reviewed for methylation tag quality and completeness.
+* All 232 R2 samples are included.
+* Coverage for this dataset is reported in the `meth_wg_cov` column of `data_sample_level_summary_release2_v1.0.csv`.
 
 #### User Notes
 * 219 PacBio HiFi samples present.
@@ -98,18 +82,7 @@ The R2 technology sequence index tables provide data processing summaries per fi
 ['HG04187', 'HG06807', 'HG02080', 'HG03492', 'HG01243', 'HG02055', 'HG02723', 'HG02109', 'HG02145']
 ```
 
-* 150 samples have HiFi and DeepConsensus sequence files. In the HiFi index data table, 141 samples have DeepConsensus sequence files that match the sample Sequel II platform unit identifier.
-  
-* 22 samples have no MM modification tags.
-```Python
-["HG00438", "HG00735", "HG01106", "HG02622", "HG02630", "HG02717", "HG02886", "HG03453", "HG03471", "HG03540", "HG03579", "HG00733", "NA18940", "NA18943", "NA18944", "NA18945", "NA18948", "NA18959", "NA18960", "NA18967", "NA18970", "NA18982"]
-```
-
-* A total of 39 samples (106 files) have sequence reads that were adapter-trimmed; however, the kinetic tags required for methylation calls were not. The column 'MM_remove' (boolean = True) indicates the samples that should be removed.
-```Python
-['HG01074', 'HG02451', 'HG03017', 'HG03704', 'HG02735', 'HG00558', 'HG00639', 'HG01969', 'HG01150', 'HG02514', 'HG01940', 'HG03050', 'HG02984', 'HG02841', 'HG00140', 'HG00323', 'HG00408', 'HG00597','HG01261', 'HG01975', 'HG02015', 'HG02056', 'HG02129', 'HG02155', 'HG02258', 'HG02273', 'HG02965', 'HG02976', 'HG03195', 'HG03225', 'HG03834', 'NA18971', 'NA20805', 'HG02071', 'HG02074', 'HG03942','HG04204', 'HG04228', 'HG02135']
-```
-**IMPORTANT**: Lima demultiplexing did not properly update MM, ML, and kinetics tags after demultiplexing. Stability issues were reported to be resolved in Lima versions after v2.5. As a result, we have included a column, MM_review, to identify with Lima versions ≤ 2.5 (boolean = True).
+**IMPORTANT**: Lima demultiplexing did not properly update MM, ML, and kinetics tags after demultiplexing. Stability issues were reported to be resolved in Lima versions after v2.5. The column `MM_review` (boolean = True) identifies samples with Lima versions ≤ 2.5. The column `MM_remove` (boolean = True) identifies samples whose kinetic tags were not retained after adapter trimming.
 
 #### Primary Metadata Identifiers
 
