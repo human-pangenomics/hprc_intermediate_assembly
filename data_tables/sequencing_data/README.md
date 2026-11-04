@@ -176,6 +176,17 @@ Kinnex data is provided as flnc.bams.  See [PacBio IsoSeq documentation](https:/
 ['CHM13','GRCh38','HG002','HG005','HG00733','HG01109','HG01243','HG02055','HG02080','HG02109','HG02145','HG02723','HG02818','HG03098','HG03486','HG06807','NA18906','NA18940','NA18943','NA18944','NA18945','NA18948','NA18959','NA18960','NA18982','NA19240','NA20129','NA21309']
 ```
 
+ ### Fiber-seq (ONT and PacBio HiFi)
+  [data_fiberseq_ont_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_fiberseq_ont_release2_v1.0.index.csv)
+  [data_fiberseq_hifi_release2_v1.0.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/sequencing_data/data_fiberseq_hifi_release2_v1.0.index.csv)
+
+  Fiber-seq reads are provided as one CRAM per sample and platform, with runs/movies merged and aligned to each sample's donor-specific assembly (DSA). Reads carry m6A and 5mC (ONT also 5hmC) modification calls plus nucleosome, MSP, and FIRE calls from [fibertools](https://fiberseq.github.io/data-access.html#hprcv2-fiber-seq-crams). CRAMs are CRAM 3.1 with the
+  DSA reference embedded, so no external FASTA is needed, but reading them requires samtools/htslib >= 1.22. Files are under `raw_data/{nanopore,PacBio_HiFi}/fiberseq/` in each sample's working directory.
+
+  #### User Notes
+  * 39 samples: 23 ONT, 21 PacBio HiFi (5 samples have both).
+  * HG002 is under `working/HPRC_PLUS/`.
+  * GRCh38-aligned versions and FIRE peak calls are available from the [Stergachis lab](https://fiberseq.github.io/data-access.html#hprcv2-fiber-seq-crams).
 
 
 ## Sequence Index File Change Log
